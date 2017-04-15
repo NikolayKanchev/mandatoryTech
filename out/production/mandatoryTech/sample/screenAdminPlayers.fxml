@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminPlayers">
+   <children>
+      <TableView fx:id="tableView" layoutX="71.0" layoutY="118.0" prefHeight="399.0" prefWidth="659.0" stylesheets="@Pretty.css">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="37.0" text="ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="162.0" text="Name" />
+          <TableColumn fx:id="dateOfBirthColumn" text="Date of birth" />
+            <TableColumn fx:id="eMailColumn" prefWidth="173.0" text="e-mail" />
+            <TableColumn fx:id="passColumn" minWidth="0.0" prefWidth="104.0" text="Password" />
+            <TableColumn fx:id="rankColumn" prefWidth="43.0" text="rank" />
+            <TableColumn fx:id="statusColumn" prefWidth="59.0" text="Status" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="dateOfBirthField" layoutX="295.0" layoutY="518.0" prefHeight="25.0" prefWidth="119.0" promptText="Date of birth" />
+      <Button fx:id="addButton" layoutX="682.0" layoutY="518.0" mnemonicParsing="false" onAction="#addNewPlayer" prefHeight="25.0" prefWidth="48.0" text="Add" />
+      <Label layoutX="76.0" layoutY="518.0" prefHeight="25.0" prefWidth="97.0" text="New player:" />
+      <Button fx:id="deleteButton" layoutX="71.0" layoutY="92.0" mnemonicParsing="false" onAction="#deletePlayer" text="Delete" />
+      <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
+      <Button fx:id="backButton" layoutX="730.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
+      <Button fx:id="editButton" layoutX="133.0" layoutY="92.0" mnemonicParsing="false" onAction="#editPlayer" prefHeight="25.0" prefWidth="53.0" text="Edit" />
+      <TextField fx:id="searchField" layoutX="573.0" layoutY="92.0" onAction="#searchPlayers" prefHeight="25.0" prefWidth="157.0" promptText="search" />
+      <Label fx:id="welcomeLabel" layoutX="303.0" layoutY="15.0" text="Players" />
+      <TextField fx:id="nameField" layoutX="176.0" layoutY="518.0" prefHeight="25.0" prefWidth="119.0" promptText="Name" />
+      <TextField fx:id="eMailField" layoutX="414.0" layoutY="518.0" prefHeight="25.0" prefWidth="149.0" promptText="e-mail" />
+      <TextField fx:id="passField" layoutX="563.0" layoutY="518.0" prefHeight="25.0" prefWidth="119.0" promptText="password" />
+   </children>
+</AnchorPane>

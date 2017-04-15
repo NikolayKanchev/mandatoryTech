@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContPlayerTournaments">
+   <children>
+      <TableView layoutX="73.0" layoutY="101.0" prefHeight="446.0" prefWidth="659.0" stylesheets="@Pretty.css">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="45.0" text="ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="233.0" text="Name" />
+          <TableColumn fx:id="startDateColumn" prefWidth="129.0" text="Start Date" />
+            <TableColumn fx:id="endDateColumn" prefWidth="115.0" text="End Date" />
+            <TableColumn fx:id="winnerColumn" prefWidth="134.0" text="Winners Team" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
+      <Button fx:id="backButton" layoutX="738.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
+      <Label fx:id="welcomeLabel" layoutX="214.0" layoutY="-4.0" text="Tournaments" />
+      <Button fx:id="seeMatchesButton" layoutX="73.0" layoutY="73.0" mnemonicParsing="false" onAction="#seeMatches" text="See Matches" />
+   </children>
+</AnchorPane>

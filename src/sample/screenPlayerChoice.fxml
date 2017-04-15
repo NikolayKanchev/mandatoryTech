@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContPlayerChoice">
+    <children>
+        <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="215.0" layoutY="38.0" prefHeight="62.0" prefWidth="371.0" stylesheets="@Pretty.css" text="Hello Player" />
+      <Label fx:id="chooseOption" alignment="CENTER" layoutX="312.0" layoutY="161.0" prefHeight="30.0" prefWidth="178.0" text="Choose an option:" />
+      <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
+      <Button fx:id="seeTournamentButton" layoutX="286.0" layoutY="228.0" mnemonicParsing="false" onAction="#seeTournaments" prefHeight="25.0" prefWidth="229.0" text="See your Tournaments and Matches" />
+      <Button fx:id="seeAllTourButton" layoutX="294.0" layoutY="376.0" mnemonicParsing="false" onAction="#seeAllTournamentsAndMatches" prefHeight="25.0" prefWidth="214.0" text="See all Tournaments" />
+      <Button fx:id="seeTeamsButton" layoutX="294.0" layoutY="300.0" mnemonicParsing="false" onAction="#seeTeams" prefHeight="25.0" prefWidth="214.0" text="See your Teams" />
+      <Button fx:id="availablePlayersButton" layoutX="294.0" layoutY="449.0" mnemonicParsing="false" onAction="#seeAvailablePlayers" prefHeight="25.0" prefWidth="214.0" text="See available Players" />
+      <Button fx:id="seeAccountButton" layoutX="293.0" layoutY="516.0" mnemonicParsing="false" onAction="#seeAccountInfo" prefHeight="25.0" prefWidth="214.0" text="See your account info" />
+      <Label fx:id="redLabel" layoutX="637.0" layoutY="162.0" text="Your Rank : 45" />
+    </children>
+</AnchorPane>
