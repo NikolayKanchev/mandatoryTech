@@ -58,7 +58,7 @@ public class ContAdminTournaments implements Initializable{
     TableColumn<Tournament, Integer> idColumn;
 
     @FXML
-    TableColumn<Tournament, String> nameColumn, winnerColumn;
+    TableColumn<Tournament, String> nameColumn;
 
     @FXML
     TableColumn<Tournament, Date> startDateColumn, endDateColumn;

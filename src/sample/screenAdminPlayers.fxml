@@ -34,5 +34,7 @@
       <TextField fx:id="nameField" layoutX="176.0" layoutY="518.0" prefHeight="25.0" prefWidth="119.0" promptText="Name" />
       <TextField fx:id="eMailField" layoutX="414.0" layoutY="518.0" prefHeight="25.0" prefWidth="149.0" promptText="e-mail" />
       <TextField fx:id="passField" layoutX="563.0" layoutY="518.0" prefHeight="25.0" prefWidth="119.0" promptText="password" />
+      <Label fx:id="redLabel" alignment="CENTER" layoutX="68.0" layoutY="548.0" prefHeight="27.0" prefWidth="659.0" text="You have to fill out all the fields" visible="false" />
+      <Label fx:id="redLabelTop" layoutX="336.0" layoutY="91.0" text="Select a player" visible="false" />
    </children>
 </AnchorPane>

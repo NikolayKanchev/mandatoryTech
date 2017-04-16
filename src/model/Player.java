@@ -1,18 +1,33 @@
 package model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 /**
  * Created by nikol on 4/6/2017.
  */
 public class Player {
+    private int id;
     private String name;
-    private LocalDate dateOfBirth;
-    private String eMail;
+    private Date dateOfBirth;
+    private String mail;
     private int rank;
+    private String status;
+    private String password;
 
-    public Player(String name, LocalDate dateOfBirth, String eMail){
+    public Player(int id, String name, Date dateOfBirth, String mail, String password) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.mail = mail;
+        this.password = password;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -23,20 +38,20 @@ public class Player {
         this.name = name;
     }
 
-    public LocalDate getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String geteMail() {
-        return eMail;
+    public String getMail() {
+        return mail;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public int getRank() {
@@ -45,5 +60,21 @@ public class Player {
 
     public void setRank(int rank) {
         this.rank = rank;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

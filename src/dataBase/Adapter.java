@@ -1,7 +1,7 @@
 package dataBase;
 
+import model.Player;
 import model.Tournament;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +16,7 @@ public class Adapter {
     private static Adapter ourInstance;
     private Connection conn;
     private ArrayList<Tournament> tournaments;
+    private ArrayList<Player> players;
 
     public  static synchronized Adapter getInstance() {
         if(ourInstance == null){
@@ -110,5 +111,62 @@ public class Adapter {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<Player> getPlayers() {
+        ArrayList<Player> players = new ArrayList<>();
+        conn = DBConn.getConn();
+
+
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `players`");
+
+            while (rs.next()){
+                Player newPlayer = new Player(rs.getInt(1), rs.getString(2),  rs.getDate(3), rs.getString(4),  rs.getString(7));
+                newPlayer.setStatus(rs.getString(6));
+                newPlayer.setRank(rs.getInt(5));
+                players.add(newPlayer);
+            }
+
+            conn.close();
+            return players;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return players;
+    }
+
+    public void addNewPlayer(String name, LocalDate dateOfBirth, String eMail, String pass) {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(
+                    "INSERT INTO `sql11168846`.`players` (`id`, `name`, `date_of_birth`, `e-mail`, `password`)" +
+                            " VALUES (NULL, '"+ name +"', '"+ dateOfBirth +"', '"+ eMail +"' , '"+ pass +"');"
+            );
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deletePlayer(int playerId) {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("DELETE FROM `players` WHERE id = " + playerId);
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void savePlayerChanges(String name, LocalDate dateOfBirth, String eMail, String pass, String status) {
+        
     }
 }
