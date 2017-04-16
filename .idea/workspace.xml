@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/dataBase/Adapter.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/dataBase/Adapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/model/FoosballHouse.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/model/FoosballHouse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminPlayerEdit.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminPlayerEdit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminPlayers.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminPlayers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContLogin$1.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContLogin$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContLogin.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContLogin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/screenAdminPlayers.fxml" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/screenAdminPlayers.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataBase/Adapter.java" afterPath="$PROJECT_DIR$/src/dataBase/Adapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/FoosballHouse.java" afterPath="$PROJECT_DIR$/src/model/FoosballHouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Team.java" afterPath="$PROJECT_DIR$/src/model/Team.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ContAdminPlayerEdit.java" afterPath="$PROJECT_DIR$/src/sample/ContAdminPlayerEdit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ContAdminPlayers.java" afterPath="$PROJECT_DIR$/src/sample/ContAdminPlayers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ContAdminTeams.java" afterPath="$PROJECT_DIR$/src/sample/ContAdminTeams.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ContLogin.java" afterPath="$PROJECT_DIR$/src/sample/ContLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/screenAdminPlayers.fxml" afterPath="$PROJECT_DIR$/src/sample/screenAdminPlayers.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/screenAdminTeams.fxml" afterPath="$PROJECT_DIR$/src/sample/screenAdminTeams.fxml" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -915,12 +897,12 @@
       <workItem from="1492034412971" duration="9381000" />
       <workItem from="1492080790818" duration="28933000" />
       <workItem from="1492198512252" duration="3311000" />
-      <workItem from="1492257686094" duration="35425000" />
+      <workItem from="1492257686094" duration="35736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129334000" />
+    <option name="totallyTimeSpent" value="129645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1930" height="1047" extended-state="1" />
