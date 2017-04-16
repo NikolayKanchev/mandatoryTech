@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.FoosballHouse;
@@ -18,6 +19,8 @@ import model.Player;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -47,7 +50,7 @@ public class ContAdminPlayers implements Initializable{
     TableColumn<Player, Integer> rankColumn;
 
     @FXML
-    TextField nameField, eMailField, passField;
+    TextField nameField, eMailField, passField, searchField;
 
     @FXML
     DatePicker dateOfBirthField;
@@ -57,7 +60,7 @@ public class ContAdminPlayers implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadPlayers();
+        loadPlayers(foosballHouse.getPlayers());
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
 
@@ -77,11 +80,25 @@ public class ContAdminPlayers implements Initializable{
             redLabel.setVisible(false);
         }
 
-        if (dateOfBirthField.getValue() == null){
+        try{
+            if (dateOfBirthField.getValue().isAfter(LocalDate.now().minusYears(15))){
+                redLabel.setText("The player should be at least 15 years old");
+                redLabel.setVisible(true);
+                dateOfBirthField.setValue(LocalDate.now().minusYears(15));
+                return;
+            }else{
+                redLabel.setVisible(false);
+            }
+        }catch (Exception e){
             redLabel.setText("You have to choose 'Date of birth'");
             redLabel.setVisible(true);
-        }else{
-            redLabel.setVisible(false);
+            return;
+        }
+
+        if(foosballHouse.checkUserAndPass(eMailField.getText(), passField.getText(), "players")){
+            redLabel.setText("This player exist in the system");
+            redLabel.setVisible(true);
+            return;
         }
 
         foosballHouse.addNewPlayer(
@@ -91,7 +108,7 @@ public class ContAdminPlayers implements Initializable{
                 passField.getText()
         );
 
-        loadPlayers();
+        loadPlayers(foosballHouse.getPlayers());
     }
 
     public void deletePlayer(ActionEvent actionEvent) {
@@ -104,7 +121,7 @@ public class ContAdminPlayers implements Initializable{
         redLabelTop.setVisible(false);
 
         foosballHouse.deletePlayer(player.getId());
-        loadPlayers();
+        loadPlayers(foosballHouse.getPlayers());
     }
 
     public void editPlayer(ActionEvent actionEvent) throws IOException {
@@ -123,11 +140,7 @@ public class ContAdminPlayers implements Initializable{
 
     }
 
-    public void searchPlayers(ActionEvent actionEvent) {
-
-    }
-
-    public void loadPlayers() {
+    public void loadPlayers(ArrayList<Player> pl) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         dateOfBirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
@@ -137,7 +150,12 @@ public class ContAdminPlayers implements Initializable{
         passColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
 
         ObservableList<Player> players = FXCollections.observableArrayList();
-        players.addAll(foosballHouse.getPlayers());
+        players.addAll(pl);
         tableView.setItems(players);
+    }
+
+
+    public void searchPlayers(KeyEvent keyEvent) {
+        loadPlayers(foosballHouse.searchPlayers(searchField.getText()));
     }
 }

@@ -32,5 +32,6 @@
       <Label fx:id="welcomeLabel" layoutX="273.0" layoutY="-3.0" text="Teams" />
       <TextField fx:id="nameField" layoutX="138.0" layoutY="525.0" prefHeight="25.0" prefWidth="180.0" promptText="Name" />
       <ComboBox fx:id="player2ComboBox1" layoutX="500.0" layoutY="525.0" prefHeight="25.0" prefWidth="180.0" promptText="Player2" />
+      <Label fx:id="redLabelTop" layoutX="260.0" layoutY="75.0" text="You have to select a team" visible="false" />
    </children>
 </AnchorPane>

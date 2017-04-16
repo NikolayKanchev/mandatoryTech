@@ -14,6 +14,7 @@ public class FoosballHouse {
     private Tournament chosenTournamentToEdit;
     private Player players;
     private Player chosenPlayerToEdit;
+    private Object teams;
 
     public static synchronized FoosballHouse getInstance() {
         if (ourInstance == null){
@@ -23,6 +24,13 @@ public class FoosballHouse {
     }
 
     private FoosballHouse() {
+    }
+
+    public boolean checkUserAndPass(String name, String pass, String tableDB){
+        if(!adapter.checkUserAndPassword(name, pass, tableDB)){
+            return false;
+        }
+        return true;
     }
 
     public ArrayList<Tournament> getTournaments(){
@@ -69,7 +77,15 @@ public class FoosballHouse {
         return chosenPlayerToEdit;
     }
 
-    public void savePlayerChanges(String name, LocalDate dateOfBirth, String eMail, String pass, String status) {
-        adapter.savePlayerChanges(name, dateOfBirth, eMail, pass, status);
+    public void savePlayerChanges(String name, LocalDate dateOfBirth, String eMail, String pass, String status, int playerId) {
+        adapter.savePlayerChanges(name, dateOfBirth, eMail, pass, status, playerId);
+    }
+
+    public ArrayList<Player> searchPlayers(String searchText) {
+        return adapter.searchPlayers(searchText);
+    }
+
+    public ArrayList<Team> getTeams() {
+        return adapter.getTeams();
     }
 }
