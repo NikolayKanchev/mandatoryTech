@@ -19,7 +19,7 @@
         </columns>
       </TableView>
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
-      <Button fx:id="backButton" layoutX="738.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
+      <Button fx:id="backButton" layoutX="716.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="70.0" text="Back" />
       <Label fx:id="welcomeLabel" layoutX="229.0" layoutY="-3.0" text="Your Teams" />
    </children>
 </AnchorPane>

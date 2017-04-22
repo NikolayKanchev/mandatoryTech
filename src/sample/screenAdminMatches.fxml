@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminMatches">
    <children>
-      <TableView fx:id="tableView" layoutX="21.0" layoutY="137.0" prefHeight="371.0" prefWidth="760.0" stylesheets="@Pretty.css">
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="125.0" prefHeight="371.0" prefWidth="760.0" stylesheets="@Pretty.css">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="65.0" text="ID" />
             <TableColumn fx:id="dateColumn" prefWidth="99.0" text="Date" />
@@ -24,17 +24,17 @@
             <TableColumn fx:id="team2scoresColumn1" prefWidth="82.0" text="Team2 scores" />
         </columns>
       </TableView>
-      <DatePicker fx:id="dateField" layoutX="102.0" layoutY="508.0" prefHeight="25.0" prefWidth="160.0" promptText="Date" />
-      <Button fx:id="addButton" layoutX="727.0" layoutY="508.0" mnemonicParsing="false" onAction="#addNewMatch" prefHeight="25.0" prefWidth="53.0" text="Add" />
-      <Label layoutX="21.0" layoutY="508.0" prefHeight="25.0" prefWidth="96.0" text="New match:" />
-      <Button fx:id="deleteButton" layoutX="21.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteMatch" text="Delete" />
+      <DatePicker fx:id="dateField" layoutX="102.0" layoutY="498.0" prefHeight="25.0" prefWidth="160.0" promptText="Date" />
+      <Button fx:id="addButton" layoutX="727.0" layoutY="498.0" mnemonicParsing="false" onAction="#addNewMatch" prefHeight="25.0" prefWidth="53.0" text="Add" />
+      <Label layoutX="21.0" layoutY="498.0" prefHeight="25.0" prefWidth="96.0" text="New match:" />
+      <Button fx:id="deleteButton" layoutX="20.0" layoutY="90.0" mnemonicParsing="false" onAction="#deleteMatch" text="Delete" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
-      <Button fx:id="backButton" layoutX="730.0" layoutY="550.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
-      <Button fx:id="editButton" layoutX="83.0" layoutY="110.0" mnemonicParsing="false" onAction="#editMatch" prefHeight="25.0" prefWidth="53.0" text="Edit" />
-      <ComboBox fx:id="team1ComboBox" layoutX="453.0" layoutY="508.0" prefHeight="25.0" prefWidth="138.0" promptText="Team1" />
-      <ComboBox fx:id="team2ComboBox" layoutX="591.0" layoutY="508.0" prefHeight="25.0" prefWidth="138.0" promptText="Team2" />
-      <ComboBox fx:id="tournamentComboBox" layoutX="262.0" layoutY="508.0" prefHeight="25.0" prefWidth="191.0" promptText="Tournament" />
-      <TextField fx:id="searchField" layoutX="601.0" layoutY="110.0" onAction="#searchByTournament" prefHeight="25.0" prefWidth="180.0" promptText="search by tournament ID" />
+      <Button fx:id="backButton" layoutX="712.0" layoutY="550.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="66.0" text="Back" />
+      <Button fx:id="editButton" layoutX="82.0" layoutY="90.0" mnemonicParsing="false" onAction="#editMatch" prefHeight="25.0" prefWidth="53.0" text="Edit" />
+      <ComboBox fx:id="team1ComboBox" layoutX="453.0" layoutY="498.0" prefHeight="25.0" prefWidth="138.0" promptText="Team1" />
+      <ComboBox fx:id="team2ComboBox" layoutX="591.0" layoutY="498.0" prefHeight="25.0" prefWidth="138.0" promptText="Team2" />
+      <ComboBox fx:id="tournamentComboBox" layoutX="262.0" layoutY="498.0" prefHeight="25.0" prefWidth="191.0" promptText="Tournament" />
+      <TextField fx:id="searchField" layoutX="600.0" layoutY="90.0" onAction="#searchByTournament" prefHeight="25.0" prefWidth="180.0" promptText="search by tournament ID" />
       <Label fx:id="welcomeLabel" layoutX="279.0" layoutY="13.0" text="Matches" />
    </children>
 </AnchorPane>

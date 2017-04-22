@@ -1,6 +1,5 @@
 package sample;
 
-import dataBase.Adapter;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -15,7 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.FoosballHouse;
+import logic.FoosballLogic;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +22,7 @@ import java.util.ResourceBundle;
 
 
 public class ContLogin implements Initializable{
-    FoosballHouse foosballHouse = FoosballHouse.getInstance();
+    FoosballLogic foosballLogic = FoosballLogic.getInstance();
 
     @FXML
     Label redLabel;
@@ -60,7 +59,7 @@ public class ContLogin implements Initializable{
             return;
         }
 
-        if(!foosballHouse.checkUserAndPass(userNameField.getText(), passField.getText(), tableDB)){
+        if(!foosballLogic.checkUserAndPass(userNameField.getText(), passField.getText(), tableDB)){
             redLabel.setText("Wrong username or password");
             redLabel.setVisible(true);
             return;

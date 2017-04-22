@@ -1,27 +1,23 @@
 package sample;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import model.FoosballHouse;
+import logic.FoosballLogic;
 import model.Player;
-import model.Tournament;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 /**
  * Created by Didi on 04/14/2017.
  */
 public class ContAdminPlayerEdit implements Initializable{
-    private FoosballHouse foosballHouse = FoosballHouse.getInstance();
+    private FoosballLogic foosballLogic = FoosballLogic.getInstance();
     private Player playerToEdit;
     private UseAgain use = UseAgain.getInstance();
 
@@ -51,7 +47,7 @@ public class ContAdminPlayerEdit implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        playerToEdit = foosballHouse.getChosenPlayerToEdit();
+        playerToEdit = foosballLogic.getChosenPlayerToEdit();
         loadData();
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
@@ -65,7 +61,7 @@ public class ContAdminPlayerEdit implements Initializable{
     }
 
     public void savePlayerChanges(ActionEvent actionEvent) throws IOException {
-        foosballHouse.savePlayerChanges(nameTF.getText(), dateOfBirth.getValue(), eMailTF.getText(), passTF.getText(), statusTF.getText(), playerToEdit.getId());
+        foosballLogic.savePlayerChanges(nameTF.getText(), dateOfBirth.getValue(), eMailTF.getText(), passTF.getText(), statusTF.getText(), playerToEdit.getId());
         goBack(actionEvent);
     }
 }

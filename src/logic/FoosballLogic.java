@@ -1,6 +1,9 @@
-package model;
+package logic;
 
 import dataBase.Adapter;
+import model.Player;
+import model.Team;
+import model.Tournament;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,22 +11,23 @@ import java.util.ArrayList;
 /**
  * Created by Didi on 04/13/2017.
  */
-public class FoosballHouse {
+public class FoosballLogic
+{
     Adapter adapter = Adapter.getInstance();
-    private static FoosballHouse ourInstance;
+    private static FoosballLogic ourInstance;
     private Tournament chosenTournamentToEdit;
     private Player players;
     private Player chosenPlayerToEdit;
     private Object teams;
 
-    public static synchronized FoosballHouse getInstance() {
+    public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
-            ourInstance = new FoosballHouse();
+            ourInstance = new FoosballLogic();
         }
         return ourInstance;
     }
 
-    private FoosballHouse() {
+    private FoosballLogic() {
     }
 
     public boolean checkUserAndPass(String name, String pass, String tableDB){
@@ -87,5 +91,10 @@ public class FoosballHouse {
 
     public ArrayList<Team> getTeams() {
         return adapter.getTeams();
+    }
+
+    public void addNewTournament(String name, LocalDate startDate, LocalDate endDate)
+    {
+        adapter.addNewTournament(name, startDate, endDate);
     }
 }

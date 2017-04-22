@@ -19,7 +19,7 @@
       <TextField fx:id="userNameField11" layoutX="350.0" layoutY="300.0" prefHeight="25.0" prefWidth="200.0" stylesheets="@Pretty.css" />
       <Label layoutX="250.0" layoutY="479.0" prefHeight="17.0" prefWidth="71.0" stylesheets="@Pretty.css" text="Password" />
       <PasswordField fx:id="passField1" layoutX="350.0" layoutY="475.0" prefHeight="25.0" prefWidth="200.0" stylesheets="@Pretty.css" />
-      <Button fx:id="backButton" layoutX="738.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
+      <Button fx:id="backButton" layoutX="715.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="71.0" text="Back" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
     </children>
 </AnchorPane>

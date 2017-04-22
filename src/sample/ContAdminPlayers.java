@@ -13,7 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import model.FoosballHouse;
+import logic.FoosballLogic;
 import model.Player;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ import java.util.ResourceBundle;
  */
 public class ContAdminPlayers implements Initializable{
 
-    private FoosballHouse foosballHouse = FoosballHouse.getInstance();
+    private FoosballLogic foosballLogic = FoosballLogic.getInstance();
     private UseAgain use = UseAgain.getInstance();
 
     @FXML
@@ -60,7 +60,7 @@ public class ContAdminPlayers implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadPlayers(foosballHouse.getPlayers());
+        loadPlayers(foosballLogic.getPlayers());
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
 
@@ -95,20 +95,20 @@ public class ContAdminPlayers implements Initializable{
             return;
         }
 
-        if(foosballHouse.checkUserAndPass(eMailField.getText(), passField.getText(), "players")){
+        if(foosballLogic.checkUserAndPass(eMailField.getText(), passField.getText(), "players")){
             redLabel.setText("This player exist in the system");
             redLabel.setVisible(true);
             return;
         }
 
-        foosballHouse.addNewPlayer(
+        foosballLogic.addNewPlayer(
                 nameField.getText(),
                 dateOfBirthField.getValue(),
                 eMailField.getText(),
                 passField.getText()
         );
 
-        loadPlayers(foosballHouse.getPlayers());
+        loadPlayers(foosballLogic.getPlayers());
     }
 
     public void deletePlayer(ActionEvent actionEvent) {
@@ -120,8 +120,8 @@ public class ContAdminPlayers implements Initializable{
 
         redLabelTop.setVisible(false);
 
-        foosballHouse.deletePlayer(player.getId());
-        loadPlayers(foosballHouse.getPlayers());
+        foosballLogic.deletePlayer(player.getId());
+        loadPlayers(foosballLogic.getPlayers());
     }
 
     public void editPlayer(ActionEvent actionEvent) throws IOException {
@@ -134,7 +134,7 @@ public class ContAdminPlayers implements Initializable{
         redLabelTop.setVisible(false);
 
 
-        foosballHouse.setChosenPlayerToEdit(player);
+        foosballLogic.setChosenPlayerToEdit(player);
         Stage stage = (Stage)(((Node) actionEvent.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("screenAdminPlayerEdit.fxml")), 800, 600));
 
@@ -156,6 +156,6 @@ public class ContAdminPlayers implements Initializable{
 
 
     public void searchPlayers(KeyEvent keyEvent) {
-        loadPlayers(foosballHouse.searchPlayers(searchField.getText()));
+        loadPlayers(foosballLogic.searchPlayers(searchField.getText()));
     }
 }

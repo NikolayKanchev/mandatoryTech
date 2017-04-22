@@ -6,7 +6,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,10 +13,9 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import model.FoosballHouse;
+import logic.FoosballLogic;
 import model.Tournament;
 
 import java.io.IOException;
@@ -34,7 +32,7 @@ public class ContAdminTournaments implements Initializable{
 
     private UseAgain use = UseAgain.getInstance();
     private Adapter adapter = Adapter.getInstance();
-    private FoosballHouse foosballHouse = FoosballHouse.getInstance();
+    private FoosballLogic foosballLogic = FoosballLogic.getInstance();
 
     @FXML
     ChoiceBox exitOptions;
@@ -103,7 +101,7 @@ public class ContAdminTournaments implements Initializable{
             return;
         }else {
             redLabel.setVisible(false);
-            adapter.addNewTournament(nameField.getText(), startDateField.getValue(), endDateField.getValue());
+            foosballLogic.addNewTournament(nameField.getText(), startDateField.getValue(), endDateField.getValue());
             loadTournaments();
         }
     }
@@ -116,7 +114,7 @@ public class ContAdminTournaments implements Initializable{
         }
 
         redLabelTop.setVisible(false);
-        foosballHouse.deleteTournament(tournament.getId());
+        foosballLogic.deleteTournament(tournament.getId());
         loadTournaments();
     }
 
@@ -134,7 +132,7 @@ public class ContAdminTournaments implements Initializable{
 
         redLabelTop.setVisible(false);
 
-        foosballHouse.setChosenTournamentToEdit(tournament);
+        foosballLogic.setChosenTournamentToEdit(tournament);
         Stage stage = (Stage)(((Node) actionEvent.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("screenAdminTournamentEdit.fxml")), 800, 600));
     }
@@ -146,7 +144,7 @@ public class ContAdminTournaments implements Initializable{
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
 
         ObservableList<Tournament> tournaments = FXCollections.observableArrayList();
-        tournaments.addAll(foosballHouse.getTournaments());
+        tournaments.addAll(foosballLogic.getTournaments());
         table.setItems(tournaments);
     }
 }

@@ -11,7 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import model.FoosballHouse;
+import logic.FoosballLogic;
 import model.Team;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
  * Created by Didi on 04/09/2017.
  */
 public class ContAdminTeams implements Initializable{
-    private FoosballHouse foosballHouse = FoosballHouse.getInstance();
+    private FoosballLogic foosballLogic = FoosballLogic.getInstance();
     UseAgain use = UseAgain.getInstance();
 
     @FXML
@@ -36,14 +36,14 @@ public class ContAdminTeams implements Initializable{
     TableView tableView;
 
     @FXML
-    TableColumn<Team, Integer> idColumn, wonMatchesColumn, lostMatchesColumn;
+    TableColumn<Team, Integer> idColumn, wonMatchesColumn, lostMatchesColumn, player1Column, player2Column;
 
     @FXML
-    TableColumn<Team, String> nameColumn, player1Column, player2Column;
+    TableColumn<Team, String> nameColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadTeams(foosballHouse.getTeams());
+        loadTeams(foosballLogic.getTeams());
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
 
@@ -76,8 +76,8 @@ public class ContAdminTeams implements Initializable{
     private void loadTeams(ArrayList<Team> t) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        player1Column.setCellValueFactory(new PropertyValueFactory<>("player1Name"));
-        player2Column.setCellValueFactory(new PropertyValueFactory<>("player2Name"));
+        player1Column.setCellValueFactory(new PropertyValueFactory<>("player1ID"));
+        player2Column.setCellValueFactory(new PropertyValueFactory<>("player2ID"));
         wonMatchesColumn.setCellValueFactory(new PropertyValueFactory<>("wonMatches"));
         lostMatchesColumn.setCellValueFactory(new PropertyValueFactory<>("lostMatches"));
 

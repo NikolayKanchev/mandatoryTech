@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import model.FoosballHouse;
+import logic.FoosballLogic;
 import model.Tournament;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
  * Created by Didi on 04/14/2017.
  */
 public class ContAdminTournamentEdit implements Initializable{
-    FoosballHouse foosballHouse = FoosballHouse.getInstance();
+    FoosballLogic foosballLogic = FoosballLogic.getInstance();
     Tournament tournamentToEdit;
     UseAgain use = UseAgain.getInstance();
 
@@ -49,13 +49,13 @@ public class ContAdminTournamentEdit implements Initializable{
     }
 
     public void saveTournamentChanges(ActionEvent actionEvent) throws IOException {
-        foosballHouse.saveTournamentChanges(nameTF.getText(), startDate.getValue(), endDate.getValue(), tournamentToEdit);
+        foosballLogic.saveTournamentChanges(nameTF.getText(), startDate.getValue(), endDate.getValue(), tournamentToEdit);
         goBack(actionEvent);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tournamentToEdit = foosballHouse.getChosenTournamentToEdit();
+        tournamentToEdit = foosballLogic.getChosenTournamentToEdit();
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
         loadData();
 

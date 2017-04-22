@@ -11,12 +11,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminTeams">
    <children>
-      <TableView fx:id="tableView" layoutX="71.0" layoutY="116.0" prefHeight="408.0" prefWidth="662.0" stylesheets="@Pretty.css">
+      <TableView fx:id="tableView" layoutX="71.0" layoutY="121.0" prefHeight="403.0" prefWidth="662.0" stylesheets="@Pretty.css">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="39.0" text="ID" />
             <TableColumn fx:id="nameColumn" prefWidth="101.0" text="Name" />
-          <TableColumn fx:id="player1Column" prefWidth="171.0" text="Player1" />
-            <TableColumn fx:id="player2Column" prefWidth="171.0" text="Player2" />
+          <TableColumn fx:id="player1Column" prefWidth="171.0" text="Player1 ID" />
+            <TableColumn fx:id="player2Column" prefWidth="171.0" text="Player2 ID" />
             <TableColumn fx:id="wonMatchesColumn" prefWidth="90.0" text="Won matches" />
             <TableColumn fx:id="lostMatchesColumn" prefWidth="89.0" text="Lost matches" />
         </columns>
@@ -25,7 +25,7 @@
       <Label layoutX="72.0" layoutY="529.0" prefHeight="17.0" prefWidth="74.0" text="New team:" />
       <Button fx:id="deleteButton" layoutX="71.0" layoutY="88.0" mnemonicParsing="false" onAction="#deleteTeam" text="Delete" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
-      <Button fx:id="backButton" layoutX="738.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
+      <Button fx:id="backButton" layoutX="720.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="66.0" text="Back" />
       <Button fx:id="editButton" layoutX="133.0" layoutY="88.0" mnemonicParsing="false" onAction="#editTeam" prefHeight="25.0" prefWidth="53.0" text="Edit" />
       <ComboBox fx:id="player1ComboBox" layoutX="319.0" layoutY="525.0" prefHeight="25.0" prefWidth="180.0" promptText="Player1" />
       <TextField fx:id="searchField" layoutX="553.0" layoutY="88.0" onAction="#searchTeams" prefHeight="25.0" prefWidth="180.0" promptText="search" />

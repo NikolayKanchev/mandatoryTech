@@ -57,7 +57,7 @@ public class Adapter {
         try {
             Statement statement = conn.createStatement();
             statement.executeUpdate(
-                    "INSERT INTO `sql11168846`.`tournaments` (`id`, `name`, `start_date`, `end_date`)" +
+                    "INSERT INTO `tournaments` (`id`, `name`, `start_date`, `end_date`)" +
                     " VALUES (NULL, '"+ name +"', '"+ start_date +"', '"+ end_date +"');"
             );
 
@@ -146,7 +146,7 @@ public class Adapter {
         try {
             Statement statement = conn.createStatement();
             statement.executeUpdate(
-                    "INSERT INTO `sql11168846`.`players` (`id`, `name`, `date_of_birth`, `e-mail`, `password`)" +
+                    "INSERT INTO `players` (`id`, `name`, `date_of_birth`, `e-mail`, `password`)" +
                             " VALUES (NULL, '"+ name +"', '"+ dateOfBirth +"', '"+ eMail +"' , '"+ pass +"');"
             );
 
@@ -224,12 +224,11 @@ public class Adapter {
                 Team newTeam = new Team(rs.getInt(1), rs.getString(2), rs.getInt(3),  rs.getInt(4));
                 newTeam.setWonMatches(rs.getInt(5));
                 newTeam.setLostMatches(rs.getInt(6));
-                newTeam.setPlayer1Name(rs.getString(7));
-                newTeam.setPlayer2Name(rs.getString(8));
                 teams.add(newTeam);
             }
 
             conn.close();
+
             return teams;
         } catch (SQLException e) {
             e.printStackTrace();

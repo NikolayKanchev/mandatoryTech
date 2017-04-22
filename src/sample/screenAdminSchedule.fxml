@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminSchedule">
    <children>
-      <TableView fx:id="tableView" layoutX="71.0" layoutY="118.0" prefHeight="156.0" prefWidth="659.0" stylesheets="@Pretty.css">
+      <TableView fx:id="tableView" layoutX="71.0" layoutY="125.0" prefHeight="149.0" prefWidth="659.0" stylesheets="@Pretty.css">
         <columns>
             <TableColumn fx:id="wonMatchesColumn1" prefWidth="658.0" text="Start">
                <columns>
@@ -23,11 +23,11 @@
             </TableColumn>
         </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="507.0" layoutY="528.0" mnemonicParsing="false" onAction="#addMatch" prefHeight="25.0" prefWidth="48.0" text="Add" />
+      <Button fx:id="addButton" layoutX="507.0" layoutY="528.0" mnemonicParsing="false" onAction="#addMatch" prefHeight="31.0" prefWidth="66.0" text="Add" />
       <Label fx:id="addMatchToSchedule" layoutX="71.0" layoutY="532.0" prefHeight="17.0" prefWidth="188.0" text="Add match to the schedule start:" />
       <Button fx:id="deleteButton" layoutX="71.0" layoutY="91.0" mnemonicParsing="false" onAction="#deleteFromSchedule" text="Delete" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
-      <Button fx:id="backButton" layoutX="731.0" layoutY="553.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="48.0" text="Back" />
+      <Button fx:id="backButton" layoutX="713.0" layoutY="553.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="66.0" text="Back" />
       <ComboBox fx:id="selectMatchComboBox" layoutX="266.0" layoutY="528.0" prefHeight="25.0" prefWidth="237.0" promptText="Select match" />
       <Label fx:id="welcomeLabel" layoutX="278.0" layoutY="-1.0" prefHeight="77.0" prefWidth="273.0" text="Schedule" />
       <Label layoutX="338.0" layoutY="95.0" text="Select tournament:" />
