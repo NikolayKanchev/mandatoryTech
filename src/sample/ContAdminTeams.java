@@ -45,6 +45,7 @@ public class ContAdminTeams implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         loadTeams(foosballLogic.getTeams());
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+        
     }
 
 
@@ -58,18 +59,23 @@ public class ContAdminTeams implements Initializable{
 
     public void addNewTeam(ActionEvent actionEvent) {
 
+
     }
 
     public void deleteTeam(ActionEvent actionEvent) {
-        
+        Team team = (Team) tableView.getSelectionModel().getSelectedItem();
+        if(team == null){
+            redLabelTop.setVisible(true);
+            return;
+        }
+
+        redLabelTop.setVisible(false);
+        foosballLogic.deleteTeam(team.getId());
+        loadTeams(foosballLogic.getTeams());
 
     }
 
     public void editTeam(ActionEvent actionEvent) {
-
-    }
-
-    public void searchTeams(ActionEvent actionEvent) {
 
     }
 

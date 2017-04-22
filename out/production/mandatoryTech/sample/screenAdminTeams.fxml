@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminTeams">
    <children>
-      <TableView fx:id="tableView" layoutX="71.0" layoutY="121.0" prefHeight="403.0" prefWidth="662.0" stylesheets="@Pretty.css">
+      <TableView fx:id="tableView" layoutX="71.0" layoutY="121.0" prefHeight="382.0" prefWidth="662.0" stylesheets="@Pretty.css">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="39.0" text="ID" />
             <TableColumn fx:id="nameColumn" prefWidth="101.0" text="Name" />
@@ -21,17 +21,17 @@
             <TableColumn fx:id="lostMatchesColumn" prefWidth="89.0" text="Lost matches" />
         </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="680.0" layoutY="525.0" mnemonicParsing="false" onAction="#addNewTeam" prefHeight="25.0" prefWidth="53.0" text="Add" />
-      <Label layoutX="72.0" layoutY="529.0" prefHeight="17.0" prefWidth="74.0" text="New team:" />
+      <Button fx:id="addButton" layoutX="680.0" layoutY="503.0" mnemonicParsing="false" onAction="#addNewTeam" prefHeight="25.0" prefWidth="53.0" text="Add" />
+      <Label layoutX="72.0" layoutY="507.0" prefHeight="17.0" prefWidth="74.0" text="New team:" />
       <Button fx:id="deleteButton" layoutX="71.0" layoutY="88.0" mnemonicParsing="false" onAction="#deleteTeam" text="Delete" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
       <Button fx:id="backButton" layoutX="720.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="66.0" text="Back" />
       <Button fx:id="editButton" layoutX="133.0" layoutY="88.0" mnemonicParsing="false" onAction="#editTeam" prefHeight="25.0" prefWidth="53.0" text="Edit" />
-      <ComboBox fx:id="player1ComboBox" layoutX="319.0" layoutY="525.0" prefHeight="25.0" prefWidth="180.0" promptText="Player1" />
-      <TextField fx:id="searchField" layoutX="553.0" layoutY="88.0" onAction="#searchTeams" prefHeight="25.0" prefWidth="180.0" promptText="search" />
+      <ComboBox fx:id="player1ComboBox" layoutX="319.0" layoutY="503.0" onMouseClicked="#choosePlayer1" prefHeight="25.0" prefWidth="180.0" promptText="Player1" />
       <Label fx:id="welcomeLabel" layoutX="273.0" layoutY="-3.0" text="Teams" />
-      <TextField fx:id="nameField" layoutX="138.0" layoutY="525.0" prefHeight="25.0" prefWidth="180.0" promptText="Name" />
-      <ComboBox fx:id="player2ComboBox1" layoutX="500.0" layoutY="525.0" prefHeight="25.0" prefWidth="180.0" promptText="Player2" />
+      <TextField fx:id="nameField" layoutX="138.0" layoutY="503.0" prefHeight="25.0" prefWidth="180.0" promptText="Name" />
+      <ComboBox fx:id="player2ComboBox1" layoutX="500.0" layoutY="503.0" onMouseClicked="#choosePlayer2" prefHeight="25.0" prefWidth="180.0" promptText="Player2" />
       <Label fx:id="redLabelTop" layoutX="260.0" layoutY="75.0" text="You have to select a team" visible="false" />
+      <Label fx:id="redLabel" alignment="CENTER" layoutX="75.0" layoutY="553.0" prefHeight="17.0" prefWidth="662.0" text="You have to fill out the field &quot;Name&quot;" visible="false" />
    </children>
 </AnchorPane>

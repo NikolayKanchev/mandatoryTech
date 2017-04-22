@@ -62,7 +62,7 @@ public class ContAdminTournaments implements Initializable{
     TableColumn<Tournament, Date> startDateColumn, endDateColumn;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources){
         loadTournaments();
 
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));

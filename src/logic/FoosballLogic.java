@@ -97,4 +97,9 @@ public class FoosballLogic
     {
         adapter.addNewTournament(name, startDate, endDate);
     }
+
+    public void deleteTeam(int id)
+    {
+        adapter.deleteTeam(id);
+    }
 }

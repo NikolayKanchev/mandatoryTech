@@ -235,4 +235,18 @@ public class Adapter {
         }
         return teams;
     }
+
+    public void deleteTeam(int id)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("DELETE FROM `teams` WHERE id = " + id);
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
