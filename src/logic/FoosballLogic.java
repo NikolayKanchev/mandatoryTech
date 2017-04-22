@@ -19,6 +19,8 @@ public class FoosballLogic
     private Player players;
     private Player chosenPlayerToEdit;
     private Object teams;
+    private ArrayList<Player> availablePlayers;
+    private Team chosenTeamToEdit;
 
     public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
@@ -101,5 +103,17 @@ public class FoosballLogic
     public void deleteTeam(int id)
     {
         adapter.deleteTeam(id);
+    }
+
+    public void addNewTeam(String name, int player1ID, int player2ID) {
+        adapter.addNewTeam(name, player1ID, player2ID);
+    }
+
+    public void setChosenTeamToEdit(Team chosenTeamToEdit) {
+        this.chosenTeamToEdit = chosenTeamToEdit;
+    }
+
+    public Team getChosenTeamToEdit() {
+        return chosenTeamToEdit;
     }
 }

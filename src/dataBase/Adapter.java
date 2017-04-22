@@ -249,4 +249,20 @@ public class Adapter {
             e.printStackTrace();
         }
     }
+
+    public void addNewTeam(String name, int player1ID, int player2ID) {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(
+                    "INSERT INTO `foosball_management`.`teams` (`id`, `name`, `player1_id`, `player2_id`, `won_matches`, `lost_matches`)" +
+                            " VALUES (NULL, '"+ name +"', '"+ player1ID +"', '"+ player2ID +"', '0', '0');"
+            );
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
