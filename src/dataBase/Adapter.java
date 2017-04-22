@@ -265,4 +265,20 @@ public class Adapter {
             e.printStackTrace();
         }
     }
+
+    public void saveTeamChanges(String name, int player1ID, int player2ID, Team teamToEdit)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("UPDATE `foosball_management`.`teams` " +
+                    "SET `name` = '"+ name +"', `player1_id` = '"+ player1ID +"', `player2_id` = '"+ player2ID+"' " +
+                    "WHERE `teams`.`id` = " + teamToEdit.getId());
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

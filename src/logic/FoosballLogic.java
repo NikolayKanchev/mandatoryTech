@@ -116,4 +116,26 @@ public class FoosballLogic
     public Team getChosenTeamToEdit() {
         return chosenTeamToEdit;
     }
+
+    public void saveTeamChanges(String name, String player1name, String player2name, Team teamToEdit)
+    {
+        int player1ID = 0;
+        int player2ID = 0;
+
+        for(Player player: getPlayers())
+        {
+            if (player.getName().equals(player1name))
+            {
+                player1ID = player.getId();
+            }
+
+            if (player.getName().equals(player2name))
+            {
+                player2ID = player.getId();
+            }
+        }
+
+        adapter.saveTeamChanges(name, player1ID, player2ID, teamToEdit);
+
+    }
 }

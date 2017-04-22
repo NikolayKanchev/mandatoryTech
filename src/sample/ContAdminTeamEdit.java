@@ -3,6 +3,7 @@ package sample;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import model.Tournament;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -51,7 +53,11 @@ public class ContAdminTeamEdit implements Initializable{
     }
 
     public void saveTeamChanges(ActionEvent actionEvent) throws IOException {
-        //foosballLogic.saveTournamentChanges(nameTF.getText(), startDate.getValue(), endDate.getValue(), tournamentToEdit);
+
+        foosballLogic.saveTeamChanges(nameTF.getText(),
+                player1ComboBox.getSelectionModel().getSelectedItem().toString(),
+                player2ComboBox.getSelectionModel().getSelectedItem().toString(),
+                teamToEdit);
         goBack(actionEvent);
     }
 
@@ -83,11 +89,47 @@ public class ContAdminTeamEdit implements Initializable{
         player2ComboBox.setPromptText(player2Name);
     }
 
-    public void choosePlayer1(ActionEvent event) {
+    public void choosePlayer1(MouseEvent mouseEvent)
+    {
+        ArrayList<Player> availablePlayers = foosballLogic.getPlayers();
 
+        ObservableList players = FXCollections.observableArrayList();
+
+        for (Player player: availablePlayers)
+        {
+            players.add(player.getName());
+        }
+
+        player1ComboBox.setItems(players);
     }
 
-    public void choosePlayer2(ActionEvent event) {
-        
+    public void choosePlayer2(MouseEvent mouseEvent)
+    {
+        redLabel.setVisible(false);
+        String player1Name = "";
+
+        if (player1ComboBox.getSelectionModel().isEmpty())
+        {
+            player1Name = player1ComboBox.getPromptText();
+        }else
+            {
+                player1Name = player1ComboBox.getSelectionModel().getSelectedItem().toString();
+            }
+
+
+        ArrayList<Player> availablePlayers = foosballLogic.getPlayers();
+
+        ObservableList players = FXCollections.observableArrayList();
+
+        for (Player player: availablePlayers)
+        {
+            if (!player.getName().equals(player1Name))
+            {
+                players.add(player.getName());
+            }
+        }
+
+        player2ComboBox.setItems(players);
+
     }
 }
