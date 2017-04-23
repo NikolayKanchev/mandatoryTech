@@ -7,34 +7,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminMatches">
    <children>
       <TableView fx:id="tableView" layoutX="21.0" layoutY="125.0" prefHeight="371.0" prefWidth="760.0" stylesheets="@Pretty.css">
         <columns>
-          <TableColumn fx:id="idColumn" prefWidth="65.0" text="ID" />
-            <TableColumn fx:id="dateColumn" prefWidth="99.0" text="Date" />
-          <TableColumn fx:id="tournamentColumn" prefWidth="124.0" text="Tournament " />
-            <TableColumn fx:id="stageColumn" prefWidth="110.0" text="Stage" />
-            <TableColumn fx:id="team1Column" prefWidth="102.0" text="Team1 " />
-            <TableColumn fx:id="team2Column1" prefWidth="88.0" text="Team2" />
-            <TableColumn fx:id="team1scoresColumn" prefWidth="89.0" text="Team1 scores" />
-            <TableColumn fx:id="team2scoresColumn1" prefWidth="82.0" text="Team2 scores" />
+          <TableColumn fx:id="idColumn" prefWidth="47.0" text="ID" />
+            <TableColumn fx:id="dateColumn" prefWidth="103.0" text="Date" />
+          <TableColumn fx:id="tournamentColumn" prefWidth="126.0" text="Tournament " />
+            <TableColumn fx:id="team1Column" prefWidth="121.0" text="Team1 " />
+            <TableColumn fx:id="team2Column" prefWidth="122.0" text="Team2" />
+            <TableColumn fx:id="team1scoresColumn" prefWidth="63.0" text="T1 scores" />
+            <TableColumn fx:id="team2scoresColumn" prefWidth="61.0" text="T2 scores" />
+            <TableColumn fx:id="stageColumn" prefWidth="116.0" text="Stage" />
         </columns>
       </TableView>
-      <DatePicker fx:id="dateField" layoutX="102.0" layoutY="498.0" prefHeight="25.0" prefWidth="160.0" promptText="Date" />
+      <DatePicker fx:id="startDate" layoutX="102.0" layoutY="498.0" onAction="#chooseDate" prefHeight="25.0" prefWidth="160.0" promptText="Date" />
       <Button fx:id="addButton" layoutX="727.0" layoutY="498.0" mnemonicParsing="false" onAction="#addNewMatch" prefHeight="25.0" prefWidth="53.0" text="Add" />
       <Label layoutX="21.0" layoutY="498.0" prefHeight="25.0" prefWidth="96.0" text="New match:" />
       <Button fx:id="deleteButton" layoutX="20.0" layoutY="90.0" mnemonicParsing="false" onAction="#deleteMatch" text="Delete" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
       <Button fx:id="backButton" layoutX="712.0" layoutY="550.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="66.0" text="Back" />
-      <Button fx:id="editButton" layoutX="82.0" layoutY="90.0" mnemonicParsing="false" onAction="#editMatch" prefHeight="25.0" prefWidth="53.0" text="Edit" />
-      <ComboBox fx:id="team1ComboBox" layoutX="453.0" layoutY="498.0" prefHeight="25.0" prefWidth="138.0" promptText="Team1" />
-      <ComboBox fx:id="team2ComboBox" layoutX="591.0" layoutY="498.0" prefHeight="25.0" prefWidth="138.0" promptText="Team2" />
-      <ComboBox fx:id="tournamentComboBox" layoutX="262.0" layoutY="498.0" prefHeight="25.0" prefWidth="191.0" promptText="Tournament" />
-      <TextField fx:id="searchField" layoutX="600.0" layoutY="90.0" onAction="#searchByTournament" prefHeight="25.0" prefWidth="180.0" promptText="search by tournament ID" />
+      <Button fx:id="editButton" layoutX="91.0" layoutY="90.0" mnemonicParsing="false" onAction="#editMatch" prefHeight="31.0" prefWidth="66.0" text="Edit" />
+      <ComboBox fx:id="team1ComboBox" layoutX="453.0" layoutY="498.0" onMouseClicked="#chooseTeam1" prefHeight="25.0" prefWidth="138.0" promptText="Team1" />
+      <ComboBox fx:id="team2ComboBox" layoutX="591.0" layoutY="498.0" onMouseClicked="#chooseTeam2" prefHeight="25.0" prefWidth="138.0" promptText="Team2" />
+      <ComboBox fx:id="tournamentComboBox" layoutX="262.0" layoutY="498.0" onMouseClicked="#chooseTournament" prefHeight="25.0" prefWidth="191.0" promptText="Tournament" />
       <Label fx:id="welcomeLabel" layoutX="279.0" layoutY="13.0" text="Matches" />
+      <Label fx:id="redLabelTop" layoutX="340.0" layoutY="90.0" text="Select a match" visible="false" />
+      <Label fx:id="redLabel" alignment="CENTER" layoutX="26.0" layoutY="552.0" prefHeight="27.0" prefWidth="751.0" text="You have to fill out all the fields" visible="false" />
    </children>
 </AnchorPane>

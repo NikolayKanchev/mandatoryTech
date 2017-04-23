@@ -1,6 +1,7 @@
 package logic;
 
 import dataBase.Adapter;
+import model.Match;
 import model.Player;
 import model.Team;
 import model.Tournament;
@@ -21,6 +22,7 @@ public class FoosballLogic
     private Object teams;
     private ArrayList<Player> availablePlayers;
     private Team chosenTeamToEdit;
+    private ArrayList<Math> matches;
 
     public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
@@ -137,5 +139,58 @@ public class FoosballLogic
 
         adapter.saveTeamChanges(name, player1ID, player2ID, teamToEdit);
 
+    }
+
+    public ArrayList<Match> getMatches()
+    {
+        return adapter.getMatches();
+    }
+
+    public void setTeamNames(ArrayList<Match> matches, ArrayList<Team> teams)
+    {
+        for(Match match: matches)
+        {
+            int team1ID = match.getTeam1ID();
+            int team2ID = match.getTeam2ID();
+
+            for (Team team: teams)
+            {
+                if(team1ID == team.getId())
+                {
+                    match.setTeam1Name(team.getName());
+                }
+
+                if(team2ID == team.getId())
+                {
+                    match.setTeam2Name(team.getName());
+                }
+            }
+        }
+    }
+
+    public void setTournamentsNames(ArrayList<Match> matches, ArrayList<Tournament> tournaments)
+    {
+        for(Match match: matches)
+        {
+            int tourID = match.getTournamentID();
+
+            for (Tournament tournament: tournaments)
+            {
+                if(tourID == tournament.getId())
+                {
+                    match.setTournamentName(tournament.getName());
+                }
+            }
+        }
+    }
+
+    public void deleteMatch(int selectedMatch)
+    {
+        adapter.deleteMatch(selectedMatch);
+    }
+
+    public void addNewMatch(LocalDate date, int tournamentID, int team1ID, int team2ID)
+    {
+        adapter.addNewTournament(date, tournamentID, team1ID, team2ID);
     }
 }

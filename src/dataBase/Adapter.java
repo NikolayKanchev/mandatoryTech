@@ -1,5 +1,6 @@
 package dataBase;
 
+import model.Match;
 import model.Player;
 import model.Team;
 import model.Tournament;
@@ -280,5 +281,71 @@ public class Adapter {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<Match> getMatches()
+    {
+        ArrayList<Match> matches = new ArrayList<>();
+
+        conn = DBConn.getConn();
+
+        try
+        {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM matches");
+
+            while (rs.next())
+            {
+                Match newMatch = new Match
+                        (
+                        rs.getInt("id"), rs.getDate("date"),
+                        rs.getInt("tournament_id"), rs.getString("stage"),
+                        rs.getInt("team1_id"), rs.getInt("team2_id")
+                        );
+                newMatch.setTeam1scores(rs.getInt("team1_scores"));
+                newMatch.setTeam2scores(rs.getInt("team2_scores"));
+                matches.add(newMatch);
+            }
+
+            conn.close();
+            return matches;
+
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void deleteMatch(int selectedMatch)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("DELETE FROM `matches` WHERE id = " + selectedMatch);
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addNewTournament(LocalDate date, int tournamentID, int team1ID, int team2ID)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(
+                    "INSERT INTO `matches` (`id`, `date`, `tournament_id`, `stage`, `team1_id`, `team2_id`, `team1_scores`, `team2_scores`) " +
+                            "VALUES (NULL, '"+ date +"', '"+ tournamentID +"', 'start', '"+ team1ID +"', '"+ team2ID +"', '0', '0');"
+            );
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
