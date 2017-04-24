@@ -63,7 +63,7 @@ public class ContAdminTeams implements Initializable{
     }
 
     public void goBack(ActionEvent actionEvent) throws IOException {
-        use.goBack(actionEvent, "screenAdminTeams.fxml");
+        use.goBack(actionEvent, "screenAdminChoice.fxml");
     }
 
     public void addNewTeam(ActionEvent actionEvent) {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Pretty.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminMatchEdit">
+   <children>
+      <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
+      <Button fx:id="backButton" layoutX="711.0" layoutY="561.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="67.0" text="Back" />
+      <Label fx:id="welcomeLabel" layoutX="257.0" layoutY="20.0" text="Edit Match" />
+      <Label layoutX="198.0" layoutY="141.0" prefHeight="17.0" prefWidth="67.0" text="Date:" />
+      <Label layoutX="198.0" layoutY="205.0" prefHeight="17.0" prefWidth="81.0" text="Tournament:" />
+      <DatePicker fx:id="date" layoutX="306.0" layoutY="134.0" prefHeight="25.0" prefWidth="212.0" />
+      <Button fx:id="saveButton" layoutX="556.0" layoutY="520.0" mnemonicParsing="false" onAction="#saveMatchChanges" prefHeight="31.0" prefWidth="67.0" text="Save" />
+      <Label layoutX="198.0" layoutY="463.0" prefHeight="17.0" prefWidth="81.0" text="Team1 scores:" />
+      <Label layoutX="198.0" layoutY="399.0" prefHeight="17.0" prefWidth="67.0" text="Team2:" />
+      <Label layoutX="198.0" layoutY="335.0" prefHeight="17.0" prefWidth="67.0" text="Team1:" />
+      <TextField fx:id="team1scores" layoutX="306.0" layoutY="456.0" prefHeight="25.0" prefWidth="212.0" />
+      <Label fx:id="redLabel" alignment="CENTER" layoutX="4.0" layoutY="97.0" prefHeight="27.0" prefWidth="790.0" text="You have to fill out all the fields" />
+      <Label layoutX="198.0" layoutY="524.0" prefHeight="17.0" prefWidth="81.0" text="Team2 scores:" />
+      <TextField fx:id="team2scores" layoutX="306.0" layoutY="520.0" prefHeight="25.0" prefWidth="212.0" />
+      <TextField fx:id="stage" layoutX="305.0" layoutY="261.0" prefHeight="25.0" prefWidth="212.0" />
+      <Label layoutX="198.0" layoutY="268.0" prefHeight="17.0" prefWidth="81.0" text="Stage:" />
+      <ComboBox fx:id="tourComboBox" layoutX="305.0" layoutY="198.0" onAction="#chooseTournament" prefHeight="31.0" prefWidth="212.0" />
+      <ComboBox fx:id="team1ComboBox" layoutX="305.0" layoutY="328.0" onAction="#chooseTeam1" prefHeight="31.0" prefWidth="212.0" />
+      <ComboBox fx:id="team2ComboBox" layoutX="305.0" layoutY="392.0" onAction="#chooseTeam2" prefHeight="31.0" prefWidth="212.0" />
+   </children>
+</AnchorPane>

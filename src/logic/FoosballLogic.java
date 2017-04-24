@@ -1,6 +1,7 @@
 package logic;
 
 import dataBase.Adapter;
+import javafx.collections.ObservableList;
 import model.Match;
 import model.Player;
 import model.Team;
@@ -17,12 +18,10 @@ public class FoosballLogic
     Adapter adapter = Adapter.getInstance();
     private static FoosballLogic ourInstance;
     private Tournament chosenTournamentToEdit;
-    private Player players;
     private Player chosenPlayerToEdit;
-    private Object teams;
-    private ArrayList<Player> availablePlayers;
     private Team chosenTeamToEdit;
-    private ArrayList<Math> matches;
+    private Match chosenMatchToEdit;
+    private ObservableList<String> tournamentsNames;
 
     public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
@@ -192,5 +191,90 @@ public class FoosballLogic
     public void addNewMatch(LocalDate date, int tournamentID, int team1ID, int team2ID)
     {
         adapter.addNewTournament(date, tournamentID, team1ID, team2ID);
+    }
+
+    public Match getChosenMatch()
+    {
+
+        return chosenMatchToEdit;
+    }
+
+    public void setChosenMatch(Match chosenMatchToEdit)
+    {
+        this.chosenMatchToEdit = chosenMatchToEdit;
+    }
+
+    public String getTournamentName(int tournamentID)
+    {
+        String name = "";
+        ArrayList<Tournament> tournaments = getTournaments();
+
+        for(Tournament tour: tournaments)
+        {
+            if(tour.getId() == tournamentID)
+            {
+                name = tour.getName();
+            }
+        }
+        return name;
+    }
+
+
+    public String getTeamName(int id)
+    {
+        String name = "";
+        ArrayList<Team> teams = getTeams();
+
+        for(Team team: teams)
+        {
+            if(team.getId() == id)
+            {
+                name = team.getName();
+            }
+        }
+        return name;
+    }
+
+    public void saveMatchChanges(LocalDate date, String tournament, String stage, String team1, String team2, int t1Scores, int t2scores)
+    {
+        ArrayList<Team> teams = getTeams();
+        ArrayList<Tournament> tournaments = getTournaments();
+        int tournamentID = 0;
+        int team1ID = 0;
+        int team2ID = 0;
+
+        for (Tournament tour: tournaments)
+        {
+            if(tour.getName().equals(tournament))
+            {
+                tournamentID = tour.getId();
+            }
+        }
+
+        for (Team team: teams)
+        {
+            if(team.getName().equals(team1))
+            {
+                team1ID = team.getId();
+            }
+
+            if(team.getName().equals(team2))
+            {
+                team2ID = team.getId();
+            }
+        }
+
+        adapter.saveMatchChanges(date, tournamentID, stage, team1ID, team2ID, t1Scores, t2scores);
+    }
+
+    public ObservableList<String> getTournamentsNames()
+    {
+        ArrayList<Tournament> tournaments = getTournaments();
+
+        for (Tournament t: tournaments)
+        {
+            tournamentsNames.add(t.getName());
+        }
+        return tournamentsNames;
     }
 }

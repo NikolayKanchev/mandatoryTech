@@ -6,10 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import logic.FoosballLogic;
 import model.Match;
 import model.Team;
@@ -159,7 +163,8 @@ public class ContAdminMatches implements Initializable{
     }
 
     public void deleteMatch(ActionEvent actionEvent) {
-        Match selectedMatch = tableView.getSelectionModel().getSelectedItem();
+    Match selectedMatch = tableView.getSelectionModel().getSelectedItem();
+
         if(selectedMatch == null){
             redLabelTop.setVisible(true);
             return;
@@ -171,7 +176,20 @@ public class ContAdminMatches implements Initializable{
         loadData();
     }
 
-    public void editMatch(ActionEvent actionEvent) {
+    public void editMatch(ActionEvent e) throws IOException
+    {
+        Match selectedMatch = tableView.getSelectionModel().getSelectedItem();
+        foosballLogic.setChosenMatch(selectedMatch);
+
+        if(selectedMatch == null){
+            redLabelTop.setVisible(true);
+            return;
+        }
+
+        redLabelTop.setVisible(false);
+
+        Stage stage = (Stage)(((Node) e.getSource()).getScene().getWindow());
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("screenAdminMatchEdit.fxml")), 800, 600));
 
     }
 

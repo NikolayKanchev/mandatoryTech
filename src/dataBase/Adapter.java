@@ -348,4 +348,20 @@ public class Adapter {
         }
 
     }
+
+    public void saveMatchChanges(LocalDate date, int tournamentID, String stage, int team1, int team2, int t1Scores, int t2scores)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("" +
+                    "INSERT INTO `foosball_management`.`matches` (`id`, `date`, `tournament_id`, `stage`, `team1_id`, `team2_id`, `team1_scores`, `team2_scores`) " +
+                    "VALUES (NULL, '"+ date +"', '" + tournamentID + "', '"+ stage +"', '"+ team1 +"', '"+ team2 +"', '"+ t1Scores +"', '"+ t2scores +"');");
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
