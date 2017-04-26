@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,10 +11,13 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import logic.FoosballLogic;
 import model.Match;
+import model.Team;
 import model.Tournament;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -22,6 +27,11 @@ public class ContAdminMatchEdit implements Initializable{
     private FoosballLogic foosballLogic = FoosballLogic.getInstance();
     private Match matchToEdit = foosballLogic.getChosenMatch();
     private UseAgain use = UseAgain.getInstance();
+    private ArrayList<Tournament> tournaments = new ArrayList<>();
+    private LocalDate startDate;
+    private LocalDate endDate;
+    int team1OldScores, team2OldScores;
+
 
     @FXML
     ChoiceBox exitOptions;
@@ -51,10 +61,47 @@ public class ContAdminMatchEdit implements Initializable{
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
         redLabel.setVisible(false);
         loadData();
+
+        tourComboBox.valueProperty().addListener(new ChangeListener()
+        {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue)
+            {
+                tournaments = foosballLogic.getTournaments();
+
+                for (Tournament tournament: tournaments)
+                {
+                    if(tourComboBox.getSelectionModel().getSelectedItem().toString().equals(tournament.getName()))
+                    {
+                        startDate = tournament.getStartDate().toLocalDate();
+                        endDate = tournament.getEndDate().toLocalDate();
+                        date.setValue(startDate);
+                    }
+                }
+            }
+        });
+
+        date.valueProperty().addListener(new ChangeListener<LocalDate>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue)
+            {
+                LocalDate selectedDate = date.getValue();
+                if(selectedDate.isBefore(startDate) || selectedDate.isAfter(endDate)){
+                    redLabel.setText("The date has to be between: "+ startDate + " and: " + endDate);
+                    redLabel.setVisible(true);
+                }
+                else
+                {
+                    redLabel.setVisible(false);
+                }
+            }
+        });
     }
 
     public void loadData(){
@@ -70,46 +117,53 @@ public class ContAdminMatchEdit implements Initializable{
         team2ComboBox.setPromptText(team2Name);
         team1scores.setText(String.valueOf(matchToEdit.getTeam1scores()));
         team2scores.setText(String.valueOf(matchToEdit.getTeam2scores()));
+
+        //team1oldScores
     }
 
     public void saveMatchChanges(ActionEvent actionEvent) throws IOException
     {
         int t1scores = 0;
         int t2scores = 0;
-        String tournament = "";
-        String team1 = "";
-        String team2 = "";
+        String tourName = "";
+        String team1Name = "";
+        String team2Name = "";
 
         redLabel.setVisible(false);
 
 
         if(tourComboBox.getSelectionModel().isEmpty())
         {
-            tournament = tourComboBox.getPromptText();
+            tourName = tourComboBox.getPromptText();
         }else
         {
-            tournament = tourComboBox.getSelectionModel().getSelectedItem().toString();
+            tourName = tourComboBox.getSelectionModel().getSelectedItem().toString();
         }
 
         if(team1ComboBox.getSelectionModel().isEmpty()){
-            team1 = team1ComboBox.getPromptText();
+            team1Name = team1ComboBox.getPromptText();
         }else
         {
-            team1 = team1ComboBox.getSelectionModel().getSelectedItem().toString();
+            team1Name = team1ComboBox.getSelectionModel().getSelectedItem().toString();
         }
 
         if(team2ComboBox.getSelectionModel().isEmpty()){
-            team2 = team2ComboBox.getPromptText();
+            team2Name = team2ComboBox.getPromptText();
         }else
         {
-            team2 = team2ComboBox.getSelectionModel().getSelectedItem().toString();
+            team2Name = team2ComboBox.getSelectionModel().getSelectedItem().toString();
+        }
+
+        if(team1Name.equals(team2Name)){
+            team2ComboBox.setPromptText("");
+            redLabel.setText("Choose 'Team 2'");
+            redLabel.setVisible(true);
+            return;
         }
 
         if (date.getValue() == null ||
-                tournament == null ||
                 stage.getText().isEmpty() ||
-                team1 == null ||
-                team2 == null ||
+                team2Name.equals(null) ||
                 team1scores.getText().isEmpty() ||
                 team2scores.getText().isEmpty())
         {
@@ -123,9 +177,9 @@ public class ContAdminMatchEdit implements Initializable{
             t1scores = Integer.parseInt(team1scores.getText());
             t2scores = Integer.parseInt(team2scores.getText());
             foosballLogic.saveMatchChanges(
-                date.getValue(), tournament,
-                stage.getText(), team1,
-                team2, t1scores, t2scores);
+                date.getValue(), tourName,
+                stage.getText(), team1Name,
+                team2Name, t1scores, t2scores);
 
         }catch (Exception e){
             redLabel.setText("Enter a whole number for 'Team 1 scores' and 'Team 2 scores'");
@@ -133,22 +187,40 @@ public class ContAdminMatchEdit implements Initializable{
             return;
         }
 
+        int scoresT1 = Integer.parseInt(team1scores.getText());
+        int scoresT2 = Integer.parseInt(team2scores.getText());
+
+        foosballLogic.setPlayerRank(team1Name, team2Name, scoresT1, scoresT2);
+
         use.goBack(actionEvent, "screenAdminMatches.fxml");
     }
 
-    public void chooseTournament(ActionEvent actionEvent)
+    public void chooseTournament(MouseEvent mouseEvent)
     {
-
-        //tourComboBox.setItems(foosballLogic.getTournamentsNames());
+        tourComboBox.setItems(foosballLogic.getTournamentsNames());
     }
 
-    public void chooseTeam1(ActionEvent actionEvent)
+    public void chooseTeam1(MouseEvent mouseEvent)
     {
+        team1ComboBox.setItems(foosballLogic.getTeamsNames());
+    }
+
+    public void chooseTeam2(MouseEvent mouseEvent)
+    {
+        String selectedTeam = "";
+        if(team1ComboBox.getSelectionModel().isEmpty())
+        {
+            selectedTeam = team1ComboBox.getPromptText();
+        }else
+        {
+            selectedTeam = team1ComboBox.getSelectionModel().getSelectedItem().toString();
+        }
+
+        team2ComboBox.setItems(foosballLogic.getTeamsNames(selectedTeam));
 
     }
 
-    public void chooseTeam2(ActionEvent actionEvent)
-    {
 
-    }
+
+
 }

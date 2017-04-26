@@ -49,15 +49,39 @@ public class ContAdminTeamEdit implements Initializable{
     }
 
     public void goBack(ActionEvent actionEvent) throws IOException {
-        use.goBack(actionEvent, "screenAdminTournaments.fxml");
+        use.goBack(actionEvent, "screenAdminTeams.fxml");
     }
 
     public void saveTeamChanges(ActionEvent actionEvent) throws IOException {
+        redLabel.setVisible(false);
+        String player1Name = "";
+        String player2Name = "";
 
-        foosballLogic.saveTeamChanges(nameTF.getText(),
-                player1ComboBox.getSelectionModel().getSelectedItem().toString(),
-                player2ComboBox.getSelectionModel().getSelectedItem().toString(),
-                teamToEdit);
+        if(player1ComboBox.getSelectionModel().isEmpty())
+        {
+            player1Name = player1ComboBox.getPromptText();
+        }else
+        {
+            player1Name = player1ComboBox.getSelectionModel().getSelectedItem().toString();
+        }
+
+        if(player2ComboBox.getSelectionModel().isEmpty())
+        {
+            player2Name = player2ComboBox.getPromptText();
+        }else
+        {
+            player2Name = player2ComboBox.getSelectionModel().getSelectedItem().toString();
+        }
+
+
+        if(player1Name.equals(player2Name))
+            {
+                redLabel.setText("Player1 and Player2 can't be the same person");
+                redLabel.setVisible(true);
+                return;
+            }
+
+        foosballLogic.saveTeamChanges(nameTF.getText(), player1Name, player2Name, teamToEdit);
         goBack(actionEvent);
     }
 
@@ -66,7 +90,6 @@ public class ContAdminTeamEdit implements Initializable{
         teamToEdit = foosballLogic.getChosenTeamToEdit();
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
         loadData();
-
     }
 
     public void loadData(){

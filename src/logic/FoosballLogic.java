@@ -1,6 +1,7 @@
 package logic;
 
 import dataBase.Adapter;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Match;
 import model.Player;
@@ -21,7 +22,9 @@ public class FoosballLogic
     private Player chosenPlayerToEdit;
     private Team chosenTeamToEdit;
     private Match chosenMatchToEdit;
-    private ObservableList<String> tournamentsNames;
+    private ArrayList<Team> teams = getTeams();
+    private ArrayList<Player> players = getPlayers();
+    private ArrayList<Match> matches = getMatches();
 
     public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
@@ -264,11 +267,12 @@ public class FoosballLogic
             }
         }
 
-        adapter.saveMatchChanges(date, tournamentID, stage, team1ID, team2ID, t1Scores, t2scores);
+        adapter.saveMatchChanges(date, tournamentID, stage, team1ID, team2ID, t1Scores, t2scores, chosenMatchToEdit.getId());
     }
 
     public ObservableList<String> getTournamentsNames()
     {
+        ObservableList<String> tournamentsNames = FXCollections.observableArrayList();
         ArrayList<Tournament> tournaments = getTournaments();
 
         for (Tournament t: tournaments)
@@ -276,5 +280,97 @@ public class FoosballLogic
             tournamentsNames.add(t.getName());
         }
         return tournamentsNames;
+    }
+
+    public ObservableList<String> getTeamsNames()
+    {
+        ObservableList<String> teamsNames = FXCollections.observableArrayList();
+
+        for (Team t: teams)
+        {
+            teamsNames.add(t.getName());
+        }
+        return teamsNames;
+    }
+
+    public ObservableList<String> getTeamsNames(String selectedTeam)
+    {
+        ObservableList<String> teamsNames = FXCollections.observableArrayList();
+
+        for (Team t: teams)
+        {
+            if(!t.getName().equals(selectedTeam))
+            {
+                teamsNames.add(t.getName());
+            }
+        }
+        return teamsNames;
+    }
+
+    public void setPlayerRank(String team1Name, String team2Name, int team1scores, int team2scores)
+    {
+        for (Match match: matches)
+        {
+            if(team1scores == match.getTeam1scores() && team2scores == match.getTeam2scores())
+            {
+                return;
+            }
+
+            if (team1scores != match.getTeam1scores() && team2scores == match.getTeam2scores())
+            {
+
+                savePlayerRankChanges(team1Name, team1scores);
+
+                return;
+            }
+
+            if (team1scores == match.getTeam1scores() && team2scores != match.getTeam2scores())
+            {
+
+                savePlayerRankChanges(team2Name, team2scores);
+
+                return;
+            }
+        }
+
+        savePlayerRankChanges(team1Name, team1scores);
+        savePlayerRankChanges(team2Name, team2scores);
+    }
+
+    public void savePlayerRankChanges(String team, int scores)
+    {
+        int player1ID = 0;
+        int player2ID = 0;
+        int player1Rank = 0;
+        int player2Rank = 0;
+
+        for (Team t: teams)
+        {
+            if (team.equals(t.getName()))
+            {
+                player1ID = t.getPlayer1ID();
+                player2ID = t.getPlayer2ID();
+            }
+        }
+
+        for (Player player: players)
+        {
+            if(player1ID == player.getId())
+            {
+                player1Rank = player.getRank();
+                player1Rank += scores;
+                player.setRank(player1Rank);
+                adapter.savePlayerRankChanges(player1ID, player1Rank);
+            }
+
+            if(player2ID == player.getId())
+            {
+                player2Rank = player.getRank();
+                player2Rank += scores;
+                player.setRank(player2Rank);
+                adapter.savePlayerRankChanges(player2ID, player2Rank);
+            }
+        }
+
     }
 }

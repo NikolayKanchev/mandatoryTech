@@ -349,15 +349,33 @@ public class Adapter {
 
     }
 
-    public void saveMatchChanges(LocalDate date, int tournamentID, String stage, int team1, int team2, int t1Scores, int t2scores)
+    public void saveMatchChanges(LocalDate date, int tournament, String stage, int team1, int team2, int t1Scores, int t2scores, int id)
     {
         conn = DBConn.getConn();
 
         try {
             Statement statement = conn.createStatement();
-            statement.executeUpdate("" +
-                    "INSERT INTO `foosball_management`.`matches` (`id`, `date`, `tournament_id`, `stage`, `team1_id`, `team2_id`, `team1_scores`, `team2_scores`) " +
-                    "VALUES (NULL, '"+ date +"', '" + tournamentID + "', '"+ stage +"', '"+ team1 +"', '"+ team2 +"', '"+ t1Scores +"', '"+ t2scores +"');");
+            statement.executeUpdate("UPDATE `foosball_management`.`matches` " +
+                    "SET `date` = '"+ date +"', `tournament_id` = '"+ tournament +"', `stage` = '"+ stage +"', " +
+                    "`team1_id` = '"+ team1 +"', `team2_id` = '" + team2 + "', `team1_scores` = '"+ t1Scores +"', `team2_scores` = '"+ t2scores +"' " +
+                    "WHERE `matches`.`id` = "+ id +";");
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void savePlayerRankChanges(int playerID, int playerRank)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(
+                    "UPDATE  `foosball_management`.`players` " +
+                        "SET  `rank` =  '"+ playerRank +"' " +
+                        "WHERE  `players`.`id` = "+ playerID +";");
 
             conn.close();
         } catch (SQLException e) {

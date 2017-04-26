@@ -103,6 +103,8 @@ public class ContAdminTournaments implements Initializable{
             redLabel.setVisible(false);
             foosballLogic.addNewTournament(nameField.getText(), startDateField.getValue(), endDateField.getValue());
             loadTournaments();
+            nameField.setText("");
+            startDateField.setValue(LocalDate.now());
         }
     }
 

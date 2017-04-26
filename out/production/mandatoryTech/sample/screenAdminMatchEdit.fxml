@@ -26,8 +26,8 @@
       <TextField fx:id="team2scores" layoutX="306.0" layoutY="520.0" prefHeight="25.0" prefWidth="212.0" />
       <TextField fx:id="stage" layoutX="305.0" layoutY="261.0" prefHeight="25.0" prefWidth="212.0" />
       <Label layoutX="198.0" layoutY="268.0" prefHeight="17.0" prefWidth="81.0" text="Stage:" />
-      <ComboBox fx:id="tourComboBox" layoutX="305.0" layoutY="198.0" onAction="#chooseTournament" prefHeight="31.0" prefWidth="212.0" />
-      <ComboBox fx:id="team1ComboBox" layoutX="305.0" layoutY="328.0" onAction="#chooseTeam1" prefHeight="31.0" prefWidth="212.0" />
-      <ComboBox fx:id="team2ComboBox" layoutX="305.0" layoutY="392.0" onAction="#chooseTeam2" prefHeight="31.0" prefWidth="212.0" />
+      <ComboBox fx:id="tourComboBox" layoutX="305.0" layoutY="198.0" onMouseClicked="#chooseTournament" prefHeight="31.0" prefWidth="212.0" />
+      <ComboBox fx:id="team1ComboBox" layoutX="305.0" layoutY="328.0" onMouseClicked="#chooseTeam1" prefHeight="31.0" prefWidth="212.0" />
+      <ComboBox fx:id="team2ComboBox" layoutX="305.0" layoutY="392.0" onMouseClicked="#chooseTeam2" prefHeight="31.0" prefWidth="212.0" />
    </children>
 </AnchorPane>
