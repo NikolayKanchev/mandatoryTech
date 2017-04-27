@@ -472,7 +472,7 @@ public class FoosballLogic
                     {
                         winnersIDs = adapter.getTheWinnersIDs(match.getTournamentID(), match.getStage());
                         System.out.println(winnersIDs);
-                       adapter.addNewMatch();*************************************
+                      // adapter.addNewMatch();*************************************
 
                     }
                 }
