@@ -191,6 +191,17 @@ public class ContAdminMatchEdit implements Initializable{
         if (team1OldScores == 0 && team2OldScores == 0)
         {
             foosballLogic.setTeamsWonMatches(team1Name, team2Name, t1scores, t2scores);
+            if(t1scores > t2scores)
+            {
+                int scoresDiff = t1scores - t2scores;
+                foosballLogic.addToWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam1ID(), scoresDiff);
+            }
+
+            if(t1scores < t2scores)
+            {
+                int scoresDiff = t2scores - t1scores;
+                foosballLogic.addToWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam2ID(), scoresDiff);
+            }
         }
 
         if(team1OldScores > team2OldScores && t1scores < t2scores)
@@ -205,6 +216,7 @@ public class ContAdminMatchEdit implements Initializable{
 
         }
 
+        foosballLogic.checkPlayedMatches(matchToEdit.getTournamentID());
 
         use.goBack(actionEvent, "screenAdminMatches.fxml");
     }
@@ -233,8 +245,4 @@ public class ContAdminMatchEdit implements Initializable{
         team2ComboBox.setItems(foosballLogic.getTeamsNames(selectedTeam));
 
     }
-
-
-
-
 }

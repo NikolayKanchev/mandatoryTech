@@ -331,7 +331,7 @@ public class Adapter {
         }
     }
 
-    public void addNewTournament(LocalDate date, int tournamentID, int team1ID, int team2ID)
+    public void addNewMatch(LocalDate date, int tournamentID, int team1ID, int team2ID, String stage)
     {
         conn = DBConn.getConn();
 
@@ -339,7 +339,7 @@ public class Adapter {
             Statement statement = conn.createStatement();
             statement.executeUpdate(
                     "INSERT INTO `matches` (`id`, `date`, `tournament_id`, `stage`, `team1_id`, `team2_id`, `team1_scores`, `team2_scores`) " +
-                            "VALUES (NULL, '"+ date +"', '"+ tournamentID +"', 'start', '"+ team1ID +"', '"+ team2ID +"', '0', '0');"
+                            "VALUES ('"+ stage +"', '"+ date +"', '"+ tournamentID +"', 'start', '"+ team1ID +"', '"+ team2ID +"', '0', '0');"
             );
 
             conn.close();
@@ -408,6 +408,71 @@ public class Adapter {
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Integer> getWinnersFirstRound(int tournamentID)
+    {
+        ArrayList<Integer> teams = new ArrayList<>();
+        conn = DBConn.getConn();
+
+
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("");
+
+            while (rs.next()){
+
+            }
+
+            conn.close();
+
+            return teams;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void addToWinners(int tournamentID, String stage, int teamID, int scoresDiff)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("INSERT INTO `foosball_management`.`winners` (`id`, `tour_id`, `stage`, `team_id`, `scores_difference`) " +
+                    "VALUES (NULL, '"+ tournamentID +"', '"+ stage +"', '"+ teamID +"', '"+ scoresDiff +"');");
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Integer> getTheWinnersIDs(int tourID, String stage)
+    {
+        ArrayList<Integer> theWinnersIDs = new ArrayList<>();
+        conn = DBConn.getConn();
+
+        try
+        {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT winners.team_id, SUM(scores_difference) AS sc_diff FROM winners " +
+                    "WHERE winners.tour_id = "+ tourID +" AND winners.stage = '"+ stage +"' GROUP BY winners.team_id ORDER BY sc_diff DESC LIMIT 4");
+
+            while (rs.next())
+            {
+                theWinnersIDs.add(rs.getInt("team_id"));
+            }
+
+            conn.close();
+
+            return theWinnersIDs;
+
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+            return null;
         }
     }
 }

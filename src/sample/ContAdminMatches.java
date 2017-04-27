@@ -157,7 +157,7 @@ public class ContAdminMatches implements Initializable{
                 }
             }
 
-            foosballLogic.addNewMatch(startDate.getValue(), tournamentID, team1ID, team2ID);
+            foosballLogic.addNewMatch(startDate.getValue(), tournamentID, team1ID, team2ID, "First Round");
             loadData();
         }
     }

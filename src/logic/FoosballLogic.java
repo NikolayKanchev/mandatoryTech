@@ -10,6 +10,7 @@ import model.Tournament;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Didi on 04/13/2017.
@@ -25,6 +26,7 @@ public class FoosballLogic
     private ArrayList<Team> teams = getTeams();
     private ArrayList<Player> players = getPlayers();
     private ArrayList<Match> matches = getMatches();
+    private ArrayList<Tournament> tournaments = getTournaments();
 
     public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
@@ -191,9 +193,9 @@ public class FoosballLogic
         adapter.deleteMatch(selectedMatch);
     }
 
-    public void addNewMatch(LocalDate date, int tournamentID, int team1ID, int team2ID)
+    public void addNewMatch(LocalDate date, int tournamentID, int team1ID, int team2ID, String stage)
     {
-        adapter.addNewTournament(date, tournamentID, team1ID, team2ID);
+        adapter.addNewMatch(date, tournamentID, team1ID, team2ID, stage);
     }
 
     public Match getChosenMatch()
@@ -238,7 +240,7 @@ public class FoosballLogic
         return name;
     }
 
-    public void saveMatchChanges(LocalDate date, String tournament, String stage, String team1, String team2, int t1Scores, int t2scores)
+    public void saveMatchChanges(LocalDate date, String tournament, String stage, String team1, String team2, int t1Scores, int t2Scores)
     {
         ArrayList<Team> teams = getTeams();
         ArrayList<Tournament> tournaments = getTournaments();
@@ -267,7 +269,7 @@ public class FoosballLogic
             }
         }
 
-        adapter.saveMatchChanges(date, tournamentID, stage, team1ID, team2ID, t1Scores, t2scores, chosenMatchToEdit.getId());
+        adapter.saveMatchChanges(date, tournamentID, stage, team1ID, team2ID, t1Scores, t2Scores, chosenMatchToEdit.getId());
     }
 
     public ObservableList<String> getTournamentsNames()
@@ -443,5 +445,46 @@ public class FoosballLogic
                 adapter.updateTeamLostMatches(t.getLostMatches(), t.getId());
             }
         }
+    }
+
+    public void checkPlayedMatches(int tournamentID)
+    {
+        ArrayList<Integer> winnersIDs = new ArrayList<>();
+        matches = getMatches();
+        boolean firstRoundComplete = false;
+        for (Match match : matches)
+        {
+            if(match.getTournamentID() == tournamentID)
+            {
+                if(match.getStage().equals("First Round"))
+                {
+                    if(match.getTeam1scores() == 0 && match.getTeam2scores() == 0)
+                    {
+                        firstRoundComplete = false;
+                        System.out.println("Stage First round is not complete");
+                        return;
+                    }
+
+                    firstRoundComplete = true;
+                    System.out.println("Stage First round is complete");
+
+                    if(firstRoundComplete)
+                    {
+                        winnersIDs = adapter.getTheWinnersIDs(match.getTournamentID(), match.getStage());
+                        System.out.println(winnersIDs);
+                       adapter.addNewMatch();*************************************
+
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+    public void addToWinners(int tournamentID, String stage, int teamID, int scoresDiff)
+    {
+        adapter.addToWinners(tournamentID, stage, teamID, scoresDiff);
     }
 }
