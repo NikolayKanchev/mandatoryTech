@@ -373,4 +373,75 @@ public class FoosballLogic
         }
 
     }
+
+    public void setTeamsWonMatches(String team1Name, String team2Name, int t1scores, int t2scores)
+    {
+        String winner = "";
+        String loser = "";
+        int teamID = 0;
+
+        if(t1scores > t2scores)
+        {
+            winner = team1Name;
+            loser = team2Name;
+        }
+        else
+        {
+           winner = team2Name;
+           loser = team1Name;
+        }
+
+
+        for (Team t: teams)
+        {
+            if (winner.equals(t.getName()))
+            {
+                t.setWonMatches(t.getWonMatches()+1);
+                adapter.updateTeamWonMatches(t.getWonMatches(), t.getId());
+            }
+
+            if (loser.equals(t.getName()))
+            {
+                t.setLostMatches(t.getLostMatches()+1);
+                adapter.updateTeamLostMatches(t.getLostMatches(), t.getId());
+            }
+        }
+    }
+
+    public void setNewValueTeamsWonMatches(String team1Name, String team2Name, int t1scores, int t2scores)
+    {
+        String winner = "";
+        String loser = "";
+        int teamID = 0;
+
+        if(t1scores > t2scores)
+        {
+            winner = team1Name;
+            loser = team2Name;
+        }
+        else
+        {
+            winner = team2Name;
+            loser = team1Name;
+        }
+
+        for (Team t: teams)
+        {
+            if (winner.equals(t.getName()))
+            {
+                t.setWonMatches(t.getWonMatches()+1);
+                t.setLostMatches(t.getLostMatches()-1);
+                adapter.updateTeamLostMatches(t.getLostMatches(), t.getId());
+                adapter.updateTeamWonMatches(t.getWonMatches(), t.getId());
+            }
+
+            if (loser.equals(t.getName()))
+            {
+                t.setLostMatches(t.getLostMatches()+1);
+                t.setWonMatches(t.getWonMatches()-1);
+                adapter.updateTeamWonMatches(t.getWonMatches(), t.getId());
+                adapter.updateTeamLostMatches(t.getLostMatches(), t.getId());
+            }
+        }
+    }
 }

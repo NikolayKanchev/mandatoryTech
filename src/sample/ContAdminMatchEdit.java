@@ -188,6 +188,24 @@ public class ContAdminMatchEdit implements Initializable{
 
         foosballLogic.setPlayerRank(team1Name, team2Name, t1scores, t2scores);
 
+        if (team1OldScores == 0 && team2OldScores == 0)
+        {
+            foosballLogic.setTeamsWonMatches(team1Name, team2Name, t1scores, t2scores);
+        }
+
+        if(team1OldScores > team2OldScores && t1scores < t2scores)
+        {
+            foosballLogic.setNewValueTeamsWonMatches(team1Name, team2Name, 1, 2);
+
+        }
+
+        if(team1OldScores < team2OldScores && t1scores > t2scores)
+        {
+            foosballLogic.setNewValueTeamsWonMatches(team1Name, team2Name, 2, 1);
+
+        }
+
+
         use.goBack(actionEvent, "screenAdminMatches.fxml");
     }
 

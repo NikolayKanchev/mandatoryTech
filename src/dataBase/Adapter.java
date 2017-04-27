@@ -382,4 +382,32 @@ public class Adapter {
             e.printStackTrace();
         }
     }
+
+    public void updateTeamWonMatches(int wonMatches, int teamID)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("UPDATE  `foosball_management`.`teams` SET  `won_matches` =  '"+ wonMatches +"' WHERE  `teams`.`id` = " + teamID);
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateTeamLostMatches(int lostMatches, int teamID)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("UPDATE  `foosball_management`.`teams` SET  `lost_matches` =  '"+ lostMatches +"' WHERE  `teams`.`id` = " + teamID);
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
