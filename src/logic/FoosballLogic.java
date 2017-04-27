@@ -359,16 +359,16 @@ public class FoosballLogic
             {
                 player1Rank = player.getRank();
                 player1Rank += scores;
-                player.setRank(player1Rank);
                 adapter.savePlayerRankChanges(player1ID, player1Rank);
+                player.setRank(player1Rank);
             }
 
             if(player2ID == player.getId())
             {
                 player2Rank = player.getRank();
                 player2Rank += scores;
-                player.setRank(player2Rank);
                 adapter.savePlayerRankChanges(player2ID, player2Rank);
+                player.setRank(player2Rank);
             }
         }
 

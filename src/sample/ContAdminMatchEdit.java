@@ -3,7 +3,6 @@ package sample;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import logic.FoosballLogic;
 import model.Match;
-import model.Team;
 import model.Tournament;
 
 import java.io.IOException;
@@ -30,7 +28,8 @@ public class ContAdminMatchEdit implements Initializable{
     private ArrayList<Tournament> tournaments = new ArrayList<>();
     private LocalDate startDate;
     private LocalDate endDate;
-    int team1OldScores, team2OldScores;
+    private int team1OldScores;
+    private int team2OldScores;
 
 
     @FXML
@@ -117,8 +116,9 @@ public class ContAdminMatchEdit implements Initializable{
         team2ComboBox.setPromptText(team2Name);
         team1scores.setText(String.valueOf(matchToEdit.getTeam1scores()));
         team2scores.setText(String.valueOf(matchToEdit.getTeam2scores()));
+        team1OldScores = matchToEdit.getTeam1scores();
+        team2OldScores = matchToEdit.getTeam2scores();
 
-        //team1oldScores
     }
 
     public void saveMatchChanges(ActionEvent actionEvent) throws IOException
@@ -161,11 +161,7 @@ public class ContAdminMatchEdit implements Initializable{
             return;
         }
 
-        if (date.getValue() == null ||
-                stage.getText().isEmpty() ||
-                team2Name.equals(null) ||
-                team1scores.getText().isEmpty() ||
-                team2scores.getText().isEmpty())
+        if (date.getValue() == null || stage.getText().isEmpty() || team2Name.equals(null))
         {
             redLabel.setText("You have to fill out all the fields");
             redLabel.setVisible(true);
@@ -187,10 +183,10 @@ public class ContAdminMatchEdit implements Initializable{
             return;
         }
 
-        int scoresT1 = Integer.parseInt(team1scores.getText());
-        int scoresT2 = Integer.parseInt(team2scores.getText());
+        t1scores = t1scores - team1OldScores;
+        t2scores = t2scores - team2OldScores;
 
-        foosballLogic.setPlayerRank(team1Name, team2Name, scoresT1, scoresT2);
+        foosballLogic.setPlayerRank(team1Name, team2Name, t1scores, t2scores);
 
         use.goBack(actionEvent, "screenAdminMatches.fxml");
     }
