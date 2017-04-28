@@ -339,7 +339,7 @@ public class Adapter {
             Statement statement = conn.createStatement();
             statement.executeUpdate(
                     "INSERT INTO `matches` (`id`, `date`, `tournament_id`, `stage`, `team1_id`, `team2_id`, `team1_scores`, `team2_scores`) " +
-                            "VALUES ('"+ stage +"', '"+ date +"', '"+ tournamentID +"', 'start', '"+ team1ID +"', '"+ team2ID +"', '0', '0');"
+                            "VALUES (NULL, '"+ date +"', '"+ tournamentID +"', '"+ stage +"', '"+ team1ID +"', '"+ team2ID +"', '0', '0');"
             );
 
             conn.close();
@@ -473,6 +473,47 @@ public class Adapter {
         {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public void updateWinners(int tournamentID, String stage, int winnerID, int scoresDiff, int oldWinnerID, int oldScoreDiff)
+    {
+        conn = DBConn.getConn();
+        int oldWinner = 0;
+
+
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT winners.id FROM winners WHERE winners.tour_id = "+ tournamentID+" " +
+                    "AND winners.stage = '"+ stage +"' AND winners.team_id = "+ oldWinnerID +" AND winners.scores_difference = "+ oldScoreDiff +" LIMIT 1");
+            if(rs.next())
+            {
+                oldWinner = rs.getInt("id");
+            }
+
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        insertNewValueForTheWinner(oldWinner, winnerID, scoresDiff, tournamentID, stage);
+
+    }
+
+    private void insertNewValueForTheWinner(int oldWinner, int newWinner, int scoresDiff, int tournamentID, String stage)
+    {
+        conn = DBConn.getConn();
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(
+                    "UPDATE winners SET `tour_id` = "+ tournamentID +", `stage` = '"+ stage +"'" +
+                            ", `team_id` = "+ newWinner +", `scores_difference` = "+ scoresDiff +" WHERE winners.id = "+ oldWinner +"");
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

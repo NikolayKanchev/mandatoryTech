@@ -31,7 +31,6 @@ public class ContAdminMatchEdit implements Initializable{
     private int team1OldScores;
     private int team2OldScores;
 
-
     @FXML
     ChoiceBox exitOptions;
 
@@ -49,7 +48,6 @@ public class ContAdminMatchEdit implements Initializable{
 
     @FXML
     ComboBox tourComboBox, team1ComboBox, team2ComboBox;
-
 
     public void exitOrLogOut(MouseEvent mouseEvent) {
         use.exitOrLogOut(mouseEvent, exitOptions);
@@ -204,16 +202,35 @@ public class ContAdminMatchEdit implements Initializable{
             }
         }
 
+
+
         if(team1OldScores > team2OldScores && t1scores < t2scores)
         {
+            int oldScoreDiff = team1OldScores - team2OldScores;
+            int newScoresDiff = oldScoreDiff - (t2scores - t1scores);
+            if(newScoresDiff < 0)
+            {
+                newScoresDiff = newScoresDiff*(-1);
+            }
             foosballLogic.setNewValueTeamsWonMatches(team1Name, team2Name, 1, 2);
+            foosballLogic.updateWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam2ID(), newScoresDiff,
+                    matchToEdit.getTeam1ID(), oldScoreDiff);
+
+            //foosballLogic.checkAreNextMatchesCreated(matchToEdit.getTournamentID(), matchToEdit.getStage())
 
         }
 
         if(team1OldScores < team2OldScores && t1scores > t2scores)
         {
+            int oldScoreDiff = team2OldScores - team1OldScores;
+            int newScoresDiff = (t1scores - t2scores) - oldScoreDiff;
+            if(newScoresDiff < 0)
+            {
+                newScoresDiff = newScoresDiff*(-1);
+            }
             foosballLogic.setNewValueTeamsWonMatches(team1Name, team2Name, 2, 1);
-
+            foosballLogic.updateWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam1ID(), newScoresDiff,
+                    matchToEdit.getTeam2ID(), oldScoreDiff);
         }
 
         foosballLogic.checkPlayedMatches(matchToEdit.getTournamentID());

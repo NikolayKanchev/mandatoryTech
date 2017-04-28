@@ -8,9 +8,11 @@ import model.Player;
 import model.Team;
 import model.Tournament;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Didi on 04/13/2017.
@@ -449,9 +451,16 @@ public class FoosballLogic
 
     public void checkPlayedMatches(int tournamentID)
     {
-        ArrayList<Integer> winnersIDs = new ArrayList<>();
+        List<Integer> winnersIDs = new ArrayList<>();
+        LocalDate date = null;
         matches = getMatches();
         boolean firstRoundComplete = false;
+        boolean semifinalComplete = false;
+        boolean semifinalMatchesHaveBeenCreated = false;
+        boolean finalMatchHaveBeenCreated = false;
+        int tournamentWinnerID = 0;
+
+
         for (Match match : matches)
         {
             if(match.getTournamentID() == tournamentID)
@@ -471,20 +480,63 @@ public class FoosballLogic
                     if(firstRoundComplete)
                     {
                         winnersIDs = adapter.getTheWinnersIDs(match.getTournamentID(), match.getStage());
-                        System.out.println(winnersIDs);
-                      // adapter.addNewMatch();*************************************
-
+                        date = match.getDate().toLocalDate();
                     }
+                }
+
+                if(match.getStage().equals("Semifinal"))
+                {
+                    semifinalMatchesHaveBeenCreated = true;
+
+                    if(match.getTeam1scores() == 0 && match.getTeam2scores() == 0)
+                    {
+                        semifinalComplete = false;
+                        System.out.println("Semifinal is not complete");
+                        return;
+                    }
+
+                    semifinalComplete = true;
+                    System.out.println("Semifinal is complete");
+
+                    if(semifinalComplete)
+                    {
+                        winnersIDs = adapter.getTheWinnersIDs(match.getTournamentID(), match.getStage());
+                        date = match.getDate().toLocalDate();
+                    }
+                }
+                if(match.getStage().equals("Final"))
+                {
+                    finalMatchHaveBeenCreated = true;
+                    winnersIDs = adapter.getTheWinnersIDs(match.getTournamentID(), match.getStage());
                 }
             }
         }
 
+        if(firstRoundComplete && !semifinalMatchesHaveBeenCreated)
+        {
+           adapter.addNewMatch(date.plusDays(1), tournamentID, winnersIDs.get(0), winnersIDs.get(1), "Semifinal");
+           adapter.addNewMatch(date.plusDays(1), tournamentID, winnersIDs.get(2), winnersIDs.get(3), "Semifinal");
+        }
 
+        if(semifinalComplete && !finalMatchHaveBeenCreated)
+        {
+            adapter.addNewMatch(date.plusDays(1), tournamentID, winnersIDs.get(0), winnersIDs.get(1), "Final");
+        }
 
+        if(finalMatchHaveBeenCreated)
+        {
+            tournamentWinnerID = winnersIDs.get(0);
+            System.out.println(tournamentWinnerID);
+        }
     }
 
     public void addToWinners(int tournamentID, String stage, int teamID, int scoresDiff)
     {
         adapter.addToWinners(tournamentID, stage, teamID, scoresDiff);
+    }
+
+    public void updateWinners(int tournamentID, String stage, int winnerID, int scoresDiff, int oldWinnerID, int oldScoreDiff)
+    {
+        adapter.updateWinners(tournamentID, stage, winnerID, scoresDiff, oldWinnerID, oldScoreDiff);
     }
 }
