@@ -9529,7 +9529,7 @@ are trying to connect to?
 SQLState: 08S01
 VendorError: 0 
 </pre></li><li class="listitem"><p><a class="link" href="#qandaitem-15-1-4">15.4: </a>
-            I have a servlet/application that works fine for a day, and
+            I have a servlet/application that works fine for a date, and
             then stops working overnight
           </p></li><li class="listitem"><p><a class="link" href="#qandaitem-15-1-5">15.5: </a>
             I'm trying to use JDBC 2.0 updatable result sets, and I get
@@ -9693,7 +9693,7 @@ VendorError: 0
             server on the port that MySQL is listening to (by default,
             3306).
           </p><p><a name="qandaitem-15-1-4"></a><span class="bold"><strong>15.4: </strong></span><span class="bold"><strong>
-            I have a servlet/application that works fine for a day, and
+            I have a servlet/application that works fine for a date, and
             then stops working overnight
           </strong></span></p><p>
             MySQL closes connections after 8 hours of inactivity. You
@@ -10165,7 +10165,7 @@ conn.commit();
       Connector/J:
     </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
           When Connector/J retrieves timestamps for a daylight saving
-          time (DST) switch day using the
+          time (DST) switch date using the
           <code class="function">getTimeStamp()</code> method on the result set,
           some of the returned values might be wrong. The errors can be
           avoided by using the following connection options when

@@ -7273,7 +7273,7 @@ VendorError: 0
 
 
      * 15.4: I have a servlet/application that works fine for a
-       day, and then stops working overnight
+       date, and then stops working overnight
 
      * 15.5: I'm trying to use JDBC 2.0 updatable result sets,
        and I get an exception saying my result set is not
@@ -7443,7 +7443,7 @@ VendorError: 0
    is running to the MySQL server on the port that MySQL is
    listening to (by default, 3306).
 
-   15.4: I have a servlet/application that works fine for a day,
+   15.4: I have a servlet/application that works fine for a date,
    and then stops working overnight
 
    MySQL closes connections after 8 hours of inactivity. You
@@ -7913,7 +7913,7 @@ Chapter 16 Known Issues and Limitations
    Connector/J:
 
      * When Connector/J retrieves timestamps for a daylight
-       saving time (DST) switch day using the getTimeStamp()
+       saving time (DST) switch date using the getTimeStamp()
        method on the result set, some of the returned values
        might be wrong. The errors can be avoided by using the
        following connection options when connecting to a

@@ -12,49 +12,44 @@
    <children>
       <TableView fx:id="tableView" layoutX="71.0" layoutY="125.0" prefHeight="149.0" prefWidth="659.0" stylesheets="@Pretty.css">
         <columns>
-            <TableColumn fx:id="wonMatchesColumn1" prefWidth="658.0" text="Start">
+            <TableColumn prefWidth="658.0" text="First round">
                <columns>
-                  <TableColumn fx:id="dayColumn" minWidth="0.0" prefWidth="78.0" text="Day" />
-                <TableColumn fx:id="idColumn" prefWidth="62.0" text="Match ID" />
+                  <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="78.0" text="Date" />
+                <TableColumn fx:id="matchID" prefWidth="62.0" text="Match ID" />
                   <TableColumn fx:id="team1Column" minWidth="4.0" prefWidth="195.0" text="Team1" />
                 <TableColumn fx:id="team2Column" prefWidth="165.0" text="Team2" />
-                  <TableColumn fx:id="winnerColumn" prefWidth="158.0" text="Winner" />
+                  <TableColumn fx:id="resultColumn" prefWidth="158.0" text="Result" />
                </columns>
             </TableColumn>
         </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="507.0" layoutY="528.0" mnemonicParsing="false" onAction="#addMatch" prefHeight="31.0" prefWidth="66.0" text="Add" />
-      <Label fx:id="addMatchToSchedule" layoutX="71.0" layoutY="532.0" prefHeight="17.0" prefWidth="188.0" text="Add match to the schedule start:" />
-      <Button fx:id="deleteButton" layoutX="71.0" layoutY="91.0" mnemonicParsing="false" onAction="#deleteFromSchedule" text="Delete" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
       <Button fx:id="backButton" layoutX="713.0" layoutY="553.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="66.0" text="Back" />
-      <ComboBox fx:id="selectMatchComboBox" layoutX="266.0" layoutY="528.0" prefHeight="25.0" prefWidth="237.0" promptText="Select match" />
       <Label fx:id="welcomeLabel" layoutX="278.0" layoutY="-1.0" prefHeight="77.0" prefWidth="273.0" text="Schedule" />
-      <Label layoutX="338.0" layoutY="95.0" text="Select tournament:" />
-      <ComboBox fx:id="timelineComboBox" layoutX="452.0" layoutY="91.0" prefHeight="25.0" prefWidth="128.0" promptText="Timeline" />
-      <ComboBox fx:id="tournamentComboBox" disable="true" layoutX="580.0" layoutY="91.0" prefHeight="25.0" prefWidth="150.0" promptText="tournament" />
-      <TableView fx:id="tableView1" layoutX="71.0" layoutY="273.0" prefHeight="141.0" prefWidth="659.0" stylesheets="@Pretty.css">
+      <Label layoutX="452.0" layoutY="98.0" text="Select tournament:" />
+      <ComboBox fx:id="tournamentComboBox" layoutX="580.0" layoutY="91.0" prefHeight="25.0" prefWidth="150.0" promptText="tournament" />
+      <TableView fx:id="tableViewSemi" layoutX="71.0" layoutY="273.0" prefHeight="141.0" prefWidth="659.0" stylesheets="@Pretty.css">
          <columns>
-            <TableColumn fx:id="wonMatchesColumn11" prefWidth="658.0" text="Semifinal">
+            <TableColumn prefWidth="658.0" text="Semifinal">
                <columns>
-                  <TableColumn fx:id="daySemiColumn" minWidth="0.0" prefWidth="78.0" text="Day" />
+                  <TableColumn fx:id="dateSemiColumn" minWidth="0.0" prefWidth="78.0" text="Date" />
                   <TableColumn fx:id="matchIDSemiColumn" prefWidth="62.0" text="Match ID" />
                   <TableColumn fx:id="team1SemiColumn" minWidth="4.0" prefWidth="195.0" text="Team1" />
                   <TableColumn fx:id="team2SemiColumn" prefWidth="165.0" text="Team2" />
-                  <TableColumn fx:id="winnerSemiColumn" prefWidth="158.0" text="Winner" />
+                  <TableColumn fx:id="resultSemiColumn" prefWidth="158.0" text="Result" />
                </columns>
             </TableColumn>
          </columns>
       </TableView>
-      <TableView fx:id="tableView11" layoutX="71.0" layoutY="414.0" prefHeight="113.0" prefWidth="659.0" stylesheets="@Pretty.css">
+      <TableView fx:id="tableViewFinal" layoutX="71.0" layoutY="414.0" prefHeight="113.0" prefWidth="659.0" stylesheets="@Pretty.css">
          <columns>
-            <TableColumn fx:id="wonMatchesColumn111" prefWidth="658.0" text="Final">
+            <TableColumn prefWidth="658.0" text="Final">
                <columns>
-                  <TableColumn fx:id="dayFinalColumn" minWidth="0.0" prefWidth="78.0" text="Day" />
+                  <TableColumn fx:id="dateFinalColumn" minWidth="0.0" prefWidth="78.0" text="Date" />
                   <TableColumn fx:id="matchIDFinalColumn" prefWidth="62.0" text="Match ID" />
                   <TableColumn fx:id="team1FinalColumn" minWidth="4.0" prefWidth="195.0" text="Team1" />
                   <TableColumn fx:id="team2FinalColumn" prefWidth="165.0" text="Team2" />
-                  <TableColumn fx:id="winnerFinalColumn" prefWidth="158.0" text="Winner" />
+                  <TableColumn fx:id="resultFinalColumn" prefWidth="158.0" text="Result" />
                </columns>
             </TableColumn>
          </columns>

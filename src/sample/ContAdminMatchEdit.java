@@ -121,14 +121,13 @@ public class ContAdminMatchEdit implements Initializable{
 
     public void saveMatchChanges(ActionEvent actionEvent) throws IOException
     {
+        redLabel.setVisible(false);
+
         int t1scores = 0;
         int t2scores = 0;
         String tourName = "";
         String team1Name = "";
         String team2Name = "";
-
-        redLabel.setVisible(false);
-
 
         if(tourComboBox.getSelectionModel().isEmpty())
         {
@@ -171,9 +170,9 @@ public class ContAdminMatchEdit implements Initializable{
             t1scores = Integer.parseInt(team1scores.getText());
             t2scores = Integer.parseInt(team2scores.getText());
             foosballLogic.saveMatchChanges(
-                date.getValue(), tourName,
-                stage.getText(), team1Name,
-                team2Name, t1scores, t2scores);
+                    date.getValue(), tourName,
+                    stage.getText(), team1Name,
+                    team2Name, t1scores, t2scores);
 
         }catch (Exception e){
             redLabel.setText("Enter a whole number for 'Team 1 scores' and 'Team 2 scores'");
@@ -186,55 +185,8 @@ public class ContAdminMatchEdit implements Initializable{
 
         foosballLogic.setPlayerRank(team1Name, team2Name, t1scores, t2scores);
 
-        if (team1OldScores == 0 && team2OldScores == 0)
-        {
-            foosballLogic.setTeamsWonMatches(team1Name, team2Name, t1scores, t2scores);
-            if(t1scores > t2scores)
-            {
-                int scoresDiff = t1scores - t2scores;
-                foosballLogic.addToWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam1ID(), scoresDiff);
-            }
 
-            if(t1scores < t2scores)
-            {
-                int scoresDiff = t2scores - t1scores;
-                foosballLogic.addToWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam2ID(), scoresDiff);
-            }
-        }
-
-
-
-        if(team1OldScores > team2OldScores && t1scores < t2scores)
-        {
-            int oldScoreDiff = team1OldScores - team2OldScores;
-            int newScoresDiff = oldScoreDiff - (t2scores - t1scores);
-            if(newScoresDiff < 0)
-            {
-                newScoresDiff = newScoresDiff*(-1);
-            }
-            foosballLogic.setNewValueTeamsWonMatches(team1Name, team2Name, 1, 2);
-            foosballLogic.updateWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam2ID(), newScoresDiff,
-                    matchToEdit.getTeam1ID(), oldScoreDiff);
-
-            //foosballLogic.checkAreNextMatchesCreated(matchToEdit.getTournamentID(), matchToEdit.getStage())
-
-        }
-
-        if(team1OldScores < team2OldScores && t1scores > t2scores)
-        {
-            int oldScoreDiff = team2OldScores - team1OldScores;
-            int newScoresDiff = (t1scores - t2scores) - oldScoreDiff;
-            if(newScoresDiff < 0)
-            {
-                newScoresDiff = newScoresDiff*(-1);
-            }
-            foosballLogic.setNewValueTeamsWonMatches(team1Name, team2Name, 2, 1);
-            foosballLogic.updateWinners(matchToEdit.getTournamentID(), matchToEdit.getStage(), matchToEdit.getTeam1ID(), newScoresDiff,
-                    matchToEdit.getTeam2ID(), oldScoreDiff);
-        }
-
-        foosballLogic.checkPlayedMatches(matchToEdit.getTournamentID());
-
+        foosballLogic.saveChangesForMatch(team1OldScores, team2OldScores, team1Name, team2Name, t1scores, t2scores);
         use.goBack(actionEvent, "screenAdminMatches.fxml");
     }
 

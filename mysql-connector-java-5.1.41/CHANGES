@@ -1621,7 +1621,7 @@
       on the server).
 
     - Fixed Bug#34913 - ResultSet.getTimestamp() returns incorrect
-      values for month/day of TIMESTAMPs when using server-side
+      values for month/date of TIMESTAMPs when using server-side
       prepared statements (not enabled by default).
       
     - Fixed BUG#34937 - MysqlConnectionPoolDataSource does not support 
@@ -5302,7 +5302,7 @@ Fixed PreparedStatement parameter checking
           correctly read data for BLOBS.
 
      - Fixed PreparedStatement.setDate() to not
-       add a day.
+       add a date.
        (above fixes thanks to Vincent Partington)
 
      - Added URL parameter parsing (?user=... etc).

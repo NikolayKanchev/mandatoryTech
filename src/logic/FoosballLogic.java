@@ -3,10 +3,7 @@ package logic;
 import dataBase.Adapter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Match;
-import model.Player;
-import model.Team;
-import model.Tournament;
+import model.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -538,5 +535,70 @@ public class FoosballLogic
     public void updateWinners(int tournamentID, String stage, int winnerID, int scoresDiff, int oldWinnerID, int oldScoreDiff)
     {
         adapter.updateWinners(tournamentID, stage, winnerID, scoresDiff, oldWinnerID, oldScoreDiff);
+    }
+
+    public void saveChangesForMatch(int team1OldScores, int team2OldScores, String team1Name, String team2Name, int t1scores, int t2scores)
+    {
+        if (team1OldScores == 0 && team2OldScores == 0)
+        {
+            setTeamsWonMatches(team1Name, team2Name, t1scores, t2scores);
+            if(t1scores > t2scores)
+            {
+                int scoresDiff = t1scores - t2scores;
+                addToWinners(chosenMatchToEdit.getTournamentID(), chosenMatchToEdit.getStage(), chosenMatchToEdit.getTeam1ID(), scoresDiff);
+            }
+
+            if(t1scores < t2scores)
+            {
+                int scoresDiff = t2scores - t1scores;
+                addToWinners(chosenMatchToEdit.getTournamentID(), chosenMatchToEdit.getStage(), chosenMatchToEdit.getTeam2ID(), scoresDiff);
+            }
+        }
+
+
+
+        if(team1OldScores > team2OldScores && t1scores < t2scores)
+        {
+            int oldScoreDiff = team1OldScores - team2OldScores;
+            int newScoresDiff = oldScoreDiff - (t2scores - t1scores);
+            if(newScoresDiff < 0)
+            {
+                newScoresDiff = newScoresDiff*(-1);
+            }
+            setNewValueTeamsWonMatches(team1Name, team2Name, 1, 2);
+            updateWinners(chosenMatchToEdit.getTournamentID(), chosenMatchToEdit.getStage(), chosenMatchToEdit.getTeam2ID(), newScoresDiff,
+                    chosenMatchToEdit.getTeam1ID(), oldScoreDiff);
+
+            //foosballLogic.checkAreNextMatchesCreated(matchToEdit.getTournamentID(), matchToEdit.getStage())
+
+        }
+
+        if(team1OldScores < team2OldScores && t1scores > t2scores)
+        {
+            int oldScoreDiff = team2OldScores - team1OldScores;
+            int newScoresDiff = (t1scores - t2scores) - oldScoreDiff;
+            if(newScoresDiff < 0)
+            {
+                newScoresDiff = newScoresDiff*(-1);
+            }
+            setNewValueTeamsWonMatches(team1Name, team2Name, 2, 1);
+            updateWinners(chosenMatchToEdit.getTournamentID(), chosenMatchToEdit.getStage(), chosenMatchToEdit.getTeam1ID(), newScoresDiff,
+                    chosenMatchToEdit.getTeam2ID(), oldScoreDiff);
+        }
+
+        checkPlayedMatches(chosenMatchToEdit.getTournamentID());
+    }
+
+    public ArrayList<Schedule> getSchedule(String chosenTournament, String s)
+    {
+        int tourID = 0;
+        for (Tournament t: tournaments)
+        {
+            if(chosenTournament.equals(t.getName()))
+            {
+                tourID = t.getId();
+            }
+        }
+        return adapter.getSchedule(tourID, s);
     }
 }

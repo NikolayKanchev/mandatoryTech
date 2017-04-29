@@ -1,9 +1,7 @@
 package dataBase;
 
-import model.Match;
-import model.Player;
-import model.Team;
-import model.Tournament;
+import model.*;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -127,8 +125,8 @@ public class Adapter {
             ResultSet rs = statement.executeQuery("SELECT * FROM `players`");
 
             while (rs.next()){
-                Player newPlayer = new Player(rs.getInt(1), rs.getString(2),  rs.getDate(3), rs.getString(4),  rs.getString(7));
-                newPlayer.setStatus(rs.getString(6));
+                Player newPlayer = new Player(rs.getInt(1), rs.getString(2),  rs.getDate(3), rs.getString(4),  rs.getString("password"));
+                newPlayer.setStatus(rs.getString("status"));
                 newPlayer.setRank(rs.getInt(5));
                 players.add(newPlayer);
             }
@@ -514,6 +512,34 @@ public class Adapter {
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Schedule> getSchedule(int chosenTournament, String stage)
+    {
+        ArrayList<Schedule> sch = new ArrayList<>();
+
+        conn = DBConn.getConn();
+
+        try
+        {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `schedule` WHERE tour_id = "+ chosenTournament +" AND stage = '"+ stage +"'");
+
+            while (rs.next())
+            {
+                Schedule schedule = new Schedule(rs.getDate(1), rs.getInt(2), rs.getString(3), rs.getString(4),
+                        rs.getString(5), rs.getInt(6), rs.getString(7));
+                sch.add(schedule);
+            }
+
+            conn.close();
+            return sch;
+
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+            return null;
         }
     }
 }
