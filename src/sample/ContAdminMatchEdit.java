@@ -82,23 +82,6 @@ public class ContAdminMatchEdit implements Initializable{
                 }
             }
         });
-
-        date.valueProperty().addListener(new ChangeListener<LocalDate>()
-        {
-            @Override
-            public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue)
-            {
-                LocalDate selectedDate = date.getValue();
-                if(selectedDate.isBefore(startDate) || selectedDate.isAfter(endDate)){
-                    redLabel.setText("The date has to be between: "+ startDate + " and: " + endDate);
-                    redLabel.setVisible(true);
-                }
-                else
-                {
-                    redLabel.setVisible(false);
-                }
-            }
-        });
     }
 
     public void loadData(){
