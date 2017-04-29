@@ -15,8 +15,8 @@
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="39.0" text="ID" />
             <TableColumn fx:id="nameColumn" prefWidth="101.0" text="Name" />
-          <TableColumn fx:id="player1Column" prefWidth="171.0" text="Player1 ID" />
-            <TableColumn fx:id="player2Column" prefWidth="171.0" text="Player2 ID" />
+          <TableColumn fx:id="player1Column" prefWidth="171.0" text="Player 1" />
+            <TableColumn fx:id="player2Column" prefWidth="171.0" text="Player 2" />
             <TableColumn fx:id="wonMatchesColumn" prefWidth="90.0" text="Won matches" />
             <TableColumn fx:id="lostMatchesColumn" prefWidth="89.0" text="Lost matches" />
         </columns>

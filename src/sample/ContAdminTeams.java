@@ -42,10 +42,10 @@ public class ContAdminTeams implements Initializable{
     TableView tableView;
 
     @FXML
-    TableColumn<Team, Integer> idColumn, wonMatchesColumn, lostMatchesColumn, player1Column, player2Column;
+    TableColumn<Team, Integer> idColumn, wonMatchesColumn, lostMatchesColumn;
 
     @FXML
-    TableColumn<Team, String> nameColumn;
+    TableColumn<Team, String> nameColumn, player1Column, player2Column;
 
     @FXML
     ComboBox player1ComboBox, player2ComboBox;
@@ -126,8 +126,8 @@ public class ContAdminTeams implements Initializable{
     private void loadTeams(ArrayList<Team> t) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        player1Column.setCellValueFactory(new PropertyValueFactory<>("player1ID"));
-        player2Column.setCellValueFactory(new PropertyValueFactory<>("player2ID"));
+        player1Column.setCellValueFactory(new PropertyValueFactory<>("player1Name"));
+        player2Column.setCellValueFactory(new PropertyValueFactory<>("player2Name"));
         wonMatchesColumn.setCellValueFactory(new PropertyValueFactory<>("wonMatches"));
         lostMatchesColumn.setCellValueFactory(new PropertyValueFactory<>("lostMatches"));
 

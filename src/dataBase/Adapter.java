@@ -217,12 +217,14 @@ public class Adapter {
 
         try {
             Statement statement = conn.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM `teams`");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `teams_view`");
 
             while (rs.next()){
-                Team newTeam = new Team(rs.getInt(1), rs.getString(2), rs.getInt(3),  rs.getInt(4));
-                newTeam.setWonMatches(rs.getInt(5));
-                newTeam.setLostMatches(rs.getInt(6));
+                Team newTeam = new Team(rs.getInt("id"), rs.getString("team_name"), rs.getInt("player_id"),  rs.getInt("player2_id"));
+                newTeam.setWonMatches(rs.getInt("won_matches"));
+                newTeam.setLostMatches(rs.getInt("lost_matches"));
+                newTeam.setPlayer1Name(rs.getString("player_1"));
+                newTeam.setPlayer2Name(rs.getString("player_2"));
                 teams.add(newTeam);
             }
 
