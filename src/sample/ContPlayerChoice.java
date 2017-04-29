@@ -8,19 +8,30 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import logic.FoosballLogic;
+import model.Match;
+import model.Player;
+import model.Team;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ContPlayerChoice implements Initializable{
+    FoosballLogic foosballLogic = FoosballLogic.getInstance();
+    Player player;
 
     UseAgain use = UseAgain.getInstance();
 
     @FXML
     ChoiceBox exitOptions;
+
+    @FXML
+    Label redLabel;
 
 
     public void exitOrLogOut(MouseEvent mouseEvent) {
@@ -29,7 +40,17 @@ public class ContPlayerChoice implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+
+        player = foosballLogic.getPlayerLoggedIN();
+        foosballLogic.getPlayerTeams();
+        foosballLogic.getPlayerMatches();
+        foosballLogic.getPlayerTournaments();
+
+        String s = "Your Rank : " +player.getRank();
+        redLabel.setText(s);
+        redLabel.setVisible(true);
     }
 
     public void seeTournaments(ActionEvent actionEvent) throws IOException {
@@ -38,10 +59,6 @@ public class ContPlayerChoice implements Initializable{
 
     public void seeAllTournamentsAndMatches(ActionEvent actionEvent) throws IOException {
         changeScreen(actionEvent, "screenPlayerTournaments.fxml");
-    }
-
-    public void seeTeams(ActionEvent actionEvent) throws IOException {
-        changeScreen(actionEvent, "screenPlayerTeams.fxml");
     }
 
     public void seeAvailablePlayers(ActionEvent actionEvent) throws IOException {

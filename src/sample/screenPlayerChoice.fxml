@@ -10,11 +10,10 @@
         <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="215.0" layoutY="38.0" prefHeight="62.0" prefWidth="371.0" stylesheets="@Pretty.css" text="Hello Player" />
       <Label fx:id="chooseOption" alignment="CENTER" layoutX="312.0" layoutY="161.0" prefHeight="30.0" prefWidth="178.0" text="Choose an option:" />
       <ChoiceBox fx:id="exitOptions" layoutX="740.0" layoutY="20.0" onMouseClicked="#exitOrLogOut" prefHeight="20.0" prefWidth="20.0" stylesheets="@Pretty.css" />
-      <Button fx:id="seeTournamentButton" layoutX="286.0" layoutY="228.0" mnemonicParsing="false" onAction="#seeTournaments" prefHeight="25.0" prefWidth="229.0" text="See your Tournaments and Matches" />
-      <Button fx:id="seeAllTourButton" layoutX="294.0" layoutY="376.0" mnemonicParsing="false" onAction="#seeAllTournamentsAndMatches" prefHeight="25.0" prefWidth="214.0" text="See all Tournaments" />
-      <Button fx:id="seeTeamsButton" layoutX="294.0" layoutY="300.0" mnemonicParsing="false" onAction="#seeTeams" prefHeight="25.0" prefWidth="214.0" text="See your Teams" />
-      <Button fx:id="availablePlayersButton" layoutX="294.0" layoutY="449.0" mnemonicParsing="false" onAction="#seeAvailablePlayers" prefHeight="25.0" prefWidth="214.0" text="See available Players" />
-      <Button fx:id="seeAccountButton" layoutX="293.0" layoutY="516.0" mnemonicParsing="false" onAction="#seeAccountInfo" prefHeight="25.0" prefWidth="214.0" text="See your account info" />
-      <Label fx:id="redLabel" layoutX="637.0" layoutY="162.0" text="Your Rank : 45" />
+      <Button fx:id="seeTournamentButton" layoutX="249.0" layoutY="228.0" mnemonicParsing="false" onAction="#seeTournaments" prefHeight="31.0" prefWidth="302.0" text="See your Tournaments Matches" />
+      <Button fx:id="seeAllTourButton" layoutX="293.0" layoutY="322.0" mnemonicParsing="false" onAction="#seeAllTournamentsAndMatches" prefHeight="25.0" prefWidth="214.0" text="See all Tournaments" />
+      <Button fx:id="availablePlayersButton" layoutX="293.0" layoutY="406.0" mnemonicParsing="false" onAction="#seeAvailablePlayers" prefHeight="25.0" prefWidth="214.0" text="See available Players" />
+      <Button fx:id="seeAccountButton" layoutX="294.0" layoutY="496.0" mnemonicParsing="false" onAction="#seeAccountInfo" prefHeight="25.0" prefWidth="214.0" text="See your account info" />
+      <Label fx:id="redLabel" layoutX="607.0" layoutY="162.0" prefHeight="27.0" prefWidth="153.0" text="Your Rank : 45" />
     </children>
 </AnchorPane>

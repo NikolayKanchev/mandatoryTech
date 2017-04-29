@@ -542,4 +542,80 @@ public class Adapter {
             return null;
         }
     }
+
+    public ArrayList<Integer> getPlayerTournamentsIDs(Player playerLogged)
+    {
+        ArrayList<Integer> tournamentsIDs = new ArrayList<>();
+        conn = DBConn.getConn();
+
+
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT DISTINCT matches.tournament_id FROM matches " +
+                    "WHERE matches.team1_id = "+ playerLogged.getId() +" OR matches.team2_id = " + playerLogged.getId());
+
+            while (rs.next()){
+                tournamentsIDs.add(rs.getInt("tournament_id"));
+            }
+
+            conn.close();
+            return tournamentsIDs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tournamentsIDs;
+    }
+
+    public ArrayList<Player> searchAvailablePlayers(String searchText)
+    {
+        ArrayList<Player> players = new ArrayList<>();
+        conn = DBConn.getConn();
+
+
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(
+                    "SELECT * FROM `players` WHERE name LIKE \"%"+ searchText +"%\" OR `e-mail` LIKE \"%"+ searchText +
+                            "%\" OR password LIKE \"%"+ searchText +"%\" OR `date_of_birth` LIKE \"%"+ searchText +
+                            "%\" OR `rank` LIKE \"%"+ searchText +"%\" OR status LIKE 'available'"
+            );
+
+            while (rs.next()){
+                Player newPlayer = new Player(rs.getInt(1), rs.getString(2),  rs.getDate(3), rs.getString(4),  rs.getString(7));
+                newPlayer.setStatus(rs.getString(6));
+                newPlayer.setRank(rs.getInt(5));
+                players.add(newPlayer);
+            }
+
+            conn.close();
+            return players;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return players;
+    }
+
+    public Player getPlayerByID(int playerId)
+    {
+        Player newPlayer = null;
+        conn = DBConn.getConn();
+
+
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `players` WHERE id = " + playerId);
+
+            while (rs.next()){
+                newPlayer = new Player(rs.getInt(1), rs.getString(2),  rs.getDate(3), rs.getString(4),  rs.getString("password"));
+                newPlayer.setStatus(rs.getString("status"));
+                newPlayer.setRank(rs.getInt(5));
+            }
+
+            conn.close();
+            return newPlayer;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return newPlayer;
+    }
 }

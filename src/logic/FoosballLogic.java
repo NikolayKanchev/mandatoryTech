@@ -5,10 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.*;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,7 +14,7 @@ import java.util.List;
  */
 public class FoosballLogic
 {
-    Adapter adapter = Adapter.getInstance();
+    private Adapter adapter = Adapter.getInstance();
     private static FoosballLogic ourInstance;
     private Tournament chosenTournamentToEdit;
     private Player chosenPlayerToEdit;
@@ -26,6 +24,13 @@ public class FoosballLogic
     private ArrayList<Player> players = getPlayers();
     private ArrayList<Match> matches = getMatches();
     private ArrayList<Tournament> tournaments = getTournaments();
+    private Player playerLogged;
+    private ArrayList<Team> playerTeams;
+    private ArrayList<Match> playerMatches;
+    private ArrayList<Tournament> playerTournaments = new ArrayList<>();
+    private ArrayList<String> playerTournamentsNames = new ArrayList<>();
+    private ArrayList<Player> availablePlayers = new ArrayList<>();
+    private Player player;
 
     public static synchronized FoosballLogic getInstance() {
         if (ourInstance == null){
@@ -600,5 +605,106 @@ public class FoosballLogic
             }
         }
         return adapter.getSchedule(tourID, s);
+    }
+
+    public Player getPlayerLoggedIN(String userName, String pass)
+    {
+        for(Player p: adapter.getPlayers())
+        {
+            if(userName.equals(p.getMail()) && pass.equals(p.getPassword()))
+            {
+                playerLogged = p;
+            }
+        }
+        return playerLogged;
+    }
+
+    public ArrayList<Team> getPlayerTeams()
+    {
+        ArrayList<Team> teams = new ArrayList<>();
+        teams = adapter.getTeams();
+
+        ArrayList<Team> playerTeams = new ArrayList<>();
+
+
+        for (Team team: teams)
+        {
+            if(playerLogged.getId() == team.getPlayer1ID() || playerLogged.getId() == team.getPlayer2ID()){
+                playerTeams.add(team);
+            }
+        }
+        return playerTeams;
+    }
+
+    public ArrayList<Match> getPlayerMatches()
+    {
+        ArrayList<Match> playerMatches = new ArrayList<>();
+
+        for(Team team: getPlayerTeams())
+        {
+            for(Match match: matches)
+            {
+                if(team.getId() == match.getTeam1ID() || team.getId() == match.getTeam2ID())
+                {
+                   playerMatches.add(match);
+                }
+            }
+        }
+        return playerMatches;
+    }
+
+
+
+    public Player getPlayerLoggedIN()
+    {
+        return this.playerLogged;
+    }
+
+    public ArrayList<Tournament> getPlayerTournaments()
+    {
+        ArrayList<Tournament> tournaments = new ArrayList<>();
+        for(Integer i: adapter.getPlayerTournamentsIDs(playerLogged))
+        {
+            for(Tournament tournament: getTournaments())
+            {
+                if(i == tournament.getId())
+                {
+                    tournaments.add(tournament);
+                }
+            }
+        }
+        return tournaments;
+
+    }
+
+    public ArrayList<String> getPlayerTournamentsNames()
+    {
+        for (Tournament tournament: getPlayerTournaments())
+        {
+            playerTournamentsNames.add(tournament.getName());
+        }
+
+        return playerTournamentsNames;
+    }
+
+    public ArrayList<Player> getAvailablePlayers()
+    {
+        for (Player pl: getPlayers())
+        {
+            if(pl.getStatus().equals("available"))
+            {
+                availablePlayers.add(pl);
+            }
+        }
+        return availablePlayers;
+    }
+
+    public ArrayList<Player> searchAvailablePlayers(String searchText) {
+        return adapter.searchAvailablePlayers(searchText);
+    }
+
+    public Player getPlayer()
+    {
+        return adapter.getPlayerByID(playerLogged.getId());
     }
 }

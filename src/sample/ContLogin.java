@@ -15,6 +15,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import logic.FoosballLogic;
+import model.Player;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class ContLogin implements Initializable{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
+    Player currentPlayer;
 
     @FXML
     Label redLabel;
@@ -70,6 +72,7 @@ public class ContLogin implements Initializable{
         }
 
         if(choice.getSelectionModel().getSelectedItem().equals("Player")){
+            currentPlayer = foosballLogic.getPlayerLoggedIN(userNameField.getText(), passField.getText());
             changeScreen(actionEvent, "screenPlayerChoice.fxml");
         }
     }
