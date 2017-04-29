@@ -28,7 +28,6 @@ public class FoosballLogic
     private ArrayList<Team> playerTeams;
     private ArrayList<Match> playerMatches;
     private ArrayList<Tournament> playerTournaments = new ArrayList<>();
-    private ArrayList<String> playerTournamentsNames = new ArrayList<>();
     private ArrayList<Player> availablePlayers = new ArrayList<>();
     private Player player;
 
@@ -679,6 +678,8 @@ public class FoosballLogic
 
     public ArrayList<String> getPlayerTournamentsNames()
     {
+        ArrayList<String> playerTournamentsNames = new ArrayList<>();
+
         for (Tournament tournament: getPlayerTournaments())
         {
             playerTournamentsNames.add(tournament.getName());

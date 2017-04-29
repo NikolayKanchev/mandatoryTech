@@ -81,7 +81,7 @@ public class ContPlayerPlayers implements Initializable{
     }
 
     public void searchPlayers(KeyEvent keyEvent) {
-        loadPlayers(foosballLogic.searchPlayers(searchField.getText()));
+        loadPlayers(foosballLogic.searchAvailablePlayers(searchField.getText()));
     }
 
 }

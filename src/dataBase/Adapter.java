@@ -575,9 +575,9 @@ public class Adapter {
         try {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(
-                    "SELECT * FROM `players` WHERE name LIKE \"%"+ searchText +"%\" OR `e-mail` LIKE \"%"+ searchText +
+                    "SELECT * FROM `players` WHERE (name LIKE \"%"+ searchText +"%\" OR `e-mail` LIKE \"%"+ searchText +
                             "%\" OR password LIKE \"%"+ searchText +"%\" OR `date_of_birth` LIKE \"%"+ searchText +
-                            "%\" OR `rank` LIKE \"%"+ searchText +"%\" OR status LIKE 'available'"
+                            "%\" OR `rank` LIKE \"%"+ searchText +"%\") AND status = 'available'"
             );
 
             while (rs.next()){

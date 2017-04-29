@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,17 +54,26 @@ public class ContPlayerMatches implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<String> tourNames = FXCollections.observableArrayList();
+        tourNames.addAll( new ArrayList<>(foosballLogic.getPlayerTournamentsNames()));
+        tournamentComboBox.setItems(tourNames);
+        tournamentComboBox.getSelectionModel().selectFirst();
         loadData();
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+
+
+        tournamentComboBox.valueProperty().addListener(new ChangeListener()
+        {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue)
+            {
+                loadData();
+            }
+        });
     }
 
     private void loadData()
     {
-        ObservableList<String> tourNames = FXCollections.observableArrayList();
-        tourNames.addAll(foosballLogic.getPlayerTournamentsNames());
-        tournamentComboBox.setItems(tourNames);
-        tournamentComboBox.getSelectionModel().selectFirst();
-
         matchIDColumn.setCellValueFactory(new PropertyValueFactory<>("matchID"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         team1Column.setCellValueFactory(new PropertyValueFactory<>("team1ID"));
