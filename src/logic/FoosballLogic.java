@@ -291,7 +291,7 @@ public class FoosballLogic
     {
         ObservableList<String> teamsNames = FXCollections.observableArrayList();
 
-        for (Team t: teams)
+        for (Team t: adapter.getTeams())
         {
             teamsNames.add(t.getName());
         }
@@ -302,7 +302,7 @@ public class FoosballLogic
     {
         ObservableList<String> teamsNames = FXCollections.observableArrayList();
 
-        for (Team t: teams)
+        for (Team t: adapter.getTeams())
         {
             if(!t.getName().equals(selectedTeam))
             {
@@ -312,29 +312,32 @@ public class FoosballLogic
         return teamsNames;
     }
 
-    public void setPlayerRank(String team1Name, String team2Name, int team1scores, int team2scores)
+    public void setPlayerRank(String team1Name, String team2Name, int team1scores, int team2scores, int matchID)
     {
         for (Match match: matches)
         {
-            if(team1scores == match.getTeam1scores() && team2scores == match.getTeam2scores())
+            if(matchID == match.getId())
             {
-                return;
-            }
+                if (team1scores == match.getTeam1scores() && team2scores == match.getTeam2scores())
+                {
+                    return;
+                }
 
-            if (team1scores != match.getTeam1scores() && team2scores == match.getTeam2scores())
-            {
+                if (team1scores != match.getTeam1scores() && team2scores == match.getTeam2scores())
+                {
 
-                savePlayerRankChanges(team1Name, team1scores);
+                    savePlayerRankChanges(team1Name, team1scores);
 
-                return;
-            }
+                    return;
+                }
 
-            if (team1scores == match.getTeam1scores() && team2scores != match.getTeam2scores())
-            {
+                if (team1scores == match.getTeam1scores() && team2scores != match.getTeam2scores())
+                {
 
-                savePlayerRankChanges(team2Name, team2scores);
+                    savePlayerRankChanges(team2Name, team2scores);
 
-                return;
+                    return;
+                }
             }
         }
 
@@ -482,6 +485,11 @@ public class FoosballLogic
                     {
                         winnersIDs = adapter.getTheWinnersIDs(match.getTournamentID(), match.getStage());
                         date = match.getDate().toLocalDate();
+                        if(winnersIDs.size() < 4)
+                        {
+                            semifinalMatchesHaveBeenCreated = true;
+                            semifinalComplete = true;
+                        }
                     }
                 }
 

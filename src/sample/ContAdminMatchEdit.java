@@ -152,6 +152,7 @@ public class ContAdminMatchEdit implements Initializable{
         {
             t1scores = Integer.parseInt(team1scores.getText());
             t2scores = Integer.parseInt(team2scores.getText());
+
             foosballLogic.saveMatchChanges(
                     date.getValue(), tourName,
                     stage.getText(), team1Name,
@@ -166,7 +167,8 @@ public class ContAdminMatchEdit implements Initializable{
         t1scores = t1scores - team1OldScores;
         t2scores = t2scores - team2OldScores;
 
-        foosballLogic.setPlayerRank(team1Name, team2Name, t1scores, t2scores);
+        System.out.println("controller \t team1: " + team1Name +", team2: " + team2Name + ", team1Scores: " +t1scores + ", team2Scores: " + t2scores);
+        foosballLogic.setPlayerRank(team1Name, team2Name, t1scores, t2scores, matchToEdit.getId());
 
 
         foosballLogic.saveChangesForMatch(team1OldScores, team2OldScores, team1Name, team2Name, t1scores, t2scores);

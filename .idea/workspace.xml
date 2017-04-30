@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminMatchEdit$2.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/logic/FoosballLogic.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/logic/FoosballLogic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminMatchEdit.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminMatchEdit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/FoosballLogic.java" afterPath="$PROJECT_DIR$/src/logic/FoosballLogic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java" afterPath="$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -61,18 +66,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContAdminMatchEdit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContAdminMatchEdit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="83" column="11" lean-forward="false" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+            <state relative-caret-position="640">
+              <caret line="198" column="54" lean-forward="true" selection-start-line="198" selection-start-column="54" selection-end-line="198" selection-end-column="54" />
               <folding>
                 <element signature="docComment;class#ContAdminMatchEdit#0" expanded="false" />
                 <element signature="method#goBack#0;class#ContAdminMatchEdit#0" expanded="false" />
-                <element signature="method#saveMatchChanges#0;class#ContAdminMatchEdit#0" expanded="false" />
-                <element signature="e#5677#5678#0" expanded="true" />
-                <element signature="e#5751#5752#0" expanded="true" />
-                <element signature="method#chooseTeam2#0;class#ContAdminMatchEdit#0" expanded="false" />
+                <element signature="e#5982#5983#0" expanded="true" />
+                <element signature="e#6051#6052#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FoosballLogic.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FoosballLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="103" column="27" lean-forward="true" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
+            <state relative-caret-position="-431">
+              <caret line="301" column="4" lean-forward="false" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
               <folding>
                 <element signature="docComment;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getInstance#0;class#FoosballLogic#0" expanded="false" />
@@ -137,8 +140,6 @@
                 <element signature="method#getPlayers#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#addNewPlayer#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#savePlayerChanges#0;class#FoosballLogic#0" expanded="false" />
-                <element signature="e#3281#3282#0" expanded="true" />
-                <element signature="e#3322#3323#0" expanded="true" />
                 <element signature="method#addNewTournament#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#addNewTeam#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#saveTeamChanges#0;class#FoosballLogic#0" expanded="false" />
@@ -149,6 +150,7 @@
                 <element signature="method#getTournamentName#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getTeamName#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#saveMatchChanges#0;class#FoosballLogic#0" expanded="false" />
+                <element signature="method#getTournamentsNames#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getTeamsNames#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getTeamsNames#1;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#setPlayerRank#0;class#FoosballLogic#0" expanded="false" />
@@ -164,6 +166,7 @@
                 <element signature="method#getPlayerTeams#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getPlayerMatches#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getPlayerTournaments#0;class#FoosballLogic#0" expanded="false" />
+                <element signature="method#getPlayerTournamentsNames#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getAvailablePlayers#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#searchAvailablePlayers#0;class#FoosballLogic#0" expanded="false" />
               </folding>
@@ -174,8 +177,8 @@
       <file leaf-file-name="Adapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataBase/Adapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="227" column="35" lean-forward="true" selection-start-line="227" selection-start-column="35" selection-end-line="227" selection-end-column="35" />
+            <state relative-caret-position="233">
+              <caret line="353" column="32" lean-forward="false" selection-start-line="353" selection-start-column="32" selection-end-line="353" selection-end-column="32" />
               <folding>
                 <element signature="docComment;class#Adapter#0" expanded="false" />
                 <element signature="method#getInstance#0;class#Adapter#0" expanded="false" />
@@ -196,7 +199,6 @@
                 <element signature="method#getMatches#0;class#Adapter#0" expanded="false" />
                 <element signature="method#deleteMatch#0;class#Adapter#0" expanded="false" />
                 <element signature="method#addNewMatch#0;class#Adapter#0" expanded="false" />
-                <element signature="method#saveMatchChanges#0;class#Adapter#0" expanded="false" />
                 <element signature="method#savePlayerRankChanges#0;class#Adapter#0" expanded="false" />
                 <element signature="method#updateTeamWonMatches#0;class#Adapter#0" expanded="false" />
                 <element signature="method#updateTeamLostMatches#0;class#Adapter#0" expanded="false" />
@@ -208,76 +210,76 @@
                 <element signature="method#getSchedule#0;class#Adapter#0" expanded="false" />
                 <element signature="method#getPlayerTournamentsIDs#0;class#Adapter#0" expanded="false" />
                 <element signature="method#getPlayerByID#0;class#Adapter#0" expanded="false" />
-                <marker date="1493505286286" expanded="false" signature="926:1014" ph="SELECT * FRO... missingValue" />
-                <marker date="1493505286286" expanded="false" signature="1482:1639" ph="INSERT INTO `tournaments`... " />
-                <marker date="1493505286286" expanded="false" signature="2042:2069" ph="SELECT * FRO... tournaments" />
-                <marker date="1493505286286" expanded="false" signature="2655:2692" ph="DELETE FROM " />
-                <marker date="1493505286286" expanded="false" signature="3089:3226" ph="UPDATE `tour... " />
-                <marker date="1493505286286" expanded="false" signature="3626:3649" ph="SELECT * FRO... players" />
-                <marker date="1493505286286" expanded="false" signature="4409:4596" ph="INSERT INTO `players`... " />
-                <marker date="1493505286286" expanded="false" signature="4914:4947" ph="DELETE FROM " />
-                <marker date="1493505286286" expanded="false" signature="5345:5529" ph="UPDATE `play... " />
-                <marker date="1493505286286" expanded="false" signature="5954:6277" ph="SELECT * FRO... players" />
-                <marker date="1493505286286" expanded="true" signature="7025:7051" ph="SELECT * FRO... teams" />
-                <marker date="1493505286286" expanded="false" signature="7881:7912" ph="DELETE FROM " />
-                <marker date="1493505286286" expanded="false" signature="8269:8493" ph="INSERT INTO `foosball_management`.`teams`... " />
-                <marker date="1493505286286" expanded="false" signature="8864:8969" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="8864:9064" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="8864:9065" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="9469:9490" ph="SELECT * FRO... matches" />
-                <marker date="1493505286286" expanded="false" signature="10399:10432" ph="DELETE FROM " />
-                <marker date="1493505286286" expanded="false" signature="10836:10996" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="10836:11003" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="10836:11017" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="10836:11054" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="10836:11071" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="10836:11096" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="10836:11097" ph="INSERT INTO `matches`... " />
-                <marker date="1493505286286" expanded="false" signature="11513:11867" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="11876:11877" ph="INSERT INTO `foosball_management`.`matches`... " />
-                <marker date="1493505286286" expanded="false" signature="12230:12315" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="12230:12385" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="12230:12386" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="12731:12792" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="12731:12831" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="12731:12832" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="13173:13276" ph="UPDATE `foos... " />
-                <marker date="1493505286286" expanded="false" signature="14141:14284" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493505286286" expanded="false" signature="14141:14306" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493505286286" expanded="false" signature="14141:14321" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493505286286" expanded="false" signature="14141:14337" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493505286286" expanded="false" signature="14141:14355" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493505286286" expanded="false" signature="14778:14802" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="14778:14849" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="14778:14897" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="14778:14898" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="14778:14932" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="14778:14999" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15672" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15673" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15737" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15771" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15772" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15821" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15822" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="15618:15848" ph="SELECT winne... winners" />
-                <marker date="1493505286286" expanded="false" signature="16448:16510" ph="UPDATE winne... " />
-                <marker date="1493505286286" expanded="false" signature="16448:16608" ph="UPDATE winne... " />
-                <marker date="1493505286286" expanded="false" signature="16448:16643" ph="UPDATE winne... " />
-                <marker date="1493505286286" expanded="false" signature="16448:16644" ph="UPDATE winne... " />
-                <marker date="1493505286286" expanded="false" signature="17079:17119" ph="SELECT * FRO... schedule" />
-                <marker date="1493505286286" expanded="false" signature="17079:17120" ph="SELECT * FRO... schedule" />
-                <marker date="1493505286286" expanded="false" signature="17079:17156" ph="SELECT * FRO... schedule" />
-                <marker date="1493505286286" expanded="false" signature="17079:17168" ph="SELECT * FRO... schedule" />
-                <marker date="1493505286286" expanded="false" signature="17923:18023" ph="SELECT DISTI... matches" />
-                <marker date="1493505286286" expanded="false" signature="17923:18024" ph="SELECT DISTI... matches" />
-                <marker date="1493505286286" expanded="false" signature="17923:18072" ph="SELECT DISTI... matches" />
-                <marker date="1493505286286" expanded="false" signature="17923:18073" ph="SELECT DISTI... matches" />
-                <marker date="1493505286286" expanded="true" signature="18699:18998" ph="SELECT * FRO... players" />
-                <marker date="1493505286286" expanded="true" signature="18699:19000" ph="SELECT * FRO... players" />
-                <marker date="1493505286286" expanded="true" signature="18699:19011" ph="SELECT * FRO... players" />
-                <marker date="1493505286286" expanded="true" signature="19753:19787" ph="SELECT * FRO... players" />
-                <marker date="1493505286286" expanded="true" signature="19753:19788" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="false" signature="926:1014" ph="SELECT * FRO... missingValue" />
+                <marker date="1493534821948" expanded="false" signature="1482:1639" ph="INSERT INTO `tournaments`... " />
+                <marker date="1493534821948" expanded="false" signature="2042:2069" ph="SELECT * FRO... tournaments" />
+                <marker date="1493534821948" expanded="false" signature="2655:2692" ph="DELETE FROM " />
+                <marker date="1493534821948" expanded="false" signature="3089:3226" ph="UPDATE `tour... " />
+                <marker date="1493534821948" expanded="false" signature="3626:3649" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="false" signature="4409:4596" ph="INSERT INTO `players`... " />
+                <marker date="1493534821948" expanded="false" signature="4914:4947" ph="DELETE FROM " />
+                <marker date="1493534821948" expanded="false" signature="5345:5529" ph="UPDATE `play... " />
+                <marker date="1493534821948" expanded="false" signature="5954:6277" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="true" signature="7025:7051" ph="SELECT * FRO... teams" />
+                <marker date="1493534821948" expanded="false" signature="7881:7912" ph="DELETE FROM " />
+                <marker date="1493534821948" expanded="false" signature="8269:8493" ph="INSERT INTO `foosball_management`.`teams`... " />
+                <marker date="1493534821948" expanded="false" signature="8864:8969" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="8864:9064" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="8864:9065" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="9469:9490" ph="SELECT * FRO... matches" />
+                <marker date="1493534821948" expanded="false" signature="10399:10432" ph="DELETE FROM " />
+                <marker date="1493534821948" expanded="false" signature="10836:10996" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="10836:11003" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="10836:11017" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="10836:11054" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="10836:11071" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="10836:11096" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="10836:11097" ph="INSERT INTO `matches`... " />
+                <marker date="1493534821948" expanded="false" signature="11513:11867" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="11876:11877" ph="INSERT INTO `foosball_management`.`matches`... " />
+                <marker date="1493534821948" expanded="false" signature="12230:12315" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="12230:12385" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="12230:12386" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="12731:12792" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="12731:12831" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="12731:12832" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="13173:13276" ph="UPDATE `foos... " />
+                <marker date="1493534821948" expanded="false" signature="14141:14284" ph="INSERT INTO `foosball_management`.`winners`... " />
+                <marker date="1493534821948" expanded="false" signature="14141:14306" ph="INSERT INTO `foosball_management`.`winners`... " />
+                <marker date="1493534821948" expanded="false" signature="14141:14321" ph="INSERT INTO `foosball_management`.`winners`... " />
+                <marker date="1493534821948" expanded="false" signature="14141:14337" ph="INSERT INTO `foosball_management`.`winners`... " />
+                <marker date="1493534821948" expanded="false" signature="14141:14355" ph="INSERT INTO `foosball_management`.`winners`... " />
+                <marker date="1493534821948" expanded="false" signature="14778:14802" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="14778:14849" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="14778:14897" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="14778:14898" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="14778:14932" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="14778:14999" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15672" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15673" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15737" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15771" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15772" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15821" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15822" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="15618:15848" ph="SELECT winne... winners" />
+                <marker date="1493534821948" expanded="false" signature="16448:16510" ph="UPDATE winne... " />
+                <marker date="1493534821948" expanded="false" signature="16448:16608" ph="UPDATE winne... " />
+                <marker date="1493534821948" expanded="false" signature="16448:16643" ph="UPDATE winne... " />
+                <marker date="1493534821948" expanded="false" signature="16448:16644" ph="UPDATE winne... " />
+                <marker date="1493534821948" expanded="false" signature="17079:17119" ph="SELECT * FRO... schedule" />
+                <marker date="1493534821948" expanded="false" signature="17079:17120" ph="SELECT * FRO... schedule" />
+                <marker date="1493534821948" expanded="false" signature="17079:17156" ph="SELECT * FRO... schedule" />
+                <marker date="1493534821948" expanded="false" signature="17079:17168" ph="SELECT * FRO... schedule" />
+                <marker date="1493534821948" expanded="false" signature="17923:18023" ph="SELECT DISTI... matches" />
+                <marker date="1493534821948" expanded="false" signature="17923:18024" ph="SELECT DISTI... matches" />
+                <marker date="1493534821948" expanded="false" signature="17923:18072" ph="SELECT DISTI... matches" />
+                <marker date="1493534821948" expanded="false" signature="17923:18073" ph="SELECT DISTI... matches" />
+                <marker date="1493534821948" expanded="true" signature="18699:18998" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="true" signature="18699:19000" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="true" signature="18699:19011" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="true" signature="19753:19787" ph="SELECT * FRO... players" />
+                <marker date="1493534821948" expanded="true" signature="19753:19788" ph="SELECT * FRO... players" />
               </folding>
             </state>
           </provider>
@@ -356,11 +358,11 @@
         <option value="$PROJECT_DIR$/src/sample/ContPlayerAccount.java" />
         <option value="$PROJECT_DIR$/src/sample/ContPlayerMatches.java" />
         <option value="$PROJECT_DIR$/src/sample/ContPlayerPlayers.java" />
-        <option value="$PROJECT_DIR$/src/logic/FoosballLogic.java" />
         <option value="$PROJECT_DIR$/src/model/Team.java" />
         <option value="$PROJECT_DIR$/src/sample/ContAdminTeams.java" />
         <option value="$PROJECT_DIR$/src/dataBase/Adapter.java" />
         <option value="$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java" />
+        <option value="$PROJECT_DIR$/src/logic/FoosballLogic.java" />
       </list>
     </option>
   </component>
@@ -1048,7 +1050,7 @@
       <workItem from="1492850158357" duration="3361000" />
       <workItem from="1492861823137" duration="1945000" />
       <workItem from="1492864240860" duration="8507000" />
-      <workItem from="1493116243957" duration="135288000" />
+      <workItem from="1493116243957" duration="143619000" />
     </task>
     <task id="LOCAL-00001" summary="Team is ready">
       <created>1492877278729</created>
@@ -1061,10 +1063,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332460000" />
+    <option name="totallyTimeSpent" value="340791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1924" height="1048" extended-state="1" />
+    <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1563,58 +1565,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminTeams.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="103" column="27" lean-forward="true" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
+        <state relative-caret-position="745">
+          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getInstance#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#FoosballLogic#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#checkUserAndPass#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getTournaments#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#setChosenTournamentToEdit#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#saveTournamentChanges#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getPlayers#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#addNewPlayer#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#savePlayerChanges#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="e#3281#3282#0" expanded="true" />
-            <element signature="e#3322#3323#0" expanded="true" />
-            <element signature="method#addNewTournament#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#addNewTeam#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#saveTeamChanges#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#setTeamNames#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#setTournamentsNames#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#addNewMatch#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getChosenMatch#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getTournamentName#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getTeamName#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#saveMatchChanges#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getTeamsNames#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getTeamsNames#1;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#setPlayerRank#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#savePlayerRankChanges#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#setTeamsWonMatches#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#setNewValueTeamsWonMatches#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#checkPlayedMatches#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#addToWinners#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#updateWinners#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#saveChangesForMatch#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getSchedule#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getPlayerLoggedIN#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getPlayerTeams#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getPlayerMatches#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getPlayerTournaments#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#getAvailablePlayers#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#searchAvailablePlayers#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="docComment;class#ContAdminTeams#0" expanded="false" />
+            <element signature="method#addNewTeam#0;class#ContAdminTeams#0" expanded="false" />
+            <element signature="method#deleteTeam#0;class#ContAdminTeams#0" expanded="false" />
+            <element signature="method#editTeam#0;class#ContAdminTeams#0" expanded="false" />
+            <element signature="method#choosePlayer1#0;class#ContAdminTeams#0" expanded="false" />
+            <element signature="method#choosePlayer2#0;class#ContAdminTeams#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatches.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="88" column="4" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#initialize#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#goBack#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#addNewMatch#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#deleteMatch#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#editMatch#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#chooseDate#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#chooseTeam1#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#chooseTeam2#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="method#chooseTournament#0;class#ContAdminMatches#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataBase/Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="227" column="35" lean-forward="true" selection-start-line="227" selection-start-column="35" selection-end-line="227" selection-end-column="35" />
+        <state relative-caret-position="233">
+          <caret line="353" column="32" lean-forward="false" selection-start-line="353" selection-start-column="32" selection-end-line="353" selection-end-column="32" />
           <folding>
             <element signature="docComment;class#Adapter#0" expanded="false" />
             <element signature="method#getInstance#0;class#Adapter#0" expanded="false" />
@@ -1635,7 +1623,6 @@
             <element signature="method#getMatches#0;class#Adapter#0" expanded="false" />
             <element signature="method#deleteMatch#0;class#Adapter#0" expanded="false" />
             <element signature="method#addNewMatch#0;class#Adapter#0" expanded="false" />
-            <element signature="method#saveMatchChanges#0;class#Adapter#0" expanded="false" />
             <element signature="method#savePlayerRankChanges#0;class#Adapter#0" expanded="false" />
             <element signature="method#updateTeamWonMatches#0;class#Adapter#0" expanded="false" />
             <element signature="method#updateTeamLostMatches#0;class#Adapter#0" expanded="false" />
@@ -1647,91 +1634,76 @@
             <element signature="method#getSchedule#0;class#Adapter#0" expanded="false" />
             <element signature="method#getPlayerTournamentsIDs#0;class#Adapter#0" expanded="false" />
             <element signature="method#getPlayerByID#0;class#Adapter#0" expanded="false" />
-            <marker date="1493505286286" expanded="false" signature="926:1014" ph="SELECT * FRO... missingValue" />
-            <marker date="1493505286286" expanded="false" signature="1482:1639" ph="INSERT INTO `tournaments`... " />
-            <marker date="1493505286286" expanded="false" signature="2042:2069" ph="SELECT * FRO... tournaments" />
-            <marker date="1493505286286" expanded="false" signature="2655:2692" ph="DELETE FROM " />
-            <marker date="1493505286286" expanded="false" signature="3089:3226" ph="UPDATE `tour... " />
-            <marker date="1493505286286" expanded="false" signature="3626:3649" ph="SELECT * FRO... players" />
-            <marker date="1493505286286" expanded="false" signature="4409:4596" ph="INSERT INTO `players`... " />
-            <marker date="1493505286286" expanded="false" signature="4914:4947" ph="DELETE FROM " />
-            <marker date="1493505286286" expanded="false" signature="5345:5529" ph="UPDATE `play... " />
-            <marker date="1493505286286" expanded="false" signature="5954:6277" ph="SELECT * FRO... players" />
-            <marker date="1493505286286" expanded="true" signature="7025:7051" ph="SELECT * FRO... teams" />
-            <marker date="1493505286286" expanded="false" signature="7881:7912" ph="DELETE FROM " />
-            <marker date="1493505286286" expanded="false" signature="8269:8493" ph="INSERT INTO `foosball_management`.`teams`... " />
-            <marker date="1493505286286" expanded="false" signature="8864:8969" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="8864:9064" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="8864:9065" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="9469:9490" ph="SELECT * FRO... matches" />
-            <marker date="1493505286286" expanded="false" signature="10399:10432" ph="DELETE FROM " />
-            <marker date="1493505286286" expanded="false" signature="10836:10996" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="10836:11003" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="10836:11017" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="10836:11054" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="10836:11071" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="10836:11096" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="10836:11097" ph="INSERT INTO `matches`... " />
-            <marker date="1493505286286" expanded="false" signature="11513:11867" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="11876:11877" ph="INSERT INTO `foosball_management`.`matches`... " />
-            <marker date="1493505286286" expanded="false" signature="12230:12315" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="12230:12385" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="12230:12386" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="12731:12792" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="12731:12831" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="12731:12832" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="13173:13276" ph="UPDATE `foos... " />
-            <marker date="1493505286286" expanded="false" signature="14141:14284" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493505286286" expanded="false" signature="14141:14306" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493505286286" expanded="false" signature="14141:14321" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493505286286" expanded="false" signature="14141:14337" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493505286286" expanded="false" signature="14141:14355" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493505286286" expanded="false" signature="14778:14802" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="14778:14849" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="14778:14897" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="14778:14898" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="14778:14932" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="14778:14999" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15672" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15673" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15737" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15771" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15772" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15821" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15822" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="15618:15848" ph="SELECT winne... winners" />
-            <marker date="1493505286286" expanded="false" signature="16448:16510" ph="UPDATE winne... " />
-            <marker date="1493505286286" expanded="false" signature="16448:16608" ph="UPDATE winne... " />
-            <marker date="1493505286286" expanded="false" signature="16448:16643" ph="UPDATE winne... " />
-            <marker date="1493505286286" expanded="false" signature="16448:16644" ph="UPDATE winne... " />
-            <marker date="1493505286286" expanded="false" signature="17079:17119" ph="SELECT * FRO... schedule" />
-            <marker date="1493505286286" expanded="false" signature="17079:17120" ph="SELECT * FRO... schedule" />
-            <marker date="1493505286286" expanded="false" signature="17079:17156" ph="SELECT * FRO... schedule" />
-            <marker date="1493505286286" expanded="false" signature="17079:17168" ph="SELECT * FRO... schedule" />
-            <marker date="1493505286286" expanded="false" signature="17923:18023" ph="SELECT DISTI... matches" />
-            <marker date="1493505286286" expanded="false" signature="17923:18024" ph="SELECT DISTI... matches" />
-            <marker date="1493505286286" expanded="false" signature="17923:18072" ph="SELECT DISTI... matches" />
-            <marker date="1493505286286" expanded="false" signature="17923:18073" ph="SELECT DISTI... matches" />
-            <marker date="1493505286286" expanded="true" signature="18699:18998" ph="SELECT * FRO... players" />
-            <marker date="1493505286286" expanded="true" signature="18699:19000" ph="SELECT * FRO... players" />
-            <marker date="1493505286286" expanded="true" signature="18699:19011" ph="SELECT * FRO... players" />
-            <marker date="1493505286286" expanded="true" signature="19753:19787" ph="SELECT * FRO... players" />
-            <marker date="1493505286286" expanded="true" signature="19753:19788" ph="SELECT * FRO... players" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminTeams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ContAdminTeams#0" expanded="false" />
-            <element signature="method#addNewTeam#0;class#ContAdminTeams#0" expanded="false" />
-            <element signature="method#deleteTeam#0;class#ContAdminTeams#0" expanded="false" />
-            <element signature="method#editTeam#0;class#ContAdminTeams#0" expanded="false" />
-            <element signature="method#choosePlayer1#0;class#ContAdminTeams#0" expanded="false" />
-            <element signature="method#choosePlayer2#0;class#ContAdminTeams#0" expanded="false" />
+            <marker date="1493534821948" expanded="false" signature="926:1014" ph="SELECT * FRO... missingValue" />
+            <marker date="1493534821948" expanded="false" signature="1482:1639" ph="INSERT INTO `tournaments`... " />
+            <marker date="1493534821948" expanded="false" signature="2042:2069" ph="SELECT * FRO... tournaments" />
+            <marker date="1493534821948" expanded="false" signature="2655:2692" ph="DELETE FROM " />
+            <marker date="1493534821948" expanded="false" signature="3089:3226" ph="UPDATE `tour... " />
+            <marker date="1493534821948" expanded="false" signature="3626:3649" ph="SELECT * FRO... players" />
+            <marker date="1493534821948" expanded="false" signature="4409:4596" ph="INSERT INTO `players`... " />
+            <marker date="1493534821948" expanded="false" signature="4914:4947" ph="DELETE FROM " />
+            <marker date="1493534821948" expanded="false" signature="5345:5529" ph="UPDATE `play... " />
+            <marker date="1493534821948" expanded="false" signature="5954:6277" ph="SELECT * FRO... players" />
+            <marker date="1493534821948" expanded="true" signature="7025:7051" ph="SELECT * FRO... teams" />
+            <marker date="1493534821948" expanded="false" signature="7881:7912" ph="DELETE FROM " />
+            <marker date="1493534821948" expanded="false" signature="8269:8493" ph="INSERT INTO `foosball_management`.`teams`... " />
+            <marker date="1493534821948" expanded="false" signature="8864:8969" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="8864:9064" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="8864:9065" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="9469:9490" ph="SELECT * FRO... matches" />
+            <marker date="1493534821948" expanded="false" signature="10399:10432" ph="DELETE FROM " />
+            <marker date="1493534821948" expanded="false" signature="10836:10996" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="10836:11003" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="10836:11017" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="10836:11054" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="10836:11071" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="10836:11096" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="10836:11097" ph="INSERT INTO `matches`... " />
+            <marker date="1493534821948" expanded="false" signature="11513:11867" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="11876:11877" ph="INSERT INTO `foosball_management`.`matches`... " />
+            <marker date="1493534821948" expanded="false" signature="12230:12315" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="12230:12385" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="12230:12386" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="12731:12792" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="12731:12831" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="12731:12832" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="13173:13276" ph="UPDATE `foos... " />
+            <marker date="1493534821948" expanded="false" signature="14141:14284" ph="INSERT INTO `foosball_management`.`winners`... " />
+            <marker date="1493534821948" expanded="false" signature="14141:14306" ph="INSERT INTO `foosball_management`.`winners`... " />
+            <marker date="1493534821948" expanded="false" signature="14141:14321" ph="INSERT INTO `foosball_management`.`winners`... " />
+            <marker date="1493534821948" expanded="false" signature="14141:14337" ph="INSERT INTO `foosball_management`.`winners`... " />
+            <marker date="1493534821948" expanded="false" signature="14141:14355" ph="INSERT INTO `foosball_management`.`winners`... " />
+            <marker date="1493534821948" expanded="false" signature="14778:14802" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="14778:14849" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="14778:14897" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="14778:14898" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="14778:14932" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="14778:14999" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15672" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15673" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15737" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15771" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15772" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15821" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15822" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="15618:15848" ph="SELECT winne... winners" />
+            <marker date="1493534821948" expanded="false" signature="16448:16510" ph="UPDATE winne... " />
+            <marker date="1493534821948" expanded="false" signature="16448:16608" ph="UPDATE winne... " />
+            <marker date="1493534821948" expanded="false" signature="16448:16643" ph="UPDATE winne... " />
+            <marker date="1493534821948" expanded="false" signature="16448:16644" ph="UPDATE winne... " />
+            <marker date="1493534821948" expanded="false" signature="17079:17119" ph="SELECT * FRO... schedule" />
+            <marker date="1493534821948" expanded="false" signature="17079:17120" ph="SELECT * FRO... schedule" />
+            <marker date="1493534821948" expanded="false" signature="17079:17156" ph="SELECT * FRO... schedule" />
+            <marker date="1493534821948" expanded="false" signature="17079:17168" ph="SELECT * FRO... schedule" />
+            <marker date="1493534821948" expanded="false" signature="17923:18023" ph="SELECT DISTI... matches" />
+            <marker date="1493534821948" expanded="false" signature="17923:18024" ph="SELECT DISTI... matches" />
+            <marker date="1493534821948" expanded="false" signature="17923:18072" ph="SELECT DISTI... matches" />
+            <marker date="1493534821948" expanded="false" signature="17923:18073" ph="SELECT DISTI... matches" />
+            <marker date="1493534821948" expanded="true" signature="18699:18998" ph="SELECT * FRO... players" />
+            <marker date="1493534821948" expanded="true" signature="18699:19000" ph="SELECT * FRO... players" />
+            <marker date="1493534821948" expanded="true" signature="18699:19011" ph="SELECT * FRO... players" />
+            <marker date="1493534821948" expanded="true" signature="19753:19787" ph="SELECT * FRO... players" />
+            <marker date="1493534821948" expanded="true" signature="19753:19788" ph="SELECT * FRO... players" />
           </folding>
         </state>
       </provider>
@@ -1777,36 +1749,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatches.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="88" column="4" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+        <state relative-caret-position="640">
+          <caret line="198" column="54" lean-forward="true" selection-start-line="198" selection-start-column="54" selection-end-line="198" selection-end-column="54" />
           <folding>
-            <element signature="docComment;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#initialize#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#goBack#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#addNewMatch#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#deleteMatch#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#editMatch#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#chooseDate#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#chooseTeam1#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#chooseTeam2#0;class#ContAdminMatches#0" expanded="false" />
-            <element signature="method#chooseTournament#0;class#ContAdminMatches#0" expanded="false" />
+            <element signature="docComment;class#ContAdminMatchEdit#0" expanded="false" />
+            <element signature="method#goBack#0;class#ContAdminMatchEdit#0" expanded="false" />
+            <element signature="e#5982#5983#0" expanded="true" />
+            <element signature="e#6051#6052#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java">
+    <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="83" column="11" lean-forward="false" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+        <state relative-caret-position="-431">
+          <caret line="301" column="4" lean-forward="false" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
           <folding>
-            <element signature="docComment;class#ContAdminMatchEdit#0" expanded="false" />
-            <element signature="method#goBack#0;class#ContAdminMatchEdit#0" expanded="false" />
-            <element signature="method#saveMatchChanges#0;class#ContAdminMatchEdit#0" expanded="false" />
-            <element signature="e#5677#5678#0" expanded="true" />
-            <element signature="e#5751#5752#0" expanded="true" />
-            <element signature="method#chooseTeam2#0;class#ContAdminMatchEdit#0" expanded="false" />
+            <element signature="docComment;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getInstance#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#FoosballLogic#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#checkUserAndPass#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getTournaments#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#setChosenTournamentToEdit#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#saveTournamentChanges#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getPlayers#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#addNewPlayer#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#savePlayerChanges#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#addNewTournament#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#addNewTeam#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#saveTeamChanges#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#setTeamNames#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#setTournamentsNames#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#addNewMatch#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getChosenMatch#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getTournamentName#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getTeamName#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#saveMatchChanges#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getTournamentsNames#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getTeamsNames#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getTeamsNames#1;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#setPlayerRank#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#savePlayerRankChanges#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#setTeamsWonMatches#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#setNewValueTeamsWonMatches#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#checkPlayedMatches#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#addToWinners#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#updateWinners#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#saveChangesForMatch#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getSchedule#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getPlayerLoggedIN#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getPlayerTeams#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getPlayerMatches#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getPlayerTournaments#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getPlayerTournamentsNames#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#getAvailablePlayers#0;class#FoosballLogic#0" expanded="false" />
+            <element signature="method#searchAvailablePlayers#0;class#FoosballLogic#0" expanded="false" />
           </folding>
         </state>
       </provider>
