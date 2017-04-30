@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="mandatoryTech:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/mandatoryTech_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,7 +71,7 @@
       <file leaf-file-name="UserInputValidation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/logic/UserInputValidation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="255">
               <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding />
             </state>
@@ -72,7 +81,7 @@
       <file leaf-file-name="FoosballLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3864">
+            <state relative-caret-position="3128">
               <caret line="756" column="29" lean-forward="false" selection-start-line="756" selection-start-column="29" selection-end-line="756" selection-end-column="29" />
               <folding>
                 <element signature="docComment;class#FoosballLogic#0" expanded="false" />
@@ -122,22 +131,22 @@
       </file>
       <file leaf-file-name="screenLogin.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/screenLogin.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="340">
               <caret line="20" column="82" lean-forward="false" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ContLogin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/ContLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="109" column="38" lean-forward="false" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+            <state relative-caret-position="122">
+              <caret line="84" column="74" lean-forward="true" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
               <folding>
                 <element signature="method#signIn#0;class#ContLogin#0" expanded="false" />
                 <element signature="method#changeScreen#0;class#ContLogin#0" expanded="false" />
@@ -149,7 +158,7 @@
       <file leaf-file-name="Adapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataBase/Adapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2184">
+            <state relative-caret-position="1768">
               <caret line="721" column="4" lean-forward="false" selection-start-line="721" selection-start-column="4" selection-end-line="721" selection-end-column="4" />
               <folding>
                 <element signature="docComment;class#Adapter#0" expanded="false" />
@@ -184,76 +193,6 @@
                 <element signature="method#getPlayerTournamentsIDs#0;class#Adapter#0" expanded="false" />
                 <element signature="method#searchAvailablePlayers#0;class#Adapter#0" expanded="false" />
                 <element signature="method#getPlayerByID#0;class#Adapter#0" expanded="false" />
-                <marker date="1493568200237" expanded="false" signature="946:1034" ph="SELECT * FRO... missingValue" />
-                <marker date="1493568200237" expanded="false" signature="1535:1692" ph="INSERT INTO `tournaments`... " />
-                <marker date="1493568200237" expanded="false" signature="2108:2135" ph="SELECT * FRO... tournaments" />
-                <marker date="1493568200237" expanded="false" signature="2773:2810" ph="DELETE FROM " />
-                <marker date="1493568200237" expanded="false" signature="3219:3356" ph="UPDATE `tour... " />
-                <marker date="1493568200237" expanded="false" signature="3769:3792" ph="SELECT * FRO... players" />
-                <marker date="1493568200237" expanded="false" signature="4685:4872" ph="INSERT INTO `players`... " />
-                <marker date="1493568200237" expanded="false" signature="5203:5236" ph="DELETE FROM " />
-                <marker date="1493568200237" expanded="false" signature="5648:5832" ph="UPDATE `play... " />
-                <marker date="1493568200237" expanded="false" signature="6292:6615" ph="SELECT * FRO... players" />
-                <marker date="1493568200237" expanded="false" signature="7497:7523" ph="SELECT * FRO... teams" />
-                <marker date="1493568200237" expanded="false" signature="8475:8506" ph="DELETE FROM " />
-                <marker date="1493568200237" expanded="false" signature="8898:9122" ph="INSERT INTO `foosball_management`.`teams`... " />
-                <marker date="1493568200237" expanded="false" signature="9510:9615" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="9510:9710" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="9510:9711" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="10123:10144" ph="SELECT * FRO... matches" />
-                <marker date="1493568200237" expanded="false" signature="11055:11088" ph="DELETE FROM " />
-                <marker date="1493568200237" expanded="false" signature="11523:11683" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="11523:11690" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="11523:11704" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="11523:11741" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="11523:11758" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="11523:11783" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="11523:11784" ph="INSERT INTO `matches`... " />
-                <marker date="1493568200237" expanded="false" signature="12217:12571" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="12580:12581" ph="INSERT INTO `foosball_management`.`matches`... " />
-                <marker date="1493568200237" expanded="false" signature="12943:13028" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="12943:13098" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="12943:13099" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="13454:13515" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="13454:13554" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="13454:13555" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="13947:14070" ph="UPDATE `foos... " />
-                <marker date="1493568200237" expanded="false" signature="14514:14657" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493568200237" expanded="false" signature="14514:14679" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493568200237" expanded="false" signature="14514:14694" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493568200237" expanded="false" signature="14514:14710" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493568200237" expanded="false" signature="14514:14728" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493568200237" expanded="false" signature="15225:15249" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="15225:15296" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="15225:15344" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="15225:15345" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="15225:15379" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="15225:15446" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16142" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16143" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16207" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16241" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16242" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16291" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16292" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16088:16318" ph="SELECT winne... winners" />
-                <marker date="1493568200237" expanded="false" signature="16949:17011" ph="UPDATE winne... " />
-                <marker date="1493568200237" expanded="false" signature="16949:17109" ph="UPDATE winne... " />
-                <marker date="1493568200237" expanded="false" signature="16949:17144" ph="UPDATE winne... " />
-                <marker date="1493568200237" expanded="false" signature="16949:17145" ph="UPDATE winne... " />
-                <marker date="1493568200237" expanded="false" signature="17652:17692" ph="SELECT * FRO... schedule" />
-                <marker date="1493568200237" expanded="false" signature="17652:17693" ph="SELECT * FRO... schedule" />
-                <marker date="1493568200237" expanded="false" signature="17652:17729" ph="SELECT * FRO... schedule" />
-                <marker date="1493568200237" expanded="false" signature="17652:17741" ph="SELECT * FRO... schedule" />
-                <marker date="1493568200237" expanded="false" signature="18694:18794" ph="SELECT DISTI... matches" />
-                <marker date="1493568200237" expanded="false" signature="18694:18795" ph="SELECT DISTI... matches" />
-                <marker date="1493568200237" expanded="false" signature="18694:18843" ph="SELECT DISTI... matches" />
-                <marker date="1493568200237" expanded="false" signature="18694:18844" ph="SELECT DISTI... matches" />
-                <marker date="1493568200237" expanded="false" signature="19537:19836" ph="SELECT * FRO... players" />
-                <marker date="1493568200237" expanded="false" signature="19537:19838" ph="SELECT * FRO... players" />
-                <marker date="1493568200237" expanded="false" signature="19537:19849" ph="SELECT * FRO... players" />
-                <marker date="1493568200237" expanded="false" signature="20776:20810" ph="SELECT * FRO... players" />
-                <marker date="1493568200237" expanded="false" signature="20776:20811" ph="SELECT * FRO... players" />
               </folding>
             </state>
           </provider>
@@ -262,7 +201,7 @@
       <file leaf-file-name="DBConn.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataBase/DBConn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
+            <state relative-caret-position="476">
               <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
               <folding />
             </state>
@@ -272,7 +211,7 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="102">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Player#0" expanded="false" />
@@ -285,7 +224,7 @@
       <file leaf-file-name="Team.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Team.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1029">
+            <state relative-caret-position="833">
               <caret line="104" column="50" lean-forward="false" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
               <folding>
                 <element signature="docComment;class#Team#0" expanded="false" />
@@ -298,7 +237,7 @@
       <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Tournament.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
+            <state relative-caret-position="493">
               <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
               <folding>
                 <element signature="docComment;class#Tournament#0" expanded="false" />
@@ -311,7 +250,7 @@
       <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="306">
               <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="docComment;class#Schedule#0" expanded="false" />
@@ -476,7 +415,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -559,7 +498,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,9 +514,9 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1059,6 +998,7 @@
       <workItem from="1492861823137" duration="1945000" />
       <workItem from="1492864240860" duration="8507000" />
       <workItem from="1493116243957" duration="163595000" />
+      <workItem from="1493577223408" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="Team is ready">
       <created>1492877278729</created>
@@ -1071,11 +1011,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360767000" />
+    <option name="totallyTimeSpent" value="361920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1086,21 +1025,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37211856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37206823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18782791" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18763103" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1816839" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1111,6 +1049,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1145,203 +1084,168 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/screenAdminSchedule.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="28" column="64" lean-forward="false" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerChoice.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerChoice.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTournaments.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTournaments.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="45" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTournamentEdit.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTournamentEdit.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminChoice.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminChoice.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminPlayerEdit.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminPlayerEdit.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="279" lean-forward="false" selection-start-line="9" selection-start-column="279" selection-end-line="9" selection-end-column="279" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTeams.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTeams.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="33" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminMatchEdit.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminMatchEdit.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
           <caret line="30" column="94" lean-forward="false" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTeamEdit.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminTeamEdit.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="38" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/TableView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="842" column="22" lean-forward="false" selection-start-line="842" selection-start-column="22" selection-end-line="842" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerMatches.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="41" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContPlayerTeams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerTeams.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContPlayerMatchesForTour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerMatchesForTour.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="284" lean-forward="false" selection-start-line="9" selection-start-column="284" selection-end-line="9" selection-end-column="284" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ContPlayerTeams.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerTeams.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/ContPlayerMatchesForTour.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerMatchesForTour.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerTournaments.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminPlayers.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenAdminPlayers.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="98" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="98" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerPlayers.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerPlayers.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="23" column="98" lean-forward="false" selection-start-line="23" selection-start-column="98" selection-end-line="23" selection-end-column="98" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerAccount.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/screenPlayerAccount.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="24" column="107" lean-forward="false" selection-start-line="24" selection-start-column="107" selection-end-line="24" selection-end-column="107" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java">
@@ -1364,14 +1268,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/screenAdminMatches.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatches.java">
@@ -1624,16 +1528,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <element signature="docComment;class#Match#0" expanded="false" />
-            <element signature="method#Match#0;class#Match#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="102">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Player#0" expanded="false" />
@@ -1644,7 +1544,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="306">
           <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="docComment;class#Schedule#0" expanded="false" />
@@ -1655,7 +1555,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Team.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
+        <state relative-caret-position="833">
           <caret line="104" column="50" lean-forward="false" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
           <folding>
             <element signature="docComment;class#Team#0" expanded="false" />
@@ -1666,7 +1566,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Tournament.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
+        <state relative-caret-position="493">
           <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
           <folding>
             <element signature="docComment;class#Tournament#0" expanded="false" />
@@ -1677,7 +1577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/logic/UserInputValidation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="255">
           <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
@@ -1685,7 +1585,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataBase/DBConn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
+        <state relative-caret-position="476">
           <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding />
         </state>
@@ -1693,7 +1593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataBase/Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
+        <state relative-caret-position="1768">
           <caret line="721" column="4" lean-forward="false" selection-start-line="721" selection-start-column="4" selection-end-line="721" selection-end-column="4" />
           <folding>
             <element signature="docComment;class#Adapter#0" expanded="false" />
@@ -1728,76 +1628,6 @@
             <element signature="method#getPlayerTournamentsIDs#0;class#Adapter#0" expanded="false" />
             <element signature="method#searchAvailablePlayers#0;class#Adapter#0" expanded="false" />
             <element signature="method#getPlayerByID#0;class#Adapter#0" expanded="false" />
-            <marker date="1493568200237" expanded="false" signature="946:1034" ph="SELECT * FRO... missingValue" />
-            <marker date="1493568200237" expanded="false" signature="1535:1692" ph="INSERT INTO `tournaments`... " />
-            <marker date="1493568200237" expanded="false" signature="2108:2135" ph="SELECT * FRO... tournaments" />
-            <marker date="1493568200237" expanded="false" signature="2773:2810" ph="DELETE FROM " />
-            <marker date="1493568200237" expanded="false" signature="3219:3356" ph="UPDATE `tour... " />
-            <marker date="1493568200237" expanded="false" signature="3769:3792" ph="SELECT * FRO... players" />
-            <marker date="1493568200237" expanded="false" signature="4685:4872" ph="INSERT INTO `players`... " />
-            <marker date="1493568200237" expanded="false" signature="5203:5236" ph="DELETE FROM " />
-            <marker date="1493568200237" expanded="false" signature="5648:5832" ph="UPDATE `play... " />
-            <marker date="1493568200237" expanded="false" signature="6292:6615" ph="SELECT * FRO... players" />
-            <marker date="1493568200237" expanded="false" signature="7497:7523" ph="SELECT * FRO... teams" />
-            <marker date="1493568200237" expanded="false" signature="8475:8506" ph="DELETE FROM " />
-            <marker date="1493568200237" expanded="false" signature="8898:9122" ph="INSERT INTO `foosball_management`.`teams`... " />
-            <marker date="1493568200237" expanded="false" signature="9510:9615" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="9510:9710" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="9510:9711" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="10123:10144" ph="SELECT * FRO... matches" />
-            <marker date="1493568200237" expanded="false" signature="11055:11088" ph="DELETE FROM " />
-            <marker date="1493568200237" expanded="false" signature="11523:11683" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="11523:11690" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="11523:11704" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="11523:11741" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="11523:11758" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="11523:11783" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="11523:11784" ph="INSERT INTO `matches`... " />
-            <marker date="1493568200237" expanded="false" signature="12217:12571" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="12580:12581" ph="INSERT INTO `foosball_management`.`matches`... " />
-            <marker date="1493568200237" expanded="false" signature="12943:13028" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="12943:13098" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="12943:13099" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="13454:13515" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="13454:13554" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="13454:13555" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="13947:14070" ph="UPDATE `foos... " />
-            <marker date="1493568200237" expanded="false" signature="14514:14657" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493568200237" expanded="false" signature="14514:14679" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493568200237" expanded="false" signature="14514:14694" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493568200237" expanded="false" signature="14514:14710" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493568200237" expanded="false" signature="14514:14728" ph="INSERT INTO `foosball_management`.`winners`... " />
-            <marker date="1493568200237" expanded="false" signature="15225:15249" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="15225:15296" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="15225:15344" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="15225:15345" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="15225:15379" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="15225:15446" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16142" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16143" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16207" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16241" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16242" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16291" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16292" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16088:16318" ph="SELECT winne... winners" />
-            <marker date="1493568200237" expanded="false" signature="16949:17011" ph="UPDATE winne... " />
-            <marker date="1493568200237" expanded="false" signature="16949:17109" ph="UPDATE winne... " />
-            <marker date="1493568200237" expanded="false" signature="16949:17144" ph="UPDATE winne... " />
-            <marker date="1493568200237" expanded="false" signature="16949:17145" ph="UPDATE winne... " />
-            <marker date="1493568200237" expanded="false" signature="17652:17692" ph="SELECT * FRO... schedule" />
-            <marker date="1493568200237" expanded="false" signature="17652:17693" ph="SELECT * FRO... schedule" />
-            <marker date="1493568200237" expanded="false" signature="17652:17729" ph="SELECT * FRO... schedule" />
-            <marker date="1493568200237" expanded="false" signature="17652:17741" ph="SELECT * FRO... schedule" />
-            <marker date="1493568200237" expanded="false" signature="18694:18794" ph="SELECT DISTI... matches" />
-            <marker date="1493568200237" expanded="false" signature="18694:18795" ph="SELECT DISTI... matches" />
-            <marker date="1493568200237" expanded="false" signature="18694:18843" ph="SELECT DISTI... matches" />
-            <marker date="1493568200237" expanded="false" signature="18694:18844" ph="SELECT DISTI... matches" />
-            <marker date="1493568200237" expanded="false" signature="19537:19836" ph="SELECT * FRO... players" />
-            <marker date="1493568200237" expanded="false" signature="19537:19838" ph="SELECT * FRO... players" />
-            <marker date="1493568200237" expanded="false" signature="19537:19849" ph="SELECT * FRO... players" />
-            <marker date="1493568200237" expanded="false" signature="20776:20810" ph="SELECT * FRO... players" />
-            <marker date="1493568200237" expanded="false" signature="20776:20811" ph="SELECT * FRO... players" />
           </folding>
         </state>
       </provider>
@@ -1806,13 +1636,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
           <caret line="59" column="31" lean-forward="false" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3864">
+        <state relative-caret-position="3128">
           <caret line="756" column="29" lean-forward="false" selection-start-line="756" selection-start-column="29" selection-end-line="756" selection-end-column="29" />
           <folding>
             <element signature="docComment;class#FoosballLogic#0" expanded="false" />
@@ -1860,20 +1689,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/screenLogin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="340">
           <caret line="20" column="82" lean-forward="false" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ContLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="109" column="38" lean-forward="false" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+        <state relative-caret-position="122">
+          <caret line="84" column="74" lean-forward="true" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
           <folding>
             <element signature="method#signIn#0;class#ContLogin#0" expanded="false" />
             <element signature="method#changeScreen#0;class#ContLogin#0" expanded="false" />
@@ -1887,10 +1716,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>mandatoryTech:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1938,7 +1769,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
