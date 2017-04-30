@@ -112,6 +112,8 @@ public class ContAdminMatchEdit implements Initializable{
         String team1Name = "";
         String team2Name = "";
 
+
+        // Check if the fields are empty. If they are empty assign the prompt text as a value
         if(tourComboBox.getSelectionModel().isEmpty())
         {
             tourName = tourComboBox.getPromptText();
@@ -134,6 +136,7 @@ public class ContAdminMatchEdit implements Initializable{
             team2Name = team2ComboBox.getSelectionModel().getSelectedItem().toString();
         }
 
+        //Checking are Team1 and Team2 the same And prompt to choose another team for Team2
         if(team1Name.equals(team2Name)){
             team2ComboBox.setPromptText("");
             redLabel.setText("Choose 'Team 2'");
@@ -141,6 +144,7 @@ public class ContAdminMatchEdit implements Initializable{
             return;
         }
 
+        // If there are any empty field prompt a message
         if (date.getValue() == null || stage.getText().isEmpty() || team2Name.equals(null))
         {
             redLabel.setText("You have to fill out all the fields");
@@ -150,9 +154,11 @@ public class ContAdminMatchEdit implements Initializable{
 
         try
         {
+            //checking - is the value an integer
             t1scores = Integer.parseInt(team1scores.getText());
             t2scores = Integer.parseInt(team2scores.getText());
 
+            //save changes
             foosballLogic.saveMatchChanges(
                     date.getValue(), tourName,
                     stage.getText(), team1Name,
@@ -164,13 +170,14 @@ public class ContAdminMatchEdit implements Initializable{
             return;
         }
 
+        //assign a new value for the scores which is the difference between the old and the new value
         t1scores = t1scores - team1OldScores;
         t2scores = t2scores - team2OldScores;
 
-        System.out.println("controller \t team1: " + team1Name +", team2: " + team2Name + ", team1Scores: " +t1scores + ", team2Scores: " + t2scores);
+        //set the player rank using the difference in the scores
         foosballLogic.setPlayerRank(team1Name, team2Name, t1scores, t2scores, matchToEdit.getId());
 
-
+        //save the match changes
         foosballLogic.saveChangesForMatch(team1OldScores, team2OldScores, team1Name, team2Name, t1scores, t2scores);
         use.goBack(actionEvent, "screenAdminMatches.fxml");
     }
@@ -188,6 +195,7 @@ public class ContAdminMatchEdit implements Initializable{
     public void chooseTeam2(MouseEvent mouseEvent)
     {
         String selectedTeam = "";
+
         if(team1ComboBox.getSelectionModel().isEmpty())
         {
             selectedTeam = team1ComboBox.getPromptText();

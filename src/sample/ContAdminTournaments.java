@@ -62,44 +62,56 @@ public class ContAdminTournaments implements Initializable{
     TableColumn<Tournament, Date> startDateColumn, endDateColumn;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources){
+    public void initialize(URL location, ResourceBundle resources)
+    {
         loadTournaments();
 
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
 
         startDateField.setValue(LocalDate.now());
+
         endDateField.setValue(startDateField.getValue().plusDays(3));
 
+        //checking if the start date is before today.
+        //if it is - prompt the user
+        //also sets the end date to be 3 days after the start date
         startDateField.valueProperty().addListener(new ChangeListener<LocalDate>() {
             @Override
-            public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue) {
-                if (startDateField.getValue().isBefore(LocalDate.now())) {
+            public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue)
+            {
+                if (startDateField.getValue().isBefore(LocalDate.now()))
+                {
                     startDateField.setValue(LocalDate.now());
                     redLabel.setText("The tournament can not start from previous date");
                     redLabel.setVisible(true);
                 }
 
-                if (startDateField.getValue().isAfter(LocalDate.now())) {
+                if (startDateField.getValue().isAfter(LocalDate.now()))
+                {
                     redLabel.setVisible(false);
                 }
+
                 endDateField.setValue(startDateField.getValue().plusDays(3));
-
-
             }
         });
 
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void addNewTournament(ActionEvent actionEvent) {
-        if(nameField.getText().isEmpty()){
+    public void addNewTournament(ActionEvent actionEvent)
+    {
+        if(nameField.getText().isEmpty())
+        {
             redLabel.setText("You have fill out the field 'Name'");
             redLabel.setVisible(true);
             return;
-        }else {
+        }
+        else
+        {
             redLabel.setVisible(false);
             foosballLogic.addNewTournament(nameField.getText(), startDateField.getValue(), endDateField.getValue());
             loadTournaments();
@@ -108,7 +120,8 @@ public class ContAdminTournaments implements Initializable{
         }
     }
 
-    public void deleteTournament(ActionEvent actionEvent) {
+    public void deleteTournament(ActionEvent actionEvent)
+    {
         Tournament tournament = table.getSelectionModel().getSelectedItem();
         if(tournament == null){
             redLabelTop.setVisible(true);
@@ -120,14 +133,18 @@ public class ContAdminTournaments implements Initializable{
         loadTournaments();
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenAdminChoice.fxml");
 
     }
 
-    public void editTournament(ActionEvent actionEvent) throws IOException {
+    public void editTournament(ActionEvent actionEvent) throws IOException
+    {
         Tournament tournament = table.getSelectionModel().getSelectedItem();
-        if(tournament == null){
+
+        if(tournament == null)
+        {
             redLabelTop.setVisible(true);
             return;
         }
@@ -135,11 +152,14 @@ public class ContAdminTournaments implements Initializable{
         redLabelTop.setVisible(false);
 
         foosballLogic.setChosenTournamentToEdit(tournament);
+
         Stage stage = (Stage)(((Node) actionEvent.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("screenAdminTournamentEdit.fxml")), 800, 600));
     }
 
-    public void loadTournaments() {
+    public void loadTournaments()
+    {
+
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));

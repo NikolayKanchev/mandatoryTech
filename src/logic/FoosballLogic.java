@@ -25,88 +25,109 @@ public class FoosballLogic
     private ArrayList<Match> matches = getMatches();
     private ArrayList<Tournament> tournaments = getTournaments();
     private Player playerLogged;
-    private ArrayList<Team> playerTeams;
-    private ArrayList<Match> playerMatches;
-    private ArrayList<Tournament> playerTournaments = new ArrayList<>();
     private ArrayList<Player> availablePlayers = new ArrayList<>();
-    private Player player;
 
-    public static synchronized FoosballLogic getInstance() {
-        if (ourInstance == null){
+//    private ArrayList<Team> playerTeams;
+//    private ArrayList<Match> playerMatches;
+//    private ArrayList<Tournament> playerTournaments = new ArrayList<>();
+//    private Player player;
+
+    public static synchronized FoosballLogic getInstance()
+    {
+        if (ourInstance == null)
+        {
             ourInstance = new FoosballLogic();
         }
         return ourInstance;
     }
 
-    private FoosballLogic() {
+    private FoosballLogic()
+    {
     }
 
-    public boolean checkUserAndPass(String name, String pass, String tableDB){
+    public boolean checkUserAndPass(String name, String pass, String tableDB)
+    {
 
         if(!UserInputValidation.notValid_string(name) || !UserInputValidation.notValid_string(pass))
         {
             return false;
         }
 
-        if(!adapter.checkUserAndPassword(name, pass, tableDB)){
+        if(!adapter.checkUserAndPassword(name, pass, tableDB))
+        {
             return false;
         }
+
         return true;
     }
 
-    public ArrayList<Tournament> getTournaments(){
+    public ArrayList<Tournament> getTournaments()
+    {
         ArrayList<Tournament> tournaments = new ArrayList<>();
         tournaments.addAll(adapter.getTournaments());
         return tournaments;
     }
 
-    public void deleteTournament(int tournamentId) {
+    public void deleteTournament(int tournamentId)
+    {
         adapter.deleteTournament(tournamentId);
     }
 
-    public void setChosenTournamentToEdit(Tournament chosenTournamentToEdit) {
+    public void setChosenTournamentToEdit(Tournament chosenTournamentToEdit)
+    {
         this.chosenTournamentToEdit = chosenTournamentToEdit;
     }
 
-    public Tournament getChosenTournamentToEdit() {
+    public Tournament getChosenTournamentToEdit()
+    {
         return chosenTournamentToEdit;
     }
 
-    public void saveTournamentChanges(String name, LocalDate startDate, LocalDate endDate, Tournament tournamentToEdit) {
+    public void saveTournamentChanges(String name, LocalDate startDate, LocalDate endDate, Tournament tournamentToEdit)
+    {
         adapter.saveTournamentsChanges(name, startDate, endDate, tournamentToEdit);
     }
 
-    public ArrayList<Player> getPlayers(){
+    public ArrayList<Player> getPlayers()
+    {
         ArrayList<Player> players = new ArrayList<>();
         players.addAll(adapter.getPlayers());
         return players;
     }
 
-    public void addNewPlayer(String name, LocalDate dateOfBirth, String eMail, String pass) {
+    public void addNewPlayer(String name, LocalDate dateOfBirth, String eMail, String pass)
+    {
         adapter.addNewPlayer(name, dateOfBirth, eMail, pass);
     }
 
-    public void deletePlayer(int playerId) {
+    public void deletePlayer(int playerId)
+    {
         adapter.deletePlayer(playerId);
     }
 
-    public void setChosenPlayerToEdit(Player chosenPlayerToEdit) {
+    public void setChosenPlayerToEdit(Player chosenPlayerToEdit)
+    {
         this.chosenPlayerToEdit = chosenPlayerToEdit;
     }
 
-    public Player getChosenPlayerToEdit() {
+    public Player getChosenPlayerToEdit()
+    {
         return chosenPlayerToEdit;
     }
 
-    public void savePlayerChanges(String name, LocalDate dateOfBirth, String eMail, String pass, String status, int playerId) {
+    public void savePlayerChanges(String name, LocalDate dateOfBirth, String eMail, String pass, String status, int playerId)
+    {
         adapter.savePlayerChanges(name, dateOfBirth, eMail, pass, status, playerId);
     }
 
-    public ArrayList<Player> searchPlayers(String searchText) {
+    //search and return all the players which contains the user input
+    public ArrayList<Player> searchPlayers(String searchText)
+    {
         return adapter.searchPlayers(searchText);
     }
 
-    public ArrayList<Team> getTeams() {
+    public ArrayList<Team> getTeams()
+    {
         return adapter.getTeams();
     }
 
@@ -120,15 +141,19 @@ public class FoosballLogic
         adapter.deleteTeam(id);
     }
 
-    public void addNewTeam(String name, int player1ID, int player2ID) {
+    public void addNewTeam(String name, int player1ID, int player2ID)
+    {
         adapter.addNewTeam(name, player1ID, player2ID);
     }
 
-    public void setChosenTeamToEdit(Team chosenTeamToEdit) {
+    //sets chosen team to edit
+    public void setChosenTeamToEdit(Team chosenTeamToEdit)
+    {
         this.chosenTeamToEdit = chosenTeamToEdit;
     }
 
-    public Team getChosenTeamToEdit() {
+    public Team getChosenTeamToEdit()
+    {
         return chosenTeamToEdit;
     }
 
@@ -249,6 +274,7 @@ public class FoosballLogic
         return name;
     }
 
+    //loops tru tournaments and teams to find the right IDs and than save the changes
     public void saveMatchChanges(LocalDate date, String tournament, String stage, String team1, String team2, int t1Scores, int t2Scores)
     {
         ArrayList<Team> teams = getTeams();
@@ -304,6 +330,7 @@ public class FoosballLogic
         return teamsNames;
     }
 
+    //get teams names excluding the chosen team
     public ObservableList<String> getTeamsNames(String selectedTeam)
     {
         ObservableList<String> teamsNames = FXCollections.observableArrayList();
@@ -318,6 +345,7 @@ public class FoosballLogic
         return teamsNames;
     }
 
+    //checks previous match scores and the new values of them
     public void setPlayerRank(String team1Name, String team2Name, int team1scores, int team2scores, int matchID)
     {
         for (Match match: matches)
@@ -351,6 +379,7 @@ public class FoosballLogic
         savePlayerRankChanges(team2Name, team2scores);
     }
 
+    //Finds players IDs and save the changes
     public void savePlayerRankChanges(String team, int scores)
     {
         int player1ID = 0;
@@ -388,6 +417,7 @@ public class FoosballLogic
 
     }
 
+    //Checks which team is winning and which is losing and add 1 to there wonMatches/lostMatches
     public void setTeamsWonMatches(String team1Name, String team2Name, int t1scores, int t2scores)
     {
         String winner = "";
@@ -422,6 +452,8 @@ public class FoosballLogic
         }
     }
 
+    //If the scores have been changed before - is checking which team was set as winner
+    //and if it is not true change it. Does the same for the loser
     public void setNewValueTeamsWonMatches(String team1Name, String team2Name, int t1scores, int t2scores)
     {
         String winner = "";
@@ -459,6 +491,11 @@ public class FoosballLogic
         }
     }
 
+
+    /*When the scores for the match are changed
+    is checking if the match is the last for this round for this tournament.
+    If it is the last one is getting  the winner teams and create new matches for the next round
+    (Semifinal or final depending on the number of teams witch are involved in the tournament ).*/
     public void checkPlayedMatches(int tournamentID)
     {
         List<Integer> winnersIDs = new ArrayList<>();
@@ -480,12 +517,10 @@ public class FoosballLogic
                     if(match.getTeam1scores() == 0 && match.getTeam2scores() == 0)
                     {
                         firstRoundComplete = false;
-                        System.out.println("Stage First round is not complete");
                         return;
                     }
 
                     firstRoundComplete = true;
-                    System.out.println("Stage First round is complete");
 
                     if(firstRoundComplete)
                     {
@@ -506,12 +541,10 @@ public class FoosballLogic
                     if(match.getTeam1scores() == 0 && match.getTeam2scores() == 0)
                     {
                         semifinalComplete = false;
-                        System.out.println("Semifinal is not complete");
                         return;
                     }
 
                     semifinalComplete = true;
-                    System.out.println("Semifinal is complete");
 
                     if(semifinalComplete)
                     {
@@ -541,7 +574,6 @@ public class FoosballLogic
         if(finalMatchHaveBeenCreated)
         {
             tournamentWinnerID = winnersIDs.get(0);
-            System.out.println(tournamentWinnerID);
         }
     }
 
@@ -555,6 +587,8 @@ public class FoosballLogic
         adapter.updateWinners(tournamentID, stage, winnerID, scoresDiff, oldWinnerID, oldScoreDiff);
     }
 
+    /*Checking the old values for the scores and the new one and based on the result is saving the changes.
+    * After call the method checkPlayedMatches to check was this the las match of this round*/
     public void saveChangesForMatch(int team1OldScores, int team2OldScores, String team1Name, String team2Name, int t1scores, int t2scores)
     {
         if (team1OldScores == 0 && team2OldScores == 0)
@@ -632,6 +666,7 @@ public class FoosballLogic
         return playerLogged;
     }
 
+    //Getting all the teams that the logged in player is involved
     public ArrayList<Team> getPlayerTeams()
     {
         ArrayList<Team> teams = new ArrayList<>();
@@ -649,6 +684,7 @@ public class FoosballLogic
         return playerTeams;
     }
 
+    //Returns all the matches for the logged in player
     public ArrayList<Match> getPlayerMatches()
     {
         ArrayList<Match> playerMatches = new ArrayList<>();
@@ -666,13 +702,12 @@ public class FoosballLogic
         return playerMatches;
     }
 
-
-
     public Player getPlayerLoggedIN()
     {
         return this.playerLogged;
     }
 
+    //Returns all the tournaments for the logged in player
     public ArrayList<Tournament> getPlayerTournaments()
     {
         ArrayList<Tournament> tournaments = new ArrayList<>();
@@ -714,7 +749,8 @@ public class FoosballLogic
         return availablePlayers;
     }
 
-    public ArrayList<Player> searchAvailablePlayers(String searchText) {
+    public ArrayList<Player> searchAvailablePlayers(String searchText)
+    {
         return adapter.searchAvailablePlayers(searchText);
     }
 

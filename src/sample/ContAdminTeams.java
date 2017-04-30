@@ -1,7 +1,6 @@
 package sample;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,8 +24,10 @@ import java.util.ResourceBundle;
 /**
  * Created by Didi on 04/09/2017.
  */
-public class ContAdminTeams implements Initializable{
+public class ContAdminTeams implements Initializable
+{
     private FoosballLogic foosballLogic = FoosballLogic.getInstance();
+
     UseAgain use = UseAgain.getInstance();
 
     @FXML
@@ -51,22 +52,27 @@ public class ContAdminTeams implements Initializable{
     ComboBox player1ComboBox, player2ComboBox;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         loadTeams(foosballLogic.getTeams());
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
         
     }
 
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenAdminChoice.fxml");
     }
 
-    public void addNewTeam(ActionEvent actionEvent) {
+    //finding player1 and player2 IDs using the chosen names
+    public void addNewTeam(ActionEvent actionEvent)
+    {
         redLabel.setVisible(false);
 
         if (nameField.getText().isEmpty() || player1ComboBox.getSelectionModel().isEmpty() || player2ComboBox.getSelectionModel().isEmpty())
@@ -96,7 +102,8 @@ public class ContAdminTeams implements Initializable{
         loadTeams(foosballLogic.getTeams());
     }
 
-    public void deleteTeam(ActionEvent actionEvent) {
+    public void deleteTeam(ActionEvent actionEvent)
+    {
         Team team = (Team) tableView.getSelectionModel().getSelectedItem();
         if(team == null){
             redLabelTop.setVisible(true);
@@ -109,7 +116,8 @@ public class ContAdminTeams implements Initializable{
 
     }
 
-    public void editTeam(ActionEvent actionEvent) throws IOException {
+    public void editTeam(ActionEvent actionEvent) throws IOException
+    {
         Team team = (Team) tableView.getSelectionModel().getSelectedItem();
         if(team == null){
             redLabelTop.setVisible(true);
@@ -123,7 +131,8 @@ public class ContAdminTeams implements Initializable{
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("screenAdminTeamEdit.fxml")), 800, 600));
     }
 
-    private void loadTeams(ArrayList<Team> t) {
+    private void loadTeams(ArrayList<Team> t)
+    {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         player1Column.setCellValueFactory(new PropertyValueFactory<>("player1Name"));
@@ -136,6 +145,7 @@ public class ContAdminTeams implements Initializable{
         tableView.setItems(teams);
     }
 
+    //adding player names in comboBoxPlayer1
     public void choosePlayer1(MouseEvent mouseEvent)
     {
         ArrayList<Player> availablePlayers = foosballLogic.getPlayers();
@@ -150,6 +160,7 @@ public class ContAdminTeams implements Initializable{
         player1ComboBox.setItems(players);
     }
 
+    //adding player names in comboBoxPlayer2 excluding the chosen player from comboBoxPlayer1
     public void choosePlayer2(MouseEvent mouseEvent)
     {
         redLabel.setVisible(false);

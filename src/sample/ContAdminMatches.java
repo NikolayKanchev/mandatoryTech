@@ -65,10 +65,14 @@ public class ContAdminMatches implements Initializable{
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
+
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+
         loadData();
 
+        //if the chosen date is before today sets the date value to be today and prompt a masage on the screen
         startDate.valueProperty().addListener(new ChangeListener<LocalDate>() {
             @Override
             public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue) {
@@ -85,6 +89,7 @@ public class ContAdminMatches implements Initializable{
         });
     }
 
+    //loading the data in the table
     private void loadData()
     {
         matches = foosballLogic.getMatches();
@@ -108,15 +113,20 @@ public class ContAdminMatches implements Initializable{
 
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
        use.goBack(actionEvent, "screenAdminChoice.fxml");
     }
 
-    public void addNewMatch(ActionEvent actionEvent) {
+    //checking if the fields are empty
+    //if there are not empty creates a new match
+    public void addNewMatch(ActionEvent actionEvent)
+    {
         if(startDate.getValue() == null ||
                 tournamentComboBox.getSelectionModel().isEmpty() ||
                 team1ComboBox.getSelectionModel().isEmpty() ||
@@ -190,11 +200,6 @@ public class ContAdminMatches implements Initializable{
 
         Stage stage = (Stage)(((Node) e.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("screenAdminMatchEdit.fxml")), 800, 600));
-
-    }
-
-    public void chooseDate(ActionEvent actionEvent)
-    {
 
     }
 

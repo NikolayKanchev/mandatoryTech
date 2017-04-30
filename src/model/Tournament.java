@@ -5,48 +5,58 @@ import java.sql.Date;
 /**
  * Created by Didi on 04/13/2017.
  */
-public class Tournament {
+public class Tournament
+{
     private int id;
     private String name;
     private Date startDate;
     private Date endDate;
 
-    public Tournament(int id, String name, Date startDate, Date endDate) {
+    public Tournament(int id, String name, Date startDate, Date endDate)
+    {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public Date getStartDate() {
+    public Date getStartDate()
+    {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Date startDate)
+    {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public Date getEndDate()
+    {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(Date endDate)
+    {
         this.endDate = endDate;
     }
 

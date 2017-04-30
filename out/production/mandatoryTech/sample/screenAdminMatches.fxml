@@ -23,7 +23,7 @@
             <TableColumn fx:id="stageColumn" prefWidth="116.0" text="Stage" />
         </columns>
       </TableView>
-      <DatePicker fx:id="startDate" layoutX="102.0" layoutY="498.0" onAction="#chooseDate" prefHeight="25.0" prefWidth="160.0" promptText="Date" />
+      <DatePicker fx:id="startDate" layoutX="102.0" layoutY="498.0" prefHeight="25.0" prefWidth="160.0" promptText="Date" />
       <Button fx:id="addButton" layoutX="727.0" layoutY="498.0" mnemonicParsing="false" onAction="#addNewMatch" prefHeight="25.0" prefWidth="53.0" text="Add" />
       <Label layoutX="21.0" layoutY="498.0" prefHeight="25.0" prefWidth="96.0" text="New match:" />
       <Button fx:id="deleteButton" layoutX="20.0" layoutY="90.0" mnemonicParsing="false" onAction="#deleteMatch" text="Delete" />

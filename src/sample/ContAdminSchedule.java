@@ -6,21 +6,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import logic.FoosballLogic;
-import model.Match;
 import model.Schedule;
-import model.Tournament;
 
 import java.io.IOException;
 import java.net.URL;
@@ -65,15 +59,19 @@ public class ContAdminSchedule implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
         loadTournaments();
+
         loadSchedule();
+
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
 
+        //Loading the schedule based on the chosen tournament
         tournamentComboBox.valueProperty().addListener(new ChangeListener()
         {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue)
             {
                 chosenTournament = tournamentComboBox.getSelectionModel().getSelectedItem().toString();
+
                 loadSchedule();
             }
         });
@@ -91,6 +89,7 @@ public class ContAdminSchedule implements Initializable
         use.goBack(actionEvent, "screenAdminChoice.fxml");
     }
 
+    //Loads the data in all 3 tables for the schedule
     private void loadSchedule()
     {
         chosenTournament = tournamentComboBox.getSelectionModel().getSelectedItem().toString();

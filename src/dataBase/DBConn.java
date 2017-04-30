@@ -6,7 +6,8 @@ import java.sql.DriverManager;
 /**
  * Created by Didi on 04/13/2017.
  */
-public class DBConn {
+public class DBConn
+{
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://52.57.136.74:3306/";
@@ -14,15 +15,19 @@ public class DBConn {
     private static final String USER = "Nikolay";
     private static final String PASS = "1234";
 
-    public static Connection getConn(){
+    public static Connection getConn()
+    {
         Connection conn = null;
-        try{
+        try
+        {
             Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL + DB_NAME, USER, PASS);
             return conn;
-        }catch (Exception e){
+
+        }catch (Exception e)
+        {
             e.printStackTrace();
-         return null;
+            return null;
         }
     }
 }

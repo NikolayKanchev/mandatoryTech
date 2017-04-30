@@ -1,12 +1,12 @@
 package model;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 /**
  * Created by nikol on 4/6/2017.
  */
-public class Match {
+public class Match
+{
     private int id;
     private Date date;
     private int tournamentID;

@@ -5,7 +5,8 @@ import java.sql.Date;
 /**
  * Created by nikol on 4/6/2017.
  */
-public class Player {
+public class Player
+{
     private int id;
     private String name;
     private Date dateOfBirth;
@@ -14,7 +15,8 @@ public class Player {
     private String status;
     private String password;
 
-    public Player(int id, String name, Date dateOfBirth, String mail, String password) {
+    public Player(int id, String name, Date dateOfBirth, String mail, String password)
+    {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -22,59 +24,73 @@ public class Player {
         this.password = password;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public Date getDateOfBirth()
+    {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth)
+    {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getMail() {
+    public String getMail()
+    {
         return mail;
     }
 
-    public void setMail(String mail) {
+    public void setMail(String mail)
+    {
         this.mail = mail;
     }
 
-    public int getRank() {
+    public int getRank()
+    {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(int rank)
+    {
         this.rank = rank;
     }
 
-    public String getStatus() {
+    public String getStatus()
+    {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(String status)
+    {
         this.status = status;
     }
 
-    public String getPassword() {
+    public String getPassword()
+    {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password)
+    {
         this.password = password;
     }
 }

@@ -24,36 +24,44 @@ public class ContAdminChoice implements Initializable{
 
 
 
-    public void manageTournaments(ActionEvent actionEvent) throws IOException {
+    public void manageTournaments(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenAdminTournaments.fxml");
     }
 
-    public void manageMatches(ActionEvent actionEvent) throws IOException {
+    public void manageMatches(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenAdminMatches.fxml");
     }
 
-    public void manageTeams(ActionEvent actionEvent) throws IOException {
+    public void manageTeams(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenAdminTeams.fxml");
     }
 
-    public void managePlayers(ActionEvent actionEvent) throws IOException {
+    public void managePlayers(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenAdminPlayers.fxml");
     }
 
-    public void manageSchedule(ActionEvent actionEvent) throws IOException {
+    public void manageSchedule(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenAdminSchedule.fxml");
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
        use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
 
-    public void changeScreen(ActionEvent e, String s) throws IOException {
+    public void changeScreen(ActionEvent e, String s) throws IOException
+    {
         Stage stage = (Stage)(((Node) e.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(s)), 800, 600));
     }

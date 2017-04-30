@@ -1,7 +1,6 @@
 package sample;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,20 +11,21 @@ import javafx.scene.input.MouseEvent;
 import logic.FoosballLogic;
 import model.Player;
 import model.Team;
-import model.Tournament;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
  * Created by Didi on 04/14/2017.
  */
-public class ContAdminTeamEdit implements Initializable{
+public class ContAdminTeamEdit implements Initializable
+{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
+
     Team teamToEdit;
+
     UseAgain use = UseAgain.getInstance();
 
     @FXML
@@ -44,15 +44,18 @@ public class ContAdminTeamEdit implements Initializable{
     Label redLabel;
 
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenAdminTeams.fxml");
     }
 
-    public void saveTeamChanges(ActionEvent actionEvent) throws IOException {
+    public void saveTeamChanges(ActionEvent actionEvent) throws IOException
+    {
         redLabel.setVisible(false);
         String player1Name = "";
         String player2Name = "";
@@ -86,7 +89,8 @@ public class ContAdminTeamEdit implements Initializable{
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         teamToEdit = foosballLogic.getChosenTeamToEdit();
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
         loadData();
@@ -96,6 +100,7 @@ public class ContAdminTeamEdit implements Initializable{
         String player1Name = "";
         String player2Name = "";
 
+        //looping tru tru the players to find player1 name and player2 name
         for (Player player: foosballLogic.getPlayers()){
             if(player.getId() == teamToEdit.getPlayer1ID()){
                 player1Name = player.getName();
@@ -112,6 +117,7 @@ public class ContAdminTeamEdit implements Initializable{
         player2ComboBox.setPromptText(player2Name);
     }
 
+    //loading player1-names in the comboBox
     public void choosePlayer1(MouseEvent mouseEvent)
     {
         ArrayList<Player> availablePlayers = foosballLogic.getPlayers();
@@ -126,6 +132,7 @@ public class ContAdminTeamEdit implements Initializable{
         player1ComboBox.setItems(players);
     }
 
+    //loading player-names in the comboBox but excluding the chosen player1
     public void choosePlayer2(MouseEvent mouseEvent)
     {
         redLabel.setVisible(false);

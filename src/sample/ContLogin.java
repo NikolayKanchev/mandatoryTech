@@ -9,10 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import logic.FoosballLogic;
 import model.Player;
@@ -21,13 +21,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static javafx.scene.paint.Color.YELLOW;
 
-public class ContLogin implements Initializable{
+
+public class ContLogin implements Initializable
+{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
     Player currentPlayer;
 
     @FXML
-    Label redLabel;
+    Label redLabel, blueLabel;
 
     @FXML
     ChoiceBox choice;
@@ -38,7 +41,8 @@ public class ContLogin implements Initializable{
     @FXML
     PasswordField passField;
 
-    public void signIn(ActionEvent actionEvent) throws IOException {
+    public void signIn(ActionEvent actionEvent) throws IOException
+    {
         String tableDB = "";
 
         if (choice.getSelectionModel().isEmpty()){
@@ -77,8 +81,11 @@ public class ContLogin implements Initializable{
         }
     }
 
+
+    /*Adds a listener witch sets the prompt text for the field user name*/
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         choice.setItems(FXCollections.observableArrayList("Admin", "Player"));
         choice.valueProperty().addListener(new ChangeListener<String>() {
             @Override public void changed(ObservableValue ov, String t, String t1) {
@@ -91,10 +98,29 @@ public class ContLogin implements Initializable{
                 }
             }
         });
+
+        Tooltip tooltip = new Tooltip();
+
+        tooltip.setText(
+                "To login as an 'Admin' use:" +
+                        "\n user name : admin" +
+                        "\n password  : 1234\n" +
+                        "\n To login as a 'Player' use:" +
+                        "\n user name : dim@yahoo.com" +
+                        "\n password  : dimpass");
+
+        blueLabel.setTooltip(tooltip);
+
     }
 
-    public void changeScreen(ActionEvent e, String s) throws IOException {
+    public void changeScreen(ActionEvent e, String s) throws IOException
+    {
         Stage stage = (Stage)(((Node) e.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(s)), 800, 600));
+    }
+
+    public void showTip(MouseEvent mouseEvent)
+    {
+
     }
 }

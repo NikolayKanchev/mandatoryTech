@@ -26,7 +26,8 @@ import java.util.ResourceBundle;
 /**
  * Created by Didi on 04/09/2017.
  */
-public class ContAdminPlayers implements Initializable{
+public class ContAdminPlayers implements Initializable
+{
 
     private FoosballLogic foosballLogic = FoosballLogic.getInstance();
     private UseAgain use = UseAgain.getInstance();
@@ -59,48 +60,66 @@ public class ContAdminPlayers implements Initializable{
     Label redLabel, redLabelTop;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
+
         loadPlayers(foosballLogic.getPlayers());
+
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenAdminChoice.fxml");
     }
 
-    public void addNewPlayer(ActionEvent actionEvent) {
-        if (nameField.getText().isEmpty() || eMailField.getText().isEmpty() || passField.getText().isEmpty()){
+    public void addNewPlayer(ActionEvent actionEvent)
+    {
+        if (nameField.getText().isEmpty() || eMailField.getText().isEmpty() || passField.getText().isEmpty())
+        {
             redLabel.setVisible(true);
             return;
-        }else{
+        }
+        else
+        {
             redLabel.setVisible(false);
         }
 
-        try{
-            if (dateOfBirthField.getValue().isAfter(LocalDate.now().minusYears(15))){
+        //Checking - is the player min 15 years old
+        try
+        {
+            if (dateOfBirthField.getValue().isAfter(LocalDate.now().minusYears(15)))
+            {
                 redLabel.setText("The player should be at least 15 years old");
                 redLabel.setVisible(true);
                 dateOfBirthField.setValue(LocalDate.now().minusYears(15));
                 return;
-            }else{
+            }
+            else
+            {
                 redLabel.setVisible(false);
             }
-        }catch (Exception e){
+
+        }catch (Exception e)
+        {
             redLabel.setText("You have to choose 'Date of birth'");
             redLabel.setVisible(true);
             return;
         }
 
+        //Checking if the player already exist in the system
         if(foosballLogic.checkUserAndPass(eMailField.getText(), passField.getText(), "players")){
             redLabel.setText("This player exist in the system");
             redLabel.setVisible(true);
             return;
         }
 
+        //adds the new player to the DB
         foosballLogic.addNewPlayer(
                 nameField.getText(),
                 dateOfBirthField.getValue(),
@@ -108,10 +127,12 @@ public class ContAdminPlayers implements Initializable{
                 passField.getText()
         );
 
+        //reloading the players info in the table
         loadPlayers(foosballLogic.getPlayers());
     }
 
-    public void deletePlayer(ActionEvent actionEvent) {
+    public void deletePlayer(ActionEvent actionEvent)
+    {
         Player player = tableView.getSelectionModel().getSelectedItem();
         if(player == null){
             redLabelTop.setVisible(true);
@@ -124,9 +145,12 @@ public class ContAdminPlayers implements Initializable{
         loadPlayers(foosballLogic.getPlayers());
     }
 
-    public void editPlayer(ActionEvent actionEvent) throws IOException {
+    public void editPlayer(ActionEvent actionEvent) throws IOException
+    {
         Player player = tableView.getSelectionModel().getSelectedItem();
-        if(player == null){
+
+        if(player == null)
+        {
             redLabelTop.setVisible(true);
             return;
         }
@@ -140,7 +164,8 @@ public class ContAdminPlayers implements Initializable{
 
     }
 
-    public void loadPlayers(ArrayList<Player> pl) {
+    public void loadPlayers(ArrayList<Player> pl)
+    {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         dateOfBirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
@@ -155,7 +180,8 @@ public class ContAdminPlayers implements Initializable{
     }
 
 
-    public void searchPlayers(KeyEvent keyEvent) {
+    public void searchPlayers(KeyEvent keyEvent)
+    {
         loadPlayers(foosballLogic.searchPlayers(searchField.getText()));
     }
 }

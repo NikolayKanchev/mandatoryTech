@@ -4,16 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import logic.FoosballLogic;
 import model.Tournament;
 
@@ -25,7 +21,8 @@ import java.util.ResourceBundle;
 /**
  * Created by Didi on 04/09/2017.
  */
-public class ContPlayerTournaments implements Initializable{
+public class ContPlayerTournaments implements Initializable
+{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
 
     UseAgain use = UseAgain.getInstance();
@@ -46,9 +43,12 @@ public class ContPlayerTournaments implements Initializable{
     TableView<Tournament> tableView;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        loadTournaments();
+    public void initialize(URL location, ResourceBundle resources)
+    {
+
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+
+        loadTournaments();
     }
 
     private void loadTournaments()
@@ -63,11 +63,13 @@ public class ContPlayerTournaments implements Initializable{
         tableView.setItems(tournaments);
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenPlayerChoice.fxml");
 
     }

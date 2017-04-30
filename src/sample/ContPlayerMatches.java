@@ -14,10 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import logic.FoosballLogic;
-import model.Match;
-import model.Player;
 import model.Schedule;
-import model.Team;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +25,8 @@ import java.util.ResourceBundle;
 /**
  * Created by Didi on 04/09/2017.
  */
-public class ContPlayerMatches implements Initializable{
+public class ContPlayerMatches implements Initializable
+{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
 
 
@@ -52,14 +50,21 @@ public class ContPlayerMatches implements Initializable{
     @FXML
     ComboBox tournamentComboBox;
 
+    //Listener loads the data again if tournamentComboBox value is modified
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> tourNames = FXCollections.observableArrayList();
-        tourNames.addAll( new ArrayList<>(foosballLogic.getPlayerTournamentsNames()));
-        tournamentComboBox.setItems(tourNames);
-        tournamentComboBox.getSelectionModel().selectFirst();
-        loadData();
+    public void initialize(URL location, ResourceBundle resources)
+    {
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+
+        ObservableList<String> tourNames = FXCollections.observableArrayList();
+
+        tourNames.addAll( new ArrayList<>(foosballLogic.getPlayerTournamentsNames()));
+
+        tournamentComboBox.setItems(tourNames);
+
+        tournamentComboBox.getSelectionModel().selectFirst();
+
+        loadData();
 
 
         tournamentComboBox.valueProperty().addListener(new ChangeListener()
@@ -92,11 +97,13 @@ public class ContPlayerMatches implements Initializable{
         tableView.setItems(observableSchedule);
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenPlayerChoice.fxml");
     }
 }

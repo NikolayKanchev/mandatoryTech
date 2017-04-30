@@ -12,16 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import logic.FoosballLogic;
-import model.Match;
 import model.Player;
-import model.Team;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ContPlayerChoice implements Initializable{
+public class ContPlayerChoice implements Initializable
+{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
     Player player;
 
@@ -34,12 +32,14 @@ public class ContPlayerChoice implements Initializable{
     Label redLabel;
 
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
 
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
 
@@ -53,23 +53,28 @@ public class ContPlayerChoice implements Initializable{
         redLabel.setVisible(true);
     }
 
-    public void seeTournaments(ActionEvent actionEvent) throws IOException {
+    public void seeTournaments(ActionEvent actionEvent) throws IOException
+    {
        changeScreen(actionEvent, "screenPlayerMatches.fxml");
     }
 
-    public void seeAllTournamentsAndMatches(ActionEvent actionEvent) throws IOException {
+    public void seeAllTournamentsAndMatches(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenPlayerTournaments.fxml");
     }
 
-    public void seeAvailablePlayers(ActionEvent actionEvent) throws IOException {
+    public void seeAvailablePlayers(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenPlayerPlayers.fxml");
     }
 
-    public void seeAccountInfo(ActionEvent actionEvent) throws IOException {
+    public void seeAccountInfo(ActionEvent actionEvent) throws IOException
+    {
         changeScreen(actionEvent, "screenPlayerAccount.fxml");
     }
 
-    public void changeScreen(ActionEvent e, String s) throws IOException {
+    public void changeScreen(ActionEvent e, String s) throws IOException
+    {
         Stage stage = (Stage)(((Node) e.getSource()).getScene().getWindow());
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(s)), 800, 600));
     }

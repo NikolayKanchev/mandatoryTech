@@ -37,22 +37,26 @@ public class ContAdminPlayerEdit implements Initializable{
     Label redLabel;
 
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenAdminPlayers.fxml");
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         playerToEdit = foosballLogic.getChosenPlayerToEdit();
         loadData();
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
     }
 
-    public void loadData(){
+    public void loadData()
+    {
         nameTF.setText(playerToEdit.getName());
         dateOfBirth.setValue(playerToEdit.getDateOfBirth().toLocalDate());
         eMailTF.setText(playerToEdit.getMail());
@@ -60,8 +64,15 @@ public class ContAdminPlayerEdit implements Initializable{
         statusTF.setText(playerToEdit.getStatus());
     }
 
-    public void savePlayerChanges(ActionEvent actionEvent) throws IOException {
-        foosballLogic.savePlayerChanges(nameTF.getText(), dateOfBirth.getValue(), eMailTF.getText(), passTF.getText(), statusTF.getText(), playerToEdit.getId());
+    public void savePlayerChanges(ActionEvent actionEvent) throws IOException
+    {
+        foosballLogic.savePlayerChanges
+                (
+                nameTF.getText(), dateOfBirth.getValue(),
+                eMailTF.getText(), passTF.getText(),
+                statusTF.getText(), playerToEdit.getId()
+                );
+
         goBack(actionEvent);
     }
 }

@@ -4,13 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import logic.FoosballLogic;
 import model.Player;
 
@@ -19,7 +15,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class ContPlayerAccount implements Initializable{
+public class ContPlayerAccount implements Initializable
+{
     FoosballLogic foosballLogic = FoosballLogic.getInstance();
     Player currentPlayer;
 
@@ -39,8 +36,10 @@ public class ContPlayerAccount implements Initializable{
     Label redLabel;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         exitOptions.setItems(FXCollections.observableArrayList("Log out", "Exit"));
+
         loadData();
     }
 
@@ -60,14 +59,15 @@ public class ContPlayerAccount implements Initializable{
         items.addAll("available","not available");
         statusComboBox.setItems(items);
 
-
     }
 
-    public void goBack(ActionEvent actionEvent) throws IOException {
+    public void goBack(ActionEvent actionEvent) throws IOException
+    {
         use.goBack(actionEvent, "screenPlayerChoice.fxml");
     }
 
-    public void exitOrLogOut(MouseEvent mouseEvent) {
+    public void exitOrLogOut(MouseEvent mouseEvent)
+    {
         use.exitOrLogOut(mouseEvent, exitOptions);
     }
 
@@ -75,6 +75,7 @@ public class ContPlayerAccount implements Initializable{
     {
         redLabel.setVisible(false);
 
+        //if there are no changes in the passwordField and the field for the status - is not doing anything
         if(statusComboBox.getSelectionModel().getSelectedItem().toString().equals(currentPlayer.getStatus()) &&
                 passField.getText().equals(currentPlayer.getPassword()))
         {
@@ -82,6 +83,7 @@ public class ContPlayerAccount implements Initializable{
             return;
         }
 
+        //if only the field for the status is modified - save changes only for the status
         if(!statusComboBox.getSelectionModel().getSelectedItem().toString().equals(currentPlayer.getStatus()) &&
                 passField.getText().equals(currentPlayer.getPassword()))
         {
@@ -95,6 +97,7 @@ public class ContPlayerAccount implements Initializable{
             return;
         }
 
+        //if only the field for the password is modified - save changes only for the password
         if(statusComboBox.getSelectionModel().getSelectedItem().toString().equals(currentPlayer.getStatus()) &&
                 !passField.getText().equals(currentPlayer.getPassword()))
         {
@@ -108,6 +111,7 @@ public class ContPlayerAccount implements Initializable{
             return;
         }
 
+        //if both are modified - save changes for both
         if(!statusComboBox.getSelectionModel().getSelectedItem().toString().equals(currentPlayer.getStatus()) &&
                 !passField.getText().equals(currentPlayer.getPassword()))
         {
