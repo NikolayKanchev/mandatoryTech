@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminMatchEdit$2.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/logic/FoosballLogic.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/logic/FoosballLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminMatchEdit.class" afterPath="$PROJECT_DIR$/out/production/mandatoryTech/sample/ContAdminMatchEdit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/FoosballLogic.java" afterPath="$PROJECT_DIR$/src/logic/FoosballLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java" afterPath="$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,56 +64,30 @@
       <file leaf-file-name="ContAdminMatchEdit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="198" column="54" lean-forward="true" selection-start-line="198" selection-start-column="54" selection-end-line="198" selection-end-column="54" />
+            <state relative-caret-position="-294">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="docComment;class#ContAdminMatchEdit#0" expanded="false" />
                 <element signature="method#goBack#0;class#ContAdminMatchEdit#0" expanded="false" />
-                <element signature="e#5982#5983#0" expanded="true" />
-                <element signature="e#6051#6052#0" expanded="true" />
+                <element signature="method#initialize#0;class#ContAdminMatchEdit#0" expanded="false" />
+                <element signature="class#1789:2484" expanded="false" />
+                <element signature="method#changed#0;class#1789:2484" expanded="false" />
+                <element signature="method#loadData#0;class#ContAdminMatchEdit#0" expanded="false" />
+                <element signature="method#saveMatchChanges#0;class#ContAdminMatchEdit#0" expanded="false" />
+                <element signature="method#chooseTeam2#0;class#ContAdminMatchEdit#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Team.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Team.java">
+      <file leaf-file-name="ContLogin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/ContLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="451">
+              <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
               <folding>
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#660#661#0" expanded="true" />
-                <element signature="e#691#692#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-                <element signature="e#758#759#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#823#824#0" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#944#945#0" expanded="true" />
-                <element signature="e#977#978#0" expanded="true" />
-                <element signature="e#1009#1010#0" expanded="true" />
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1098#1099#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1165#1166#0" expanded="true" />
-                <element signature="e#1214#1215#0" expanded="true" />
-                <element signature="e#1258#1259#0" expanded="true" />
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1327#1328#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1424#1425#0" expanded="true" />
-                <element signature="e#1466#1467#0" expanded="true" />
-                <element signature="e#1500#1501#0" expanded="true" />
-                <element signature="e#1558#1559#0" expanded="true" />
-                <element signature="e#1604#1605#0" expanded="true" />
-                <element signature="e#1646#1647#0" expanded="true" />
-                <element signature="e#1680#1681#0" expanded="true" />
-                <element signature="e#1738#1739#0" expanded="true" />
-                <element signature="e#1784#1785#0" expanded="true" />
+                <element signature="method#initialize#0;class#ContLogin#0" expanded="false" />
+                <element signature="method#changeScreen#0;class#ContLogin#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,13 +96,12 @@
       <file leaf-file-name="FoosballLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-431">
-              <caret line="301" column="4" lean-forward="false" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+            <state relative-caret-position="178">
+              <caret line="45" column="98" lean-forward="false" selection-start-line="45" selection-start-column="98" selection-end-line="45" selection-end-column="98" />
               <folding>
                 <element signature="docComment;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getInstance#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#FoosballLogic#0;class#FoosballLogic#0" expanded="false" />
-                <element signature="method#checkUserAndPass#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#getTournaments#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#setChosenTournamentToEdit#0;class#FoosballLogic#0" expanded="false" />
                 <element signature="method#saveTournamentChanges#0;class#FoosballLogic#0" expanded="false" />
@@ -174,113 +142,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Adapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dataBase/Adapter.java">
+      <file leaf-file-name="UserInputValidation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logic/UserInputValidation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="353" column="32" lean-forward="false" selection-start-line="353" selection-start-column="32" selection-end-line="353" selection-end-column="32" />
-              <folding>
-                <element signature="docComment;class#Adapter#0" expanded="false" />
-                <element signature="method#getInstance#0;class#Adapter#0" expanded="false" />
-                <element signature="method#Adapter#0;class#Adapter#0" expanded="false" />
-                <element signature="method#checkUserAndPassword#0;class#Adapter#0" expanded="false" />
-                <element signature="method#addNewTournament#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getTournaments#0;class#Adapter#0" expanded="false" />
-                <element signature="method#deleteTournament#0;class#Adapter#0" expanded="false" />
-                <element signature="method#saveTournamentsChanges#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getPlayers#0;class#Adapter#0" expanded="false" />
-                <element signature="method#addNewPlayer#0;class#Adapter#0" expanded="false" />
-                <element signature="method#deletePlayer#0;class#Adapter#0" expanded="false" />
-                <element signature="method#savePlayerChanges#0;class#Adapter#0" expanded="false" />
-                <element signature="method#searchPlayers#0;class#Adapter#0" expanded="false" />
-                <element signature="method#deleteTeam#0;class#Adapter#0" expanded="false" />
-                <element signature="method#addNewTeam#0;class#Adapter#0" expanded="false" />
-                <element signature="method#saveTeamChanges#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getMatches#0;class#Adapter#0" expanded="false" />
-                <element signature="method#deleteMatch#0;class#Adapter#0" expanded="false" />
-                <element signature="method#addNewMatch#0;class#Adapter#0" expanded="false" />
-                <element signature="method#savePlayerRankChanges#0;class#Adapter#0" expanded="false" />
-                <element signature="method#updateTeamWonMatches#0;class#Adapter#0" expanded="false" />
-                <element signature="method#updateTeamLostMatches#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getWinnersFirstRound#0;class#Adapter#0" expanded="false" />
-                <element signature="method#addToWinners#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getTheWinnersIDs#0;class#Adapter#0" expanded="false" />
-                <element signature="method#updateWinners#0;class#Adapter#0" expanded="false" />
-                <element signature="method#insertNewValueForTheWinner#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getSchedule#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getPlayerTournamentsIDs#0;class#Adapter#0" expanded="false" />
-                <element signature="method#getPlayerByID#0;class#Adapter#0" expanded="false" />
-                <marker date="1493534821948" expanded="false" signature="926:1014" ph="SELECT * FRO... missingValue" />
-                <marker date="1493534821948" expanded="false" signature="1482:1639" ph="INSERT INTO `tournaments`... " />
-                <marker date="1493534821948" expanded="false" signature="2042:2069" ph="SELECT * FRO... tournaments" />
-                <marker date="1493534821948" expanded="false" signature="2655:2692" ph="DELETE FROM " />
-                <marker date="1493534821948" expanded="false" signature="3089:3226" ph="UPDATE `tour... " />
-                <marker date="1493534821948" expanded="false" signature="3626:3649" ph="SELECT * FRO... players" />
-                <marker date="1493534821948" expanded="false" signature="4409:4596" ph="INSERT INTO `players`... " />
-                <marker date="1493534821948" expanded="false" signature="4914:4947" ph="DELETE FROM " />
-                <marker date="1493534821948" expanded="false" signature="5345:5529" ph="UPDATE `play... " />
-                <marker date="1493534821948" expanded="false" signature="5954:6277" ph="SELECT * FRO... players" />
-                <marker date="1493534821948" expanded="true" signature="7025:7051" ph="SELECT * FRO... teams" />
-                <marker date="1493534821948" expanded="false" signature="7881:7912" ph="DELETE FROM " />
-                <marker date="1493534821948" expanded="false" signature="8269:8493" ph="INSERT INTO `foosball_management`.`teams`... " />
-                <marker date="1493534821948" expanded="false" signature="8864:8969" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="8864:9064" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="8864:9065" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="9469:9490" ph="SELECT * FRO... matches" />
-                <marker date="1493534821948" expanded="false" signature="10399:10432" ph="DELETE FROM " />
-                <marker date="1493534821948" expanded="false" signature="10836:10996" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="10836:11003" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="10836:11017" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="10836:11054" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="10836:11071" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="10836:11096" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="10836:11097" ph="INSERT INTO `matches`... " />
-                <marker date="1493534821948" expanded="false" signature="11513:11867" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="11876:11877" ph="INSERT INTO `foosball_management`.`matches`... " />
-                <marker date="1493534821948" expanded="false" signature="12230:12315" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="12230:12385" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="12230:12386" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="12731:12792" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="12731:12831" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="12731:12832" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="13173:13276" ph="UPDATE `foos... " />
-                <marker date="1493534821948" expanded="false" signature="14141:14284" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493534821948" expanded="false" signature="14141:14306" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493534821948" expanded="false" signature="14141:14321" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493534821948" expanded="false" signature="14141:14337" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493534821948" expanded="false" signature="14141:14355" ph="INSERT INTO `foosball_management`.`winners`... " />
-                <marker date="1493534821948" expanded="false" signature="14778:14802" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="14778:14849" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="14778:14897" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="14778:14898" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="14778:14932" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="14778:14999" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15672" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15673" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15737" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15771" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15772" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15821" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15822" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="15618:15848" ph="SELECT winne... winners" />
-                <marker date="1493534821948" expanded="false" signature="16448:16510" ph="UPDATE winne... " />
-                <marker date="1493534821948" expanded="false" signature="16448:16608" ph="UPDATE winne... " />
-                <marker date="1493534821948" expanded="false" signature="16448:16643" ph="UPDATE winne... " />
-                <marker date="1493534821948" expanded="false" signature="16448:16644" ph="UPDATE winne... " />
-                <marker date="1493534821948" expanded="false" signature="17079:17119" ph="SELECT * FRO... schedule" />
-                <marker date="1493534821948" expanded="false" signature="17079:17120" ph="SELECT * FRO... schedule" />
-                <marker date="1493534821948" expanded="false" signature="17079:17156" ph="SELECT * FRO... schedule" />
-                <marker date="1493534821948" expanded="false" signature="17079:17168" ph="SELECT * FRO... schedule" />
-                <marker date="1493534821948" expanded="false" signature="17923:18023" ph="SELECT DISTI... matches" />
-                <marker date="1493534821948" expanded="false" signature="17923:18024" ph="SELECT DISTI... matches" />
-                <marker date="1493534821948" expanded="false" signature="17923:18072" ph="SELECT DISTI... matches" />
-                <marker date="1493534821948" expanded="false" signature="17923:18073" ph="SELECT DISTI... matches" />
-                <marker date="1493534821948" expanded="true" signature="18699:18998" ph="SELECT * FRO... players" />
-                <marker date="1493534821948" expanded="true" signature="18699:19000" ph="SELECT * FRO... players" />
-                <marker date="1493534821948" expanded="true" signature="18699:19011" ph="SELECT * FRO... players" />
-                <marker date="1493534821948" expanded="true" signature="19753:19787" ph="SELECT * FRO... players" />
-                <marker date="1493534821948" expanded="true" signature="19753:19788" ph="SELECT * FRO... players" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -312,9 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/screenPlayerMatches.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/dataBase/Addaptor.java" />
         <option value="$PROJECT_DIR$/src/dataBase/Adaptor.java" />
         <option value="$PROJECT_DIR$/src/dataBase/DBcon.java" />
@@ -362,6 +226,9 @@
         <option value="$PROJECT_DIR$/src/sample/ContAdminTeams.java" />
         <option value="$PROJECT_DIR$/src/dataBase/Adapter.java" />
         <option value="$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java" />
+        <option value="$PROJECT_DIR$/src/sample/UseAgain.java" />
+        <option value="$PROJECT_DIR$/src/logic/validateUserInput.java" />
+        <option value="$PROJECT_DIR$/src/logic/UserInputValidation.java" />
         <option value="$PROJECT_DIR$/src/logic/FoosballLogic.java" />
       </list>
     </option>
@@ -1050,7 +917,7 @@
       <workItem from="1492850158357" duration="3361000" />
       <workItem from="1492861823137" duration="1945000" />
       <workItem from="1492864240860" duration="8507000" />
-      <workItem from="1493116243957" duration="143619000" />
+      <workItem from="1493116243957" duration="149198000" />
     </task>
     <task id="LOCAL-00001" summary="Team is ready">
       <created>1492877278729</created>
@@ -1063,10 +930,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340791000" />
+    <option name="totallyTimeSpent" value="346370000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
+    <frame x="-9" y="-9" width="1924" height="1048" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1128,7 +995,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/ScreenTournaments.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/UseAgain.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Pretty.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1247,14 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminChoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/screenAdminMatchEdit.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1324,14 +1182,6 @@
             <element signature="e#1442#1443#0" expanded="false" />
             <element signature="e#1482#1483#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ContLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1452,14 +1302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="661">
           <caret line="73" column="88" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="73" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UseAgain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="33" selection-end-column="81" />
           <folding />
         </state>
       </provider>
@@ -1708,6 +1550,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ContAdminChoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/UseAgain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#UseAgain#0" expanded="false" />
+            <element signature="method#UseAgain#0;class#UseAgain#0" expanded="false" />
+            <element signature="method#getInstance#0;class#UseAgain#0" expanded="false" />
+            <element signature="method#goBack#0;class#UseAgain#0" expanded="false" />
+            <element signature="method#exitOrLogOut#0;class#UseAgain#0" expanded="false" />
+            <element signature="e#1009#1609#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Team.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1751,26 +1616,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ContAdminMatchEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="198" column="54" lean-forward="true" selection-start-line="198" selection-start-column="54" selection-end-line="198" selection-end-column="54" />
+        <state relative-caret-position="-294">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="docComment;class#ContAdminMatchEdit#0" expanded="false" />
             <element signature="method#goBack#0;class#ContAdminMatchEdit#0" expanded="false" />
-            <element signature="e#5982#5983#0" expanded="true" />
-            <element signature="e#6051#6052#0" expanded="true" />
+            <element signature="method#initialize#0;class#ContAdminMatchEdit#0" expanded="false" />
+            <element signature="class#1789:2484" expanded="false" />
+            <element signature="method#changed#0;class#1789:2484" expanded="false" />
+            <element signature="method#loadData#0;class#ContAdminMatchEdit#0" expanded="false" />
+            <element signature="method#saveMatchChanges#0;class#ContAdminMatchEdit#0" expanded="false" />
+            <element signature="method#chooseTeam2#0;class#ContAdminMatchEdit#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ContLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+          <folding>
+            <element signature="method#initialize#0;class#ContLogin#0" expanded="false" />
+            <element signature="method#changeScreen#0;class#ContLogin#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logic/UserInputValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/logic/FoosballLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-431">
-          <caret line="301" column="4" lean-forward="false" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+        <state relative-caret-position="178">
+          <caret line="45" column="98" lean-forward="false" selection-start-line="45" selection-start-column="98" selection-end-line="45" selection-end-column="98" />
           <folding>
             <element signature="docComment;class#FoosballLogic#0" expanded="false" />
             <element signature="method#getInstance#0;class#FoosballLogic#0" expanded="false" />
             <element signature="method#FoosballLogic#0;class#FoosballLogic#0" expanded="false" />
-            <element signature="method#checkUserAndPass#0;class#FoosballLogic#0" expanded="false" />
             <element signature="method#getTournaments#0;class#FoosballLogic#0" expanded="false" />
             <element signature="method#setChosenTournamentToEdit#0;class#FoosballLogic#0" expanded="false" />
             <element signature="method#saveTournamentChanges#0;class#FoosballLogic#0" expanded="false" />

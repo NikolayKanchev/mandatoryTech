@@ -42,6 +42,12 @@ public class FoosballLogic
     }
 
     public boolean checkUserAndPass(String name, String pass, String tableDB){
+
+        if(!UserInputValidation.notValid_string(name) || !UserInputValidation.notValid_string(pass))
+        {
+            return false;
+        }
+
         if(!adapter.checkUserAndPassword(name, pass, tableDB)){
             return false;
         }
